@@ -1,0 +1,30 @@
+{% set mainPath = app.user ? 'app_regulations_list' : 'app_landing' %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{{ 'common.title'|trans }}{% endblock %}</title>
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+  </head>
+  <body>
+    {% for label, messages in app.flashes %}
+        {% if loop.first %}<div class="fr-container fr-pt-4w">{% endif %}
+        {% for message in messages %}
+            <div class="fr-alert fr-alert--{{ label }}">
+                {{ message|raw }}
+            </div>
+        {% endfor %}
+        {% if loop.last %}</div>{% endif %}
+    {% endfor %}
+
+    {% block body %}{% endblock %}
+  </body>
+</html>
