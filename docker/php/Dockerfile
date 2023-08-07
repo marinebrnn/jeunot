@@ -46,16 +46,6 @@ RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | b
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
    mv composer.phar /usr/local/bin/composer
 
-# Install Playwright browser dependencies
-RUN npx playwright install-deps firefox chromium
-
-# Install pandoc
-RUN apt-get install -y wget && \
-    mkdir -p /usr/src/pandoc && \
-    cd /usr/src/pandoc && \
-    wget https://github.com/jgm/pandoc/releases/download/3.1.5/pandoc-3.1.5-1-amd64.deb && \
-    dpkg -i pandoc-3.1.5-1-amd64.deb
-
 # Allow husky to install pre-commit hooks
 RUN git config --global --add safe.directory /var/www/jeunot
 

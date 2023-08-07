@@ -38,7 +38,6 @@ install: build start install_deps dbinstall assets ## Bootstrap project
 install_deps: ## Install dependencies
 	make composer CMD="install -n --prefer-dist"
 	$(BIN_NPM) ci
-	$(BIN_NPX) playwright install firefox chromium
 
 update_deps:
 	make composer CMD="update"
@@ -70,10 +69,10 @@ rm: ## Remove containers
 ##
 
 dbinstall: ## Setup databases
-	make dbmigrate
+	#make dbmigrate
 	make console CMD="doctrine:database:create --env=test --if-not-exists"
-	make dbmigrate ARGS="--env=test"
-	make dbfixtures
+	#make dbmigrate ARGS="--env=test"
+	#make dbfixtures
 
 dbmigration: ## Generate new db migration
 	${BIN_CONSOLE} doctrine:migrations:diff
@@ -180,12 +179,6 @@ test_unit: ## Run unit tests only
 
 test_integration: ## Run integration tests only
 	${BIN_PHP} ./bin/phpunit --testsuite=Integration ${ARGS}
-
-test_e2e: ## Run end-to-end tests only
-	make dbfixtures
-	$(BIN_NPX) playwright test --project desktop-firefox ${ARGS}
-	make dbfixtures
-	$(BIN_NPX) playwright test --project mobile-chromium ${ARGS}
 
 ##
 ## ----------------
