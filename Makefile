@@ -30,7 +30,7 @@ BIN_CONSOLE_NO_TTY = ${_SYMFONY_NO_TTY} console
 
 all: help
 
-help: ## Display this message
+help: ## Table des matières
 	@grep -E '(^[a-zA-Z0-9_\-\.]+:.*?##.*$$)|(^##)' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m## /[33m/'
 
 install: build start install_deps dbinstall assets ## Bootstrap project
@@ -39,7 +39,7 @@ install_deps: ## Install dependencies
 	make composer CMD="install -n --prefer-dist"
 	$(BIN_NPM) ci
 
-update_deps:
+update_deps: ## Update dependencies
 	make composer CMD="update"
 	$(BIN_NPM) update
 
@@ -110,7 +110,7 @@ watch: ## Watch assets
 assets: ## Build assets
 	$(BIN_NPM) run build
 
-shell: ## Connect to the container
+shell: ## Connect to the PHP container
 	docker-compose exec php bash
 
 ##
