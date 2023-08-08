@@ -5,7 +5,7 @@ volumes:
 
 services:
   database:
-    image: postgres:15.3
+    image: postgres:15.3-alpine
     environment:
       POSTGRES_DB: jeunot
       POSTGRES_PASSWORD: jeunot
