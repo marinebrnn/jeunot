@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Security;
 
-use App\Domain\User\Organization;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -13,9 +12,9 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct(
         private string $uuid,
         private string $email,
-        private string $fullName,
+        private string $firstName,
+        private string $lastName,
         private string $password,
-        private array $organizations,
         private array $roles,
     ) {
     }
@@ -30,9 +29,14 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->roles;
     }
 
-    public function getFullName(): string
+    public function getFirstName(): string
     {
-        return $this->fullName;
+        return $this->firstName;
+    }
+
+    public function getLastName(): string
+    {
+        return $this->lastName;
     }
 
     public function getSalt(): ?string
@@ -53,19 +57,6 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
     public function getPassword(): string
     {
         return $this->password;
-    }
-
-    public function getOrganizations(): array
-    {
-        return $this->organizations;
-    }
-
-    public function getOrganizationUuids(): array
-    {
-        return array_map(
-            function (Organization $organization) { return $organization->getUuid(); },
-            $this->organizations,
-        );
     }
 
     public function eraseCredentials(): void

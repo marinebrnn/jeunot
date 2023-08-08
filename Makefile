@@ -69,10 +69,10 @@ rm: ## Remove containers
 ##
 
 dbinstall: ## Setup databases
-	#make dbmigrate
+	make dbmigrate
 	make console CMD="doctrine:database:create --env=test --if-not-exists"
-	#make dbmigrate ARGS="--env=test"
-	#make dbfixtures
+	make dbmigrate ARGS="--env=test"
+	make dbfixtures
 
 dbmigration: ## Generate new db migration
 	${BIN_CONSOLE} doctrine:migrations:diff
