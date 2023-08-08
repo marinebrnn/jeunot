@@ -17,7 +17,7 @@
 
 ℹ️ Vous devez avoir **[Docker](https://www.docker.com/)** et **[Docker Compose](https://docs.docker.com/compose/)** d'installés sur votre machine.
 
-Pour démarrer l'application (http://localhost:8000) :
+Pour démarrer l'application (http://jeunot.localhost:8000) :
 
 ```bash
 make install
