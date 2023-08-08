@@ -16,7 +16,7 @@
   </head>
   <body>
     {% for label, messages in app.flashes %}
-        {% if loop.first %}<div class="fr-container fr-pt-4w">{% endif %}
+        {% if loop.first %}<div class="fr-container">{% endif %}
         {% for message in messages %}
             <div class="fr-alert fr-alert--{{ label }}">
                 {{ message|raw }}

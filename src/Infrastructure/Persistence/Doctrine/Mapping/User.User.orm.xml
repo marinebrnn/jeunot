@@ -4,10 +4,12 @@
     name="App\Domain\User\User"
     table="`user`">
     <id name="uuid" type="guid" column="uuid"/>
-    <field name="fullName" type="string" column="full_name" nullable="false"/>
-    <field name="email" type="string" column="email" nullable="false"/>
-    <field name="password" type="string" column="password" nullable="false"/>
-    <many-to-many field="organizations" mapped-by="users" target-entity="App\Domain\User\Organization"/>
+    <field name="firstName" type="string" length="100" nullable="false"/>
+    <field name="lastName" type="string" length="100" nullable="false"/>
+    <field name="email" type="string" length="100" nullable="false"/>
+    <field name="password" type="string" length="100" nullable="false"/>
+    <field name="role" type="string" length="10" nullable="false"/>
+    <field name="birthday" type="datetimetz" nullable="true"/>
     <unique-constraints>
         <unique-constraint columns="email" name="user_email" />
     </unique-constraints>

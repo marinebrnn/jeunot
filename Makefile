@@ -69,10 +69,10 @@ rm: ## Remove containers
 ##
 
 dbinstall: ## Setup databases
-	#make dbmigrate
+	make dbmigrate
 	make console CMD="doctrine:database:create --env=test --if-not-exists"
-	#make dbmigrate ARGS="--env=test"
-	#make dbfixtures
+	make dbmigrate ARGS="--env=test"
+	make dbfixtures
 
 dbmigration: ## Generate new db migration
 	${BIN_CONSOLE} doctrine:migrations:diff
@@ -169,7 +169,6 @@ format: php_lint ## Format code
 
 test: ## Run the test suite
 	${BIN_PHP} ${OPTIONS} ./bin/phpunit ${ARGS}
-	make test_e2e ARGS=""
 
 test_cov: ## Run the test suite (with code coverage)
 	make test OPTIONS="-d xdebug.mode=coverage" ARGS="--coverage-html coverage --coverage-clover coverage.xml"

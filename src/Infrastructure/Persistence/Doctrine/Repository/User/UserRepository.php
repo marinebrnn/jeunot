@@ -21,7 +21,6 @@ final class UserRepository extends ServiceEntityRepository implements UserReposi
         return $this->createQueryBuilder('u')
             ->where('u.email = :email')
             ->setParameter('email', trim(strtolower($email)))
-            ->innerJoin('u.organizations', 'o')
             ->setMaxResults(1)
             ->getQuery()
             ->getOneOrNullResult()

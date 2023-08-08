@@ -2,9 +2,29 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="fr" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="common.site_name">
-                <source>common.site_name</source>
+            <trans-unit id="common.title">
+                <source>common.title</source>
                 <target>Jeunot</target>
+            </trans-unit>
+            <trans-unit id="login.title">
+                <source>login.title</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="login.submit">
+                <source>login.submit</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="login.email">
+                <source>login.email</source>
+                <target>Adresse e-mail / Courriel</target>
+            </trans-unit>
+            <trans-unit id="login.password">
+                <source>login.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="login.description">
+                <source>login.description</source>
+                <target>Vous avez déjà un compte chez Jeunot ? Renseignez vos identifiants pour vous inscrire aux évènements et participer aux groupes de discussion.</target>
             </trans-unit>
         </body>
     </file>
