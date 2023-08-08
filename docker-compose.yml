@@ -13,7 +13,7 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - 'database:/var/lib/postgresql@14/data:rw'
+      - 'database:/var/lib/postgresql@15/data:rw'
 
   php:
     build:
