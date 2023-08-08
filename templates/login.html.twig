@@ -19,12 +19,13 @@
         </div>
 
         {% if error %}
-            <p>
+            <p class="error">
                 {{ error.messageKey|trans(error.messageData, 'security') }}
             </p>
         {% endif %}
 
         <button>{{ 'login.submit'|trans }}</button>
+        <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
     </form>
 {% endblock %}
