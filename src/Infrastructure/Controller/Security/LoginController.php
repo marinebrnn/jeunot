@@ -11,8 +11,8 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 final class LoginController
 {
     public function __construct(
-        private \Twig\Environment $twig,
-        private AuthenticationUtils $authenticationUtils,
+        private readonly \Twig\Environment $twig,
+        private readonly AuthenticationUtils $authenticationUtils,
     ) {
     }
 
@@ -24,7 +24,7 @@ final class LoginController
 
         return new Response(
             $this->twig->render(
-                name: 'login.html.twig',
+                name: 'security/login.html.twig',
                 context: [
                     'last_username' => $lastUsername,
                     'error' => $error,

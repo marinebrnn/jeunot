@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 final class DashboardController
 {
     public function __construct(
-        private \Twig\Environment $twig,
+        private readonly \Twig\Environment $twig,
     ) {
     }
 

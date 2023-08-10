@@ -24,7 +24,71 @@
             </trans-unit>
             <trans-unit id="login.description">
                 <source>login.description</source>
-                <target>Vous avez déjà un compte chez Jeunot ? Renseignez vos identifiants pour vous inscrire aux évènements et participer aux groupes de discussion.</target>
+                <target>Vous avez déjà un compte chez Jeunot ? Renseignez vos identifiants pour vous inscrire aux événements et participer aux groupes de discussion.</target>
+            </trans-unit>
+            <trans-unit id="login.error.not_verified_account">
+                <source>login.error.not_verified_account</source>
+                <target>Vous devez valider votre adresse e-mail.</target>
+            </trans-unit>
+            <trans-unit id="register.title">
+                <source>register.title</source>
+                <target>Créer un compte</target>
+            </trans-unit>
+            <trans-unit id="register.firstName">
+                <source>register.firstName</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="register.lastName">
+                <source>register.lastName</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="register.lastName.help">
+                <source>register.lastName.help</source>
+                <target>Seuls les administrateurs du site pourront voir votre nom.</target>
+            </trans-unit>
+            <trans-unit id="register.email">
+                <source>register.email</source>
+                <target>Adresse e-mail / Courriel</target>
+            </trans-unit>
+            <trans-unit id="register.password">
+                <source>register.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="register.password.help">
+                <source>register.password.help</source>
+                <target>Votre mot de passe doit faire au moins 10 caractères et contenir au moins une minuscule et une majuscule.</target>
+            </trans-unit>
+            <trans-unit id="register.repeated_password">
+                <source>register.repeated_password</source>
+                <target>Confirmer votre mot de passe</target>
+            </trans-unit>
+            <trans-unit id="register.repeated_password.help">
+                <source>register.repeated_password.help</source>
+                <target>Retaper le mot de passe entré ci-dessus.</target>
+            </trans-unit>
+            <trans-unit id="register.birthday">
+                <source>register.birthday</source>
+                <target>Date de naissance</target>
+            </trans-unit>
+            <trans-unit id="register.description">
+                <source>register.description</source>
+                <target>En créant un compte, vous aurez accès aux événements près de chez vous. C’est entièrement gratuit et sans engagement ! Vos données personnelles sont protégées et ne sont pas revendues.</target>
+            </trans-unit>
+            <trans-unit id="register.submit">
+                <source>register.submit</source>
+                <target>Créer mon compte</target>
+            </trans-unit>
+            <trans-unit id="register.mandatory_fields">
+                <source>register.mandatory_fields</source>
+                <target>Tous les champs sont obligatoires</target>
+            </trans-unit>
+            <trans-unit id="register.succeeded.title">
+                <source>register.succeeded.title</source>
+                <target>Vérifiez vos emails</target>
+            </trans-unit>
+            <trans-unit id="register.succeeded.description">
+                <source>register.succeeded.description</source>
+                <target>Pour valider la création de votre compte et accéder à votre profil, confirmer votre adresse mail en cliquant sur le lien reçu à votre adresse.</target>
             </trans-unit>
         </body>
     </file>

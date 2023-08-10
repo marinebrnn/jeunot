@@ -8,5 +8,7 @@ use App\Domain\User\User;
 
 interface UserRepositoryInterface
 {
+    public function add(User $user): User;
+
     public function findOneByEmail(string $email): ?User;
 }

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'register.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'register.title'|trans }}</h1>
+    <p>{{ 'register.description'|trans }}</p>
+    <p>{{ 'register.mandatory_fields'|trans }}</p>
+    {{ form_start(form) }}
+        {{ form_row(form.firstName)}}
+        {{ form_row(form.lastName)}}
+        {{ form_row(form.email)}}
+        {{ form_row(form.password)}}
+        {{ form_row(form.birthday)}}
+    {{ form_end(form) }}
+{% endblock %}

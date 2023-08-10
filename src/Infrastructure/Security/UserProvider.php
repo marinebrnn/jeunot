@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Security\Provider;
+namespace App\Infrastructure\Security;
 
 use App\Domain\User\Repository\UserRepositoryInterface;
 use App\Domain\User\User;
-use App\Infrastructure\Security\SymfonyUser;
 use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
@@ -32,6 +31,7 @@ final class UserProvider implements UserProviderInterface
             $user->getFirstName(),
             $user->getLastName(),
             $user->getPassword(),
+            $user->isVerified(),
             [$user->getRole()],
         );
     }

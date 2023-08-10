@@ -14,6 +14,7 @@ final class User
         private string $password,
         private string $role,
         private \DateTimeInterface $birthday,
+        private bool $isVerified = false,
     ) {
     }
 
@@ -40,6 +41,11 @@ final class User
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
     }
 
     public function getRole(): string

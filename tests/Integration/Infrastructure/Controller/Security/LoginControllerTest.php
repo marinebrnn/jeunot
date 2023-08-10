@@ -29,6 +29,25 @@ final class LoginControllerTest extends AbstractWebTestCase
         $this->assertSame('DASHBOARD', $crawler->filter('h1')->text());
     }
 
+    public function testLoginWithNonVerifiedAccount(): void
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/login');
+
+        $this->assertResponseStatusCodeSame(200);
+
+        $saveButton = $crawler->selectButton('Se connecter');
+        $form = $saveButton->form();
+        $form['email'] = 'gregory.pelletier@fairness.coop';
+        $form['password'] = 'password2';
+
+        $client->submit($form);
+        $this->assertResponseStatusCodeSame(302);
+        $crawler = $client->followRedirect();
+
+        $this->assertSame('Vous devez valider votre adresse e-mail.', $crawler->filter('p.error')->text());
+    }
+
     public function testLoginWithUnknownAccount(): void
     {
         $client = static::createClient();
