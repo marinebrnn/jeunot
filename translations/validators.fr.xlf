@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="login.error.user_already_registered">
+                <source>login.error.user_already_registered</source>
+                <target>Un compte est déjà associé à cette adresse e-mail.</target>
+            </trans-unit>
+            <trans-unit id="register.error.minimum_age_to_register">
+                <source>register.error.minimum_age_to_register</source>
+                <target>La mission de Jeunot étant de contribuer au “mieux vieillir”, la plateforme est réservée aux plus de 55 ans.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

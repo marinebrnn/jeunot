@@ -7,12 +7,12 @@ namespace App\Test\Unit\Infrastructure\Security;
 use App\Domain\User\Repository\UserRepositoryInterface;
 use App\Domain\User\User;
 use App\Domain\User\UserRoleEnum;
-use App\Infrastructure\Security\Provider\UserProvider;
 use App\Infrastructure\Security\SymfonyUser;
+use App\Infrastructure\Security\UserProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 
-class UserProviderTest extends TestCase
+final class UserProviderTest extends TestCase
 {
     public function testLoadUserByIdentifier()
     {
@@ -33,6 +33,10 @@ class UserProviderTest extends TestCase
             ->expects(self::once())
             ->method('getPassword')
             ->willReturn('password');
+        $user
+            ->expects(self::once())
+            ->method('isVerified')
+            ->willReturn(true);
         $user
             ->expects(self::once())
             ->method('getRole')
@@ -56,6 +60,7 @@ class UserProviderTest extends TestCase
             'Mathieu',
             'MARCHOIS',
             'password',
+            true,
             [UserRoleEnum::ROLE_ADMIN->value],
         );
 

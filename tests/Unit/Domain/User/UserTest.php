@@ -21,6 +21,7 @@ final class UserTest extends TestCase
             'password',
             UserRoleEnum::ROLE_ADMIN->value,
             $birthday,
+            true,
         );
 
         $this->assertSame('9cebe00d-04d8-48da-89b1-059f6b7bfe44', $user->getUuid());
@@ -30,5 +31,6 @@ final class UserTest extends TestCase
         $this->assertSame('password', $user->getPassword());
         $this->assertSame(UserRoleEnum::ROLE_ADMIN->value, $user->getRole());
         $this->assertSame($birthday, $user->getBirthday());
+        $this->assertTrue($user->isVerified());
     }
 }

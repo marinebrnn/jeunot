@@ -21,6 +21,7 @@ final class UserFixture extends Fixture
             'password1',
             UserRoleEnum::ROLE_ADMIN->value,
             new \DateTime('1989-09-17'),
+            true,
         );
 
         $user = new User(
@@ -31,6 +32,7 @@ final class UserFixture extends Fixture
             'password2',
             UserRoleEnum::ROLE_USER->value,
             new \DateTime('1984-01-01'),
+            false,
         );
 
         $manager->persist($admin);

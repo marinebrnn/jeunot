@@ -7,7 +7,7 @@ namespace App\Infrastructure\Security;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
+final class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
 {
     public function __construct(
         private string $uuid,
@@ -15,6 +15,7 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
         private string $firstName,
         private string $lastName,
         private string $password,
+        private bool $isVerified,
         private array $roles,
     ) {
     }
@@ -37,6 +38,11 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
     public function getLastName(): string
     {
         return $this->lastName;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
     }
 
     public function getSalt(): ?string

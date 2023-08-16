@@ -7,7 +7,7 @@ namespace App\Test\Unit\Infrastructure\Security;
 use App\Infrastructure\Security\SymfonyUser;
 use PHPUnit\Framework\TestCase;
 
-class SymfonyUserTest extends TestCase
+final class SymfonyUserTest extends TestCase
 {
     public function testUser()
     {
@@ -17,6 +17,7 @@ class SymfonyUserTest extends TestCase
             'Mathieu',
             'MARCHOIS',
             'password',
+            false,
             ['ROLE_USER'],
         );
 
@@ -29,5 +30,6 @@ class SymfonyUserTest extends TestCase
         $this->assertSame('mathieu@fairness.coop', $user->getUserIdentifier());
         $this->assertSame('password', $user->getPassword());
         $this->assertEmpty($user->eraseCredentials());
+        $this->assertFalse($user->isVerified());
     }
 }
