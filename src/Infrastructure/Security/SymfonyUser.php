@@ -4,20 +4,30 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Security;
 
+use App\Domain\User\User;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 final class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    private string $uuid;
+    private string $email;
+    private string $firstName;
+    private string $lastName;
+    private string $password;
+    private bool $isVerified;
+    private array $roles;
+
     public function __construct(
-        private string $uuid,
-        private string $email,
-        private string $firstName,
-        private string $lastName,
-        private string $password,
-        private bool $isVerified,
-        private array $roles,
+        User $user,
     ) {
+        $this->uuid = $user->getUuid();
+        $this->email = $user->getEmail();
+        $this->firstName = $user->getFirstName();
+        $this->lastName = $user->getLastName();
+        $this->password = $user->getPassword();
+        $this->isVerified = $user->isVerified();
+        $this->roles = [$user->getRole()];
     }
 
     public function getUuid(): string

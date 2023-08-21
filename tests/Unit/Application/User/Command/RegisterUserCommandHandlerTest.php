@@ -22,7 +22,7 @@ final class RegisterUserCommandHandlerTest extends TestCase
     private MockObject $passwordHasher;
     private MockObject $idFactory;
     private MockObject $isUserAlreadyRegistered;
-    private $command;
+    private RegisterUserCommand $command;
 
     public function setUp(): void
     {
@@ -83,7 +83,7 @@ final class RegisterUserCommandHandlerTest extends TestCase
             $this->isUserAlreadyRegistered,
         );
 
-        $handler->__invoke($this->command);
+        $this->assertEquals($user, ($handler)($this->command));
     }
 
     public function testUserAlreadyRegistered(): void
@@ -115,6 +115,6 @@ final class RegisterUserCommandHandlerTest extends TestCase
             $this->isUserAlreadyRegistered,
         );
 
-        $handler->__invoke($this->command);
+        ($handler)($this->command);
     }
 }

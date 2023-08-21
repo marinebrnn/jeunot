@@ -1,6 +1,6 @@
 # Redis
 
-Nous utilisons Redis pour stocker les sessions utilisateurs.
+Nous utilisons Redis pour stocker les sessions utilisateurs et traiter des messages en asynchrones.
 
 ## Connexion
 

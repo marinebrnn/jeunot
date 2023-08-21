@@ -63,3 +63,5 @@ when@test:
     services:
         Psr\Log\NullLogger: ~
         logger: '@Psr\Log\NullLogger'
+        App\Infrastructure\Adapter\DateUtils:
+            class: App\Tests\Mock\DateUtilsMock

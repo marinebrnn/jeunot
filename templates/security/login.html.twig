@@ -28,4 +28,8 @@
         <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
     </form>
+    <p>
+        {{ 'login.not_registered'|trans }}
+        <a href="{{ path('app_register') }}">{{ 'register.title'|trans }}</a>
+    </p>
 {% endblock %}

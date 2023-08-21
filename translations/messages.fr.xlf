@@ -26,6 +26,10 @@
                 <source>login.description</source>
                 <target>Vous avez déjà un compte chez Jeunot ? Renseignez vos identifiants pour vous inscrire aux événements et participer aux groupes de discussion.</target>
             </trans-unit>
+            <trans-unit id="login.not_registered">
+                <source>login.not_registered</source>
+                <target>Vous n'avez pas encore de compte ?</target>
+            </trans-unit>
             <trans-unit id="login.error.not_verified_account">
                 <source>login.error.not_verified_account</source>
                 <target>Vous devez valider votre adresse e-mail.</target>
@@ -89,6 +93,10 @@
             <trans-unit id="register.succeeded.description">
                 <source>register.succeeded.description</source>
                 <target>Pour valider la création de votre compte et accéder à votre profil, confirmer votre adresse mail en cliquant sur le lien reçu à votre adresse.</target>
+            </trans-unit>
+            <trans-unit id="register.already_registered">
+                <source>register.already_registered</source>
+                <target>Vous avez déjà un compte ?</target>
             </trans-unit>
         </body>
     </file>

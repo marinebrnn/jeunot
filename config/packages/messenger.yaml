@@ -13,19 +13,22 @@ framework:
                     - validation
 
         transports:
-            # https://symfony.com/doc/current/messenger.html#transport-configuration
-            # async: '%env(MESSENGER_TRANSPORT_DSN)%'
-            # failed: 'doctrine://default?queue_name=failed'
-            # sync: 'sync://'
+            async:
+                dsn: "%env(MESSENGER_TRANSPORT_DSN)%"
+                retry_strategy:
+                    max_retries: 3
+                    # milliseconds delay - 10 seconds
+                    delay: 10_000
+                    # causes the delay to be higher before each retry
+                    # e.g. 10 second delay, 20 seconds, 40 seconds, etc.
+                    multiplier: 2
+                    max_delay: 0
 
         routing:
-            # Route your messages to the transports
-            # 'App\Message\YourMessage': async
+            'App\Application\AsyncCommandInterface': async
 
-# when@test:
-#    framework:
-#        messenger:
-#            transports:
-#                # replace with your transport name here (e.g., my_transport: 'in-memory://')
-#                # For more Messenger testing tools, see https://github.com/zenstruck/messenger-test
-#                async: 'in-memory://'
+when@test:
+   framework:
+       messenger:
+           transports:
+               async: 'in-memory://'
