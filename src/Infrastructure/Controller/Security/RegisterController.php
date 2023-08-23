@@ -6,6 +6,7 @@ namespace App\Infrastructure\Controller\Security;
 
 use App\Application\CommandBusInterface;
 use App\Application\User\Command\RegisterUserCommand;
+use App\Application\User\Command\SendConfirmationLinkCommand;
 use App\Domain\User\Exception\UserAlreadyRegisteredException;
 use App\Infrastructure\Form\User\RegisterUserFormType;
 use Symfony\Component\Form\FormError;
@@ -31,17 +32,16 @@ final class RegisterController
     #[Route('/register', name: 'app_register', methods: ['GET', 'POST'])]
     public function __invoke(Request $request): Response
     {
-        $command = new RegisterUserCommand();
-        $form = $this->formFactory->create(RegisterUserFormType::class, $command);
+        $registerCommand = new RegisterUserCommand();
+        $form = $this->formFactory->create(RegisterUserFormType::class, $registerCommand);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
-                $this->commandBus->handle($command);
+                $user = $this->commandBus->handle($registerCommand);
+                $this->commandBus->dispatchAsync(new SendConfirmationLinkCommand($user->getEmail()));
 
-                return new RedirectResponse(
-                    $this->urlGenerator->generate('app_register_succeeded'),
-                );
+                return new RedirectResponse($this->urlGenerator->generate('app_register_succeeded'));
             } catch (UserAlreadyRegisteredException) {
                 $form->get('email')->addError(
                     new FormError(

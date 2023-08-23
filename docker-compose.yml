@@ -27,6 +27,17 @@ services:
       - database
       - redis
 
+  php_worker:
+    build:
+      context: ./docker/php
+    command: 'bin/console messenger:consume async --time-limit=300 --memory-limit=256M --limit=50'
+    restart: always
+    volumes:
+      - ./:/var/www/jeunot
+    depends_on:
+      - database
+      - redis
+
   nginx:
     image: nginx:stable-alpine
     ports:
@@ -42,4 +53,10 @@ services:
     image: redis:5-alpine
     ports:
       - 6379:6379
+
+  mailer:
+    image: schickling/mailcatcher
+    ports:
+      - 1025:1025
+      - 1080:1080
 

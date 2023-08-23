@@ -13,6 +13,7 @@ security:
             provider: user
             user_checker: App\Infrastructure\Security\UserChecker
             form_login:
+                default_target_path: app_dashboard
                 login_path: app_login
                 check_path: app_login
                 enable_csrf: true

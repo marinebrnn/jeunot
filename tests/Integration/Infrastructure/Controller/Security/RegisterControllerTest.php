@@ -29,7 +29,7 @@ final class RegisterControllerTest extends AbstractWebTestCase
         $client->submit($form);
 
         $this->assertResponseStatusCodeSame(302);
-        $crawler = $client->followRedirect();
+        $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
         $this->assertRouteSame('app_register_succeeded');
     }

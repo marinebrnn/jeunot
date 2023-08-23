@@ -6,7 +6,6 @@ namespace App\Test\Unit\Infrastructure\Security;
 
 use App\Domain\User\Repository\UserRepositoryInterface;
 use App\Domain\User\User;
-use App\Domain\User\UserRoleEnum;
 use App\Infrastructure\Security\SymfonyUser;
 use App\Infrastructure\Security\UserProvider;
 use PHPUnit\Framework\TestCase;
@@ -17,35 +16,6 @@ final class UserProviderTest extends TestCase
     public function testLoadUserByIdentifier()
     {
         $user = $this->createMock(User::class);
-        $user
-            ->expects(self::once())
-            ->method('getFirstName')
-            ->willReturn('Mathieu');
-        $user
-            ->expects(self::once())
-            ->method('getLastName')
-            ->willReturn('MARCHOIS');
-        $user
-            ->expects(self::once())
-            ->method('getEmail')
-            ->willReturn('mathieu@fairness.coop');
-        $user
-            ->expects(self::once())
-            ->method('getPassword')
-            ->willReturn('password');
-        $user
-            ->expects(self::once())
-            ->method('isVerified')
-            ->willReturn(true);
-        $user
-            ->expects(self::once())
-            ->method('getRole')
-            ->willReturn(UserRoleEnum::ROLE_ADMIN->value);
-        $user
-            ->expects(self::once())
-            ->method('getUuid')
-            ->willReturn('2d3724f1-2910-48b4-ba56-81796f6e100b');
-
         $userRepository = $this->createMock(UserRepositoryInterface::class);
         $userRepository
             ->expects(self::once())
@@ -54,15 +24,7 @@ final class UserProviderTest extends TestCase
             ->willReturn($user);
 
         $provider = new UserProvider($userRepository);
-        $expectedResult = new SymfonyUser(
-            '2d3724f1-2910-48b4-ba56-81796f6e100b',
-            'mathieu@fairness.coop',
-            'Mathieu',
-            'MARCHOIS',
-            'password',
-            true,
-            [UserRoleEnum::ROLE_ADMIN->value],
-        );
+        $expectedResult = new SymfonyUser($user);
 
         $this->assertEquals($provider->loadUserByIdentifier('mathieu@fairness.coop'), $expectedResult);
     }

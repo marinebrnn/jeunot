@@ -57,4 +57,9 @@ final class User
     {
         return $this->birthday;
     }
+
+    public function verified(): void
+    {
+        $this->isVerified = true;
+    }
 }

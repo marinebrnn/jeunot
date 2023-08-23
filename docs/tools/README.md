@@ -8,3 +8,4 @@ Table des matières :
 - [Base de données](./db.md)
 - [Docker](./docker.md)
 - [Redis](./redis.md)
+- [Mailer](./mailer.md)

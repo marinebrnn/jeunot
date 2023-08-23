@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="common.team">
+                <source>common.team</source>
+                <target>L’équipe Jeunot.</target>
+            </trans-unit>
+            <trans-unit id="common.best_regards">
+                <source>common.best_regards</source>
+                <target>Cordialement,</target>
+            </trans-unit>
+            <trans-unit id="verify_user_account.subjet">
+                <source>verify_user_account.subjet</source>
+                <target>Confirmez votre compte</target>
+            </trans-unit>
+            <trans-unit id="verify_user_account.welcome">
+                <source>verify_user_account.welcome</source>
+                <target>Bonjour,</target>
+            </trans-unit>
+            <trans-unit id="verify_user_account.thanks">
+                <source>verify_user_account.thanks</source>
+                <target>Merci d’avoir rejoint Jeunot !</target>
+            </trans-unit>
+            <trans-unit id="verify_user_account.confirm_email">
+                <source>verify_user_account.confirm_email</source>
+                <target>Pour finaliser la création de votre compte, merci de cliquer sur le lien ci-dessous:</target>
+            </trans-unit>
+            <trans-unit id="verify_user_account.confirm_email_button">
+                <source>verify_user_account.confirm_email_button</source>
+                <target>Je confirme mon adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="verify_user_account.help">
+                <source>verify_user_account.help</source>
+                <target>Si vous rencontrez des difficultés pour vous connecter à votre compte, contactez-nous à contact@jeunot.com.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

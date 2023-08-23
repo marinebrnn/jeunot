@@ -22,7 +22,7 @@ final class RegisterUserCommandHandler
     ) {
     }
 
-    public function __invoke(RegisterUserCommand $command): void
+    public function __invoke(RegisterUserCommand $command): User
     {
         $email = trim(strtolower($command->email));
 
@@ -30,7 +30,7 @@ final class RegisterUserCommandHandler
             throw new UserAlreadyRegisteredException();
         }
 
-        $this->userRepository->add(
+        return $this->userRepository->add(
             new User(
                 uuid: $this->idFactory->make(),
                 firstName: $command->firstName,
