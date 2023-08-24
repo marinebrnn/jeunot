@@ -41,7 +41,9 @@ final class RegisterController
                 $user = $this->commandBus->handle($registerCommand);
                 $this->commandBus->dispatchAsync(new SendConfirmationLinkCommand($user->getEmail()));
 
-                return new RedirectResponse($this->urlGenerator->generate('app_register_succeeded'));
+                return new RedirectResponse(
+                    $this->urlGenerator->generate('app_register_succeeded', ['email' => $user->getEmail()]),
+                );
             } catch (UserAlreadyRegisteredException) {
                 $form->get('email')->addError(
                     new FormError(

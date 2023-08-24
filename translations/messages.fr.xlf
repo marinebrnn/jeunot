@@ -94,6 +94,14 @@
                 <source>register.succeeded.description</source>
                 <target>Pour valider la création de votre compte et accéder à votre profil, confirmer votre adresse mail en cliquant sur le lien reçu à votre adresse.</target>
             </trans-unit>
+            <trans-unit id="register.succeeded.email_not_received">
+                <source>register.succeeded.email_not_received</source>
+                <target>Si vous n'avez pas reçu d'email, vous pouvez en renvoyer un en cliquant sur le bouton ci-dessous.</target>
+            </trans-unit>
+            <trans-unit id="register.succeeded.send_link">
+                <source>register.succeeded.send_link</source>
+                <target>Renvoyer un lien</target>
+            </trans-unit>
             <trans-unit id="register.already_registered">
                 <source>register.already_registered</source>
                 <target>Vous avez déjà un compte ?</target>
