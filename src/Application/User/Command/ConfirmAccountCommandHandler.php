@@ -15,7 +15,7 @@ final class ConfirmAccountCommandHandler
     ) {
     }
 
-    public function __invoke(ConfirmAccountCommand $command): User
+    public function __invoke(ConfirmAccountCommand $command): void
     {
         $email = trim(strtolower($command->email));
         $user = $this->userRepository->findOneByEmail($email);
@@ -25,7 +25,5 @@ final class ConfirmAccountCommandHandler
         }
 
         $user->verified();
-
-        return $user;
     }
 }

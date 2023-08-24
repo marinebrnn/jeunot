@@ -23,7 +23,12 @@
                 {{ error.messageKey|trans(error.messageData, 'security') }}
             </p>
         {% endif %}
-
+        <div>
+            <label>
+                <input type="checkbox" name="_remember_me" checked />
+                {{ 'login.remember_me'|trans }}
+            </label>
+        </div>
         <button>{{ 'login.submit'|trans }}</button>
         <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

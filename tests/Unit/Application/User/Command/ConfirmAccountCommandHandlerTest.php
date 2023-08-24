@@ -37,7 +37,7 @@ final class ConfirmAccountCommandHandlerTest extends TestCase
         $command = new ConfirmAccountCommand('  MAthieu@faIrness.coop   ');
         $handler = new ConfirmAccountCommandHandler($this->userRepository);
 
-        $this->assertEquals($user, ($handler)($command));
+        ($handler)($command);
     }
 
     public function testUserNotFound(): void
@@ -52,6 +52,6 @@ final class ConfirmAccountCommandHandlerTest extends TestCase
         $command = new ConfirmAccountCommand('  MAthieu@faIrness.coop   ');
         $handler = new ConfirmAccountCommandHandler($this->userRepository);
 
-        $this->assertEmpty(($handler)($command));
+        ($handler)($command);
     }
 }

@@ -23,9 +23,10 @@ final class RegisterConfirmAccountControllerTest extends AbstractWebTestCase
         $client->request('GET', $url);
 
         $this->assertResponseStatusCodeSame(302);
-        $client->followRedirect();
+        $crawler = $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
-        $this->assertRouteSame('app_dashboard');
+        $this->assertRouteSame('app_login');
+        $this->assertSame('Votre compte a bien été vérifié, vous pouvez maintenant vous connecter.', $crawler->filter('div.alert--success')->text());
     }
 
     public function testExpiredURI(): void
