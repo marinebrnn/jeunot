@@ -8,23 +8,26 @@ use App\Application\CommandBusInterface;
 use App\Application\DateUtilsInterface;
 use App\Application\User\Command\ConfirmAccountCommand;
 use App\Domain\User\Exception\UserNotFoundException;
-use App\Infrastructure\Security\SymfonyUser;
-use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\FlashBagAwareSessionInterface;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\UriSigner;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final readonly class RegisterConfirmAccountController
 {
     public function __construct(
         private UriSigner $uriSigner,
         private CommandBusInterface $commandBus,
-        private Security $security,
+        private UrlGeneratorInterface $urlGenerator,
         private DateUtilsInterface $dateUtils,
+        private TranslatorInterface $translator,
     ) {
     }
 
@@ -43,10 +46,12 @@ final readonly class RegisterConfirmAccountController
         }
 
         try {
-            $user = $this->commandBus->handle(new ConfirmAccountCommand($email));
-            $redirectResponse = $this->security->login(new SymfonyUser($user));
+            /** @var FlashBagAwareSessionInterface */
+            $session = $request->getSession();
+            $this->commandBus->handle(new ConfirmAccountCommand($email));
+            $session->getFlashBag()->add('success', $this->translator->trans('register.succeeded.verified'));
 
-            return $redirectResponse;
+            return new RedirectResponse($this->urlGenerator->generate('app_login'));
         } catch (UserNotFoundException) {
             throw new NotFoundHttpException();
         }

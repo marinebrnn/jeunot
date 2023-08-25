@@ -14,6 +14,10 @@
                 <source>login.submit</source>
                 <target>Se connecter</target>
             </trans-unit>
+            <trans-unit id="login.remember_me">
+                <source>login.remember_me</source>
+                <target>Rester connecté-e</target>
+            </trans-unit>
             <trans-unit id="login.email">
                 <source>login.email</source>
                 <target>Adresse e-mail / Courriel</target>
@@ -89,6 +93,10 @@
             <trans-unit id="register.succeeded.title">
                 <source>register.succeeded.title</source>
                 <target>Vérifiez vos emails</target>
+            </trans-unit>
+            <trans-unit id="register.succeeded.verified">
+                <source>register.succeeded.verified</source>
+                <target>Votre compte a bien été vérifié, vous pouvez maintenant vous connecter.</target>
             </trans-unit>
             <trans-unit id="register.succeeded.description">
                 <source>register.succeeded.description</source>

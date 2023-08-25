@@ -12,6 +12,9 @@ security:
             lazy: true
             provider: user
             user_checker: App\Infrastructure\Security\UserChecker
+            remember_me:
+                secret:   '%kernel.secret%' # required
+                lifetime: 604800 # 1 week in seconds
             form_login:
                 default_target_path: app_dashboard
                 login_path: app_login
