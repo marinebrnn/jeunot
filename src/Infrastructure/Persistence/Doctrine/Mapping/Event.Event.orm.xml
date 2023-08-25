@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Domain\Event\Event" table="event">
+    <id name="uuid" type="guid" column="uuid"/>
+    <field name="title" type="string" lenght="100" nullable="false"/>
+    <field name="description" type="text" nullable="false"/>
+    <field name="startDate" type="datetimetz" nullable="false"/>
+    <field name="endDate" type="datetimetz" nullable="false"/>
+    <field name="published" type="boolean" nullable="false"/>
+    <field name="picture" type="string" nullable="true"/>
+    <field name="location" type="string" nullable="false"/>
+    <field name="initialAvailablePlaces" type="integer" nullable="false"/>
+    <many-to-one field="owner" target-entity="App\Domain\User\User">
+        <join-column name="user_uuid" referenced-column-name="uuid" nullable="false" on-delete="CASCADE"/>
+    </many-to-one>
+    <many-to-many field="tags" target-entity="App\Domain\Event\Tag">
+        <join-table name="event_tag">
+            <join-columns>
+                <join-column name="event_uuid" referenced-column-name="uuid" />
+            </join-columns>
+            <inverse-join-columns>
+                <join-column name="tag_uuid" referenced-column-name="uuid" />
+            </inverse-join-columns>
+        </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

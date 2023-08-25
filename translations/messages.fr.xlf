@@ -36,7 +36,7 @@
             </trans-unit>
             <trans-unit id="login.error.not_verified_account">
                 <source>login.error.not_verified_account</source>
-                <target>Vous devez valider votre adresse e-mail.</target>
+                <target>Vous devez valider votre compte grâce au mail de confirmation reçu.</target>
             </trans-unit>
             <trans-unit id="register.title">
                 <source>register.title</source>

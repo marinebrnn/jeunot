@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="admin.dashboard">
+                <source>admin.dashboard</source>
+                <target>Tableau de bord</target>
+            </trans-unit>
+            <trans-unit id="admin.events">
+                <source>admin.events</source>
+                <target>Événements</target>
+            </trans-unit>
+            <trans-unit id="admin.events.form.title">
+                <source>admin.events.form.title</source>
+                <target>Nom de l'événement</target>
+            </trans-unit>
+            <trans-unit id="admin.events.form.description">
+                <source>admin.events.form.description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="admin.events.form.initialAvailablePlaces">
+                <source>admin.events.form.initialAvailablePlaces</source>
+                <target>Nombre de place(s) disponible(s)</target>
+            </trans-unit>
+            <trans-unit id="admin.events.form.startDate">
+                <source>admin.events.form.startDate</source>
+                <target>Date / heure de début</target>
+            </trans-unit>
+            <trans-unit id="admin.events.form.endDate">
+                <source>admin.events.form.endDate</source>
+                <target>Date / heure de fin</target>
+            </trans-unit>
+            <trans-unit id="admin.events.form.published">
+                <source>admin.events.form.published</source>
+                <target>Publié</target>
+            </trans-unit>
+            <trans-unit id="admin.events.form.location">
+                <source>admin.events.form.location</source>
+                <target>Lieu</target>
+            </trans-unit>
+            <trans-unit id="admin.event">
+                <source>admin.event</source>
+                <target>Événement</target>
+            </trans-unit>
+            <trans-unit id="admin.tag">
+                <source>admin.tag</source>
+                <target>Tag</target>
+            </trans-unit>
+            <trans-unit id="admin.tags">
+                <source>admin.tags</source>
+                <target>Tags</target>
+            </trans-unit>
+            <trans-unit id="admin.tags.form.title">
+                <source>admin.tags.form.title</source>
+                <target>Nom du tag</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
