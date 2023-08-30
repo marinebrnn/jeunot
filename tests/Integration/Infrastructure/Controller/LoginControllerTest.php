@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Integration\Infrastructure\Controller\Security;
-
-use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
+namespace App\Tests\Integration\Infrastructure\Controller;
 
 final class LoginControllerTest extends AbstractWebTestCase
 {

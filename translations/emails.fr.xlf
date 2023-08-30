@@ -10,28 +10,28 @@
                 <source>common.best_regards</source>
                 <target>Cordialement,</target>
             </trans-unit>
-            <trans-unit id="verify_user_account.subjet">
-                <source>verify_user_account.subjet</source>
+            <trans-unit id="confirm_user_account.subjet">
+                <source>confirm_user_account.subjet</source>
                 <target>Confirmez votre compte</target>
             </trans-unit>
-            <trans-unit id="verify_user_account.welcome">
-                <source>verify_user_account.welcome</source>
+            <trans-unit id="confirm_user_account.welcome">
+                <source>confirm_user_account.welcome</source>
                 <target>Bonjour,</target>
             </trans-unit>
-            <trans-unit id="verify_user_account.thanks">
-                <source>verify_user_account.thanks</source>
+            <trans-unit id="confirm_user_account.thanks">
+                <source>confirm_user_account.thanks</source>
                 <target>Merci d’avoir rejoint Jeunot !</target>
             </trans-unit>
-            <trans-unit id="verify_user_account.confirm_email">
-                <source>verify_user_account.confirm_email</source>
+            <trans-unit id="confirm_user_account.confirm_email">
+                <source>confirm_user_account.confirm_email</source>
                 <target>Pour finaliser la création de votre compte, merci de cliquer sur le lien ci-dessous:</target>
             </trans-unit>
-            <trans-unit id="verify_user_account.confirm_email_button">
-                <source>verify_user_account.confirm_email_button</source>
+            <trans-unit id="confirm_user_account.confirm_email_button">
+                <source>confirm_user_account.confirm_email_button</source>
                 <target>Je confirme mon adresse e-mail</target>
             </trans-unit>
-            <trans-unit id="verify_user_account.help">
-                <source>verify_user_account.help</source>
+            <trans-unit id="confirm_user_account.help">
+                <source>confirm_user_account.help</source>
                 <target>Si vous rencontrez des difficultés pour vous connecter à votre compte, contactez-nous à contact@jeunot.com.</target>
             </trans-unit>
         </body>

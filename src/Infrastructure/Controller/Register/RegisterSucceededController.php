@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Controller\Security;
+namespace App\Infrastructure\Controller\Register;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
@@ -19,7 +19,7 @@ final class RegisterSucceededController
     public function __invoke(#[MapQueryParameter] string $email): Response
     {
         return new Response(
-            $this->twig->render('security/register_succeeded.html.twig', [
+            $this->twig->render('register/succeeded.html.twig', [
                 'email' => $email,
             ]),
         );

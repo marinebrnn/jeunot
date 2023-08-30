@@ -1,0 +1,14 @@
+{% extends 'email/base.html.twig' %}
+{% trans_default_domain 'emails' %}
+
+{% block body %}
+    <p>{{ 'confirm_user_account.welcome'|trans }}</p>
+    <p>
+        {{ 'confirm_user_account.thanks'|trans }}<br/>
+        {{ 'confirm_user_account.confirm_email'|trans }}<br/><br/>
+        <a href="{{ url('app_register_confirm_account', { token }) }}">
+            {{ 'confirm_user_account.confirm_email_button'|trans }}
+        </a>
+    </p>
+    <p>{{ 'confirm_user_account.help'|trans }}</p>
+{% endblock %}

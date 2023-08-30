@@ -4,26 +4,37 @@ declare(strict_types=1);
 
 namespace App\Application\User\Command;
 
-use App\Domain\User\Exception\UserNotFoundException;
-use App\Domain\User\Repository\UserRepositoryInterface;
-use App\Domain\User\User;
+use App\Domain\User\Exception\TokenExpiredException;
+use App\Domain\User\Exception\TokenNotFoundException;
+use App\Domain\User\Repository\TokenRepositoryInterface;
+use App\Domain\User\Specification\IsTokenExpired;
+use App\Domain\User\Token;
+use App\Domain\User\TokenTypeEnum;
 
-final class ConfirmAccountCommandHandler
+final readonly class ConfirmAccountCommandHandler
 {
     public function __construct(
-        private readonly UserRepositoryInterface $userRepository,
+        private TokenRepositoryInterface $tokenRepository,
+        private IsTokenExpired $isTokenExpired,
     ) {
     }
 
     public function __invoke(ConfirmAccountCommand $command): void
     {
-        $email = trim(strtolower($command->email));
-        $user = $this->userRepository->findOneByEmail($email);
+        $token = $this->tokenRepository->findOneByTokenAndType(
+            $command->token,
+            TokenTypeEnum::CONFIRM_ACCOUNT->value,
+        );
 
-        if (!$user instanceof User) {
-            throw new UserNotFoundException();
+        if (!$token instanceof Token) {
+            throw new TokenNotFoundException();
         }
 
-        $user->verified();
+        if ($this->isTokenExpired->isSatisfiedBy($token)) {
+            throw new TokenExpiredException();
+        }
+
+        $token->getUser()->verified();
+        $this->tokenRepository->remove($token);
     }
 }
