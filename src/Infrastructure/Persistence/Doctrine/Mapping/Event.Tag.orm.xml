@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Domain\Event\Tag" table="tag">
+    <id name="uuid" type="guid" column="uuid"/>
+    <field name="title" type="string" length="100" nullable="false"/>
+    <unique-constraints>
+        <unique-constraint columns="title" name="tag_title" />
+    </unique-constraints>
+  </entity>
+</doctrine-mapping>

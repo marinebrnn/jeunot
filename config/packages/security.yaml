@@ -25,7 +25,8 @@ security:
             logout:
                 path: app_logout
     access_control:
-        - { path: '^/app', roles: ROLE_USER }
+        - { path: ^/app, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/, roles: PUBLIC_ACCESS }
 
     role_hierarchy:

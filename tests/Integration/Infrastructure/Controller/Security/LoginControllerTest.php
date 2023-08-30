@@ -45,7 +45,7 @@ final class LoginControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(302);
         $crawler = $client->followRedirect();
 
-        $this->assertSame('Vous devez valider votre adresse e-mail.', $crawler->filter('p.error')->text());
+        $this->assertSame('Vous devez valider votre compte grâce au mail de confirmation reçu.', $crawler->filter('p.error')->text());
     }
 
     public function testLoginWithUnknownAccount(): void
