@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Integration\Infrastructure\Controller\Security;
+namespace App\Tests\Integration\Infrastructure\Controller\Register;
 
 use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
 
-final class ResendConfirmationLinkControllerTest extends AbstractWebTestCase
+final class ResendConfirmationMailControllerTest extends AbstractWebTestCase
 {
-    public function testResendConfirmationLink(): void
+    public function testResendConfirmationMail(): void
     {
         $client = static::createClient();
-        $client->request('POST', '/register/resend-confirmation-link?email=mathieu@fairness.coop');
+        $client->request('POST', '/register/resend-confirmation-mail?email=mathieu@fairness.coop');
 
         $this->assertResponseStatusCodeSame(302);
         $client->followRedirect();
@@ -22,7 +22,7 @@ final class ResendConfirmationLinkControllerTest extends AbstractWebTestCase
     public function testMissingEmail(): void
     {
         $client = static::createClient();
-        $client->request('POST', '/register/resend-confirmation-link');
+        $client->request('POST', '/register/resend-confirmation-mail');
 
         $this->assertResponseStatusCodeSame(404);
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\User;
 
-final class User
+class User
 {
     public function __construct(
         private string $uuid,

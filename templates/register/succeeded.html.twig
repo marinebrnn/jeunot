@@ -8,7 +8,7 @@
     <h1>{{ 'register.succeeded.title'|trans }}</h1>
     <p>{{ 'register.succeeded.description'|trans }}</p>
     <p>{{ 'register.succeeded.email_not_received'|trans }}</p>
-    <form method="POST" action="{{ path('app_resend_confirmation_link', { email }) }}">
+    <form method="POST" action="{{ path('app_resend_confirmation_mail', { email }) }}">
         <button type="submit">{{ 'register.succeeded.send_link'|trans }}</button>
     </form>
 {% endblock %}

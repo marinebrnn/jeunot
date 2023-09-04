@@ -6,5 +6,5 @@ namespace App\Application\Mail\User;
 
 interface ConfirmAccountMailInterface
 {
-    public function send(string $email, \DateTimeInterface $expirationDate): void;
+    public function send(string $email, string $token): void;
 }

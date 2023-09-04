@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Integration\Infrastructure\Controller\Security;
+namespace App\Tests\Integration\Infrastructure\Controller\Register;
 
 use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
 

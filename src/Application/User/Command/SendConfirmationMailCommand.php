@@ -6,7 +6,7 @@ namespace App\Application\User\Command;
 
 use App\Application\AsyncCommandInterface;
 
-final class SendConfirmationLinkCommand implements AsyncCommandInterface
+final class SendConfirmationMailCommand implements AsyncCommandInterface
 {
     public function __construct(public readonly string $email)
     {

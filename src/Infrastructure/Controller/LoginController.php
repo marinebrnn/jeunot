@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Controller\Security;
+namespace App\Infrastructure\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +24,7 @@ final class LoginController
 
         return new Response(
             $this->twig->render(
-                name: 'security/login.html.twig',
+                name: 'login.html.twig',
                 context: [
                     'last_username' => $lastUsername,
                     'error' => $error,
