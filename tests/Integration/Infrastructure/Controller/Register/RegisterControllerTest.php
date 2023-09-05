@@ -29,6 +29,11 @@ final class RegisterControllerTest extends AbstractWebTestCase
         $client->submit($form);
 
         $this->assertResponseStatusCodeSame(302);
+
+        $this->assertEmailCount(1);
+        $email = $this->getMailerMessage();
+        $this->assertEmailHtmlBodyContains($email, 'Pour finaliser la création de votre compte, merci de cliquer sur le lien ci-dessous:');
+
         $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
         $this->assertRouteSame('app_register_succeeded');
