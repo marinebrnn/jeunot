@@ -57,6 +57,7 @@ jobs:
           echo "DATABASE_URL=postgresql://jeunot:jeunot@localhost:5432/jeunot" >> .env
           echo "REDIS_URL=redis://localhost:6379" >> .env
           echo "MESSENGER_TRANSPORT_DSN=redis://localhost:6379/messages" >> .env
+          echo "MAILER_DSN=smtp://localhost:1025" >> .env
 
       - name: CI
         run: make ci CI=1 BIN_PHP="php" BIN_CONSOLE="php bin/console" BIN_COMPOSER="composer" BIN_NPM="npm" BIN_NPX="npx"
