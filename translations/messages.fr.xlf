@@ -26,6 +26,10 @@
                 <source>login.password</source>
                 <target>Mot de passe</target>
             </trans-unit>
+            <trans-unit id="login.forgot_password">
+                <source>login.forgot_password</source>
+                <target>J'ai oublié mon mot de passe</target>
+            </trans-unit>
             <trans-unit id="login.description">
                 <source>login.description</source>
                 <target>Vous avez déjà un compte chez Jeunot ? Renseignez vos identifiants pour vous inscrire aux événements et participer aux groupes de discussion.</target>
@@ -113,6 +117,50 @@
             <trans-unit id="register.already_registered">
                 <source>register.already_registered</source>
                 <target>Vous avez déjà un compte ?</target>
+            </trans-unit>
+            <trans-unit id="forgot_password.title">
+                <source>forgot_password.title</source>
+                <target>Mot de passe oublié ?</target>
+            </trans-unit>
+            <trans-unit id="forgot_password.submit">
+                <source>forgot_password.submit</source>
+                <target>Envoyer un lien de réinitialisation</target>
+            </trans-unit>
+            <trans-unit id="forgot_password.description">
+                <source>forgot_password.description</source>
+                <target>Entrez votre mail ci-dessous. Nous vous enverrons un lien de réinitialisation de votre mot de passe.</target>
+            </trans-unit>
+            <trans-unit id="forgot_password.succeeded">
+                <source>forgot_password.succeeded</source>
+                <target>Si cette adresse e-mail est enregistrée chez Jeunot, vous recevrez un lien pour réinitialiser votre mot de passe.</target>
+            </trans-unit>
+            <trans-unit id="forgot_password.back_to_login">
+                <source>forgot_password.back_to_login</source>
+                <target>Retour à la connexion</target>
+            </trans-unit>
+            <trans-unit id="reset_password.succeeded">
+                <source>reset_password.succeeded</source>
+                <target>Votre mot de passe a bien été changé. Vous pouvez dès à présent vous connecter en utilisant votre nouveau mot de passe.</target>
+            </trans-unit>
+            <trans-unit id="reset_password.password">
+                <source>reset_password.password</source>
+                <target>Nouveau mot de passe</target>
+            </trans-unit>
+            <trans-unit id="reset_password.repeated_password">
+                <source>reset_password.repeated_password</source>
+                <target>Retaper votre nouveau mot de passe</target>
+            </trans-unit>
+            <trans-unit id="reset_password.submit">
+                <source>reset_password.submit</source>
+                <target>Changer mon mot de passe</target>
+            </trans-unit>
+            <trans-unit id="reset_password.title">
+                <source>reset_password.title</source>
+                <target>Changer mon mot de passe</target>
+            </trans-unit>
+            <trans-unit id="reset_password.token.error">
+                <source>reset_password.token.error</source>
+                <target>Le changement de mot de passe a échoué, veuillez faire une nouvelle demande.</target>
             </trans-unit>
         </body>
     </file>

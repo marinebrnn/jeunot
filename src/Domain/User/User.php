@@ -62,4 +62,9 @@ class User
     {
         $this->isVerified = true;
     }
+
+    public function updatePassword(string $password): void
+    {
+        $this->password = $password;
+    }
 }

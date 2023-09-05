@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\User\Command;
+namespace App\Application\User\Command\Mail;
 
 use App\Application\AsyncCommandInterface;
 

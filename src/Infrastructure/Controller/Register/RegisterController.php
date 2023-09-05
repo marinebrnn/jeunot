@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Infrastructure\Controller\Register;
 
 use App\Application\CommandBusInterface;
+use App\Application\User\Command\Mail\SendConfirmationMailCommand;
 use App\Application\User\Command\RegisterUserCommand;
-use App\Application\User\Command\SendConfirmationMailCommand;
 use App\Domain\User\Exception\UserAlreadyRegisteredException;
 use App\Infrastructure\Form\User\RegisterUserFormType;
 use Symfony\Component\Form\FormError;

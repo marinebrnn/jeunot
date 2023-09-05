@@ -35,5 +35,8 @@ final class UserTest extends TestCase
 
         $user->verified();
         $this->assertTrue($user->isVerified());
+
+        $user->updatePassword('newPassword');
+        $this->assertSame('newPassword', $user->getPassword());
     }
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\Controller\Register;
 
 use App\Application\CommandBusInterface;
-use App\Application\User\Command\SendConfirmationMailCommand;
+use App\Application\User\Command\Mail\SendConfirmationMailCommand;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
