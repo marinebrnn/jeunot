@@ -17,6 +17,7 @@
             <label for="password">{{ 'login.password'|trans }}</label>
             <input aria-required="true" required name="password" autocomplete="current-password" id="password" type="password"/>
         </div>
+        <a href="{{ path('app_forgot_password') }}">{{ 'login.forgot_password'|trans }}</a>
 
         {% if error %}
             <p class="error">

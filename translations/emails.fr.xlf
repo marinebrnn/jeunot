@@ -34,6 +34,18 @@
                 <source>confirm_user_account.help</source>
                 <target>Si vous rencontrez des difficultés pour vous connecter à votre compte, contactez-nous à contact@jeunot.com.</target>
             </trans-unit>
+            <trans-unit id="forgot_password.subjet">
+                <source>forgot_password.subjet</source>
+                <target>Changer de mot de passe</target>
+            </trans-unit>
+            <trans-unit id="forgot_password.title">
+                <source>forgot_password.title</source>
+                <target>Vous avez demandé la réinitialisation du mot de passe associé à votre compte. Pour le modifier, cliquez ci-dessous :</target>
+            </trans-unit>
+            <trans-unit id="forgot_password.reset">
+                <source>forgot_password.reset</source>
+                <target>Modifier mon mot de passe</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
