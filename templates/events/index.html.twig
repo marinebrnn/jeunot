@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'events.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'events.title'|trans }}</h1>
+    <ul>
+        {% for event in paginatedEvents.items %}
+            <li>
+                {{ event.title }} - {{ event.location }} - {{ event.startDate|date('d/m/Y') }} - {{ 'events.list.attendee'|trans({'%count%' : event.nbAttendees }) }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
