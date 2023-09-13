@@ -36,7 +36,7 @@ final readonly class ListEventsController
 
         return new Response(
             content: $this->twig->render(
-                name: 'events/index.html.twig',
+                name: 'events/list.html.twig',
                 context : [
                     'paginatedEvents' => $paginatedEvents,
                 ],

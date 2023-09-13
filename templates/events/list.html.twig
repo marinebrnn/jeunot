@@ -9,7 +9,9 @@
     <ul>
         {% for event in paginatedEvents.items %}
             <li>
-                {{ event.title }} - {{ event.location }} - {{ event.startDate|date('d/m/Y') }} - {{ 'events.list.attendee'|trans({'%count%' : event.nbAttendees }) }}
+                <a href="{{ path('app_event_show', { uuid: event.uuid } )}}">
+                    {{ event.title }} - {{ event.location }} - {{ event.startDate|date('d/m/Y') }} - {{ 'events.list.attendee'|trans({'%count%' : event.nbAttendees }) }}
+                </a>
             </li>
         {% endfor %}
     </ul>

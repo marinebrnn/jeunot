@@ -7,4 +7,6 @@ namespace App\Domain\Event\Repository;
 interface EventRepositoryInterface
 {
     public function findActiveEvents(int $pageSize, int $page): array;
+
+    public function findOneByUuid(string $uuid): array;
 }

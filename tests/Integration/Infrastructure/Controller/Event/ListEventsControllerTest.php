@@ -18,7 +18,7 @@ final class ListEventsControllerTest extends AbstractWebTestCase
         $this->assertSame('Événements', $crawler->filter('h1')->text());
         $this->assertMetaTitle('Événements - Jeunot', $crawler);
         $this->assertSame(1, $li->count());
-        $this->assertSame('Balade et pique-nique en forêt de Chevreuse - Saint Remy les Chevreuses - 13/09/2023 - Aucun inscrit', $li->text());
+        $this->assertSame('Balade et pique-nique en forêt de Chevreuse - Saint Remy les Chevreuses - 13/09/2023 - Aucun participant', $li->text());
     }
 
     public function testBadPageParameter(): void

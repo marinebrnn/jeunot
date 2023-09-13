@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ event.title }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ event.title }}</h1>
+    <div>
+        {{ event.startDate|date('d/m/Y H:i') }} {{ event.endDate|date('d/m/Y H:i') }}<br/>
+        {{ event.description|raw }}
+        {{ event.location }}<br/>
+        {{ event.nbAttendees }} / {{ event.nbAvailablePlaces }}<br/>
+        {{ event.owner.firstName }}<br/>
+    </div>
+{% endblock %}

@@ -168,7 +168,7 @@
             </trans-unit>
             <trans-unit id="events.list.attendee">
                 <source>events.list.attendee</source>
-                <target>{0} Aucun inscrit | {1} 1 inscrit | ]1,Inf[ %count% inscrits</target>
+                <target>{0} Aucun participant | {1} 1 participant | ]1,Inf[ %count% participants</target>
             </trans-unit>
         </body>
     </file>
