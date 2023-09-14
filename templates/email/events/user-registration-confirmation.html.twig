@@ -1,0 +1,12 @@
+{% extends 'email/base.html.twig' %}
+{% trans_default_domain 'emails' %}
+
+{% block body %}
+    <p>{{ 'events.user_registration.confirmed'|trans({ '%title%': event.title }) }}</p>
+    <p>{{ 'events.user_registration.information'|trans }}</p>
+    <ul>
+        <li>{{ 'events.user_registration.information.when'|trans({ '%startDate%': event.startDate|date('d/m/Y H:i'), '%endDate%': event.endDate|date('d/m/Y H:i') }) }}</li>
+        <li>{{ 'events.user_registration.information.location'|trans({ '%location%': event.location }) }}</li>
+        <li>{{ 'events.user_registration.information.owner'|trans({ '%firstName%': event.owner.firstName }) }}</li>
+    </ul>
+{% endblock %}

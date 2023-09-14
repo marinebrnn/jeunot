@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Event\Query;
 
-use App\Application\Event\View\EventSummaryView;
+use App\Application\Event\View\SummarizedEventView;
 use App\Domain\Event\Repository\EventRepositoryInterface;
 use App\Domain\Pagination;
 
@@ -24,7 +24,7 @@ final class GetActiveEventsQueryHandler
 
         $views = [];
         foreach ($events as $event) {
-            $views[] = new EventSummaryView(
+            $views[] = new SummarizedEventView(
                 uuid: $event['uuid'],
                 title: $event['title'],
                 location: $event['location'],

@@ -17,17 +17,16 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
         parent::__construct($registry, Event::class);
     }
 
+    private const NB_ATTENDEE_QUERY = '
+        SELECT count(a.uuid)
+        FROM App\Domain\Event\Attendee a
+        WHERE a.event = e.uuid';
+
     public function findActiveEvents(int $pageSize, int $page): array
     {
         $query = $this->createQueryBuilder('e')
             ->select('e.uuid, e.title, e.location, e.picture, e.startDate')
-            ->addSelect('
-                (
-                    SELECT count(a.uuid)
-                    FROM App\Domain\Event\Attendee a
-                    WHERE a.event = e.uuid
-                ) AS nbAttendees
-            ')
+            ->addSelect(sprintf('(%s) as nbAttendees', self::NB_ATTENDEE_QUERY))
             ->where('e.published = true')
             ->orderBy('e.startDate', 'DESC')
             ->setFirstResult($pageSize * ($page - 1))
@@ -49,7 +48,7 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
         return $result;
     }
 
-    public function findOneByUuid(string $uuid): array
+    public function findDetailedEvent(string $uuid): array
     {
         return $this->createQueryBuilder('e')
             ->select('
@@ -63,13 +62,7 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
                 e.initialAvailablePlaces,
                 o.firstName as ownerFirstName
             ')
-            ->addSelect('
-                (
-                    SELECT count(a.uuid)
-                    FROM App\Domain\Event\Attendee a
-                    WHERE a.event = e.uuid
-                ) AS nbAttendees
-            ')
+            ->addSelect(sprintf('(%s) as nbAttendees', self::NB_ATTENDEE_QUERY))
             ->innerJoin('e.owner', 'o')
             ->where('e.published = true')
             ->andWhere('e.uuid = :uuid')
@@ -77,5 +70,17 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
             ->setMaxResults(1)
             ->getQuery()
             ->getResult();
+    }
+
+    public function findOneByUuid(string $uuid): ?Event
+    {
+        return $this->createQueryBuilder('e')
+            ->where('e.published = true')
+            ->andWhere('e.uuid = :uuid')
+            ->setParameter('uuid', $uuid)
+            ->innerJoin('e.owner', 'o')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 }
