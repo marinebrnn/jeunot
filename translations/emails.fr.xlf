@@ -46,6 +46,46 @@
                 <source>forgot_password.reset</source>
                 <target>Modifier mon mot de passe</target>
             </trans-unit>
+            <trans-unit id="events.user_registration.subjet">
+                <source>events.user_registration.subjet</source>
+                <target>Confirmation d'inscription à l'événement</target>
+            </trans-unit>
+            <trans-unit id="events.user_registration.confirmed">
+                <source>events.user_registration.confirmed</source>
+                <target>Votre inscription à l'événement "%title%" est confirmé !</target>
+            </trans-unit>
+            <trans-unit id="events.user_registration.information">
+                <source>events.user_registration.information</source>
+                <target>Vous retrouverez toutes les informations relatives à votre événement ci-dessous :</target>
+            </trans-unit>
+            <trans-unit id="events.user_registration.information.location">
+                <source>events.user_registration.information.location</source>
+                <target>Où : %location%</target>
+            </trans-unit>
+            <trans-unit id="events.user_registration.information.when">
+                <source>events.user_registration.information.when</source>
+                <target>Quand : de %startDate% à %endDate%</target>
+            </trans-unit>
+            <trans-unit id="events.user_registration.information.owner">
+                <source>events.user_registration.information.owner</source>
+                <target>Organisé par : %firstName%</target>
+            </trans-unit>
+            <trans-unit id="events.comment.subjet">
+                <source>events.comment.subjet</source>
+                <target>Vous avez reçu un commentaire concernant votre événement</target>
+            </trans-unit>
+            <trans-unit id="events.comment.title">
+                <source>events.comment.title</source>
+                <target>Vous avez reçu un commentaire concernant l'événement : "%title%"</target>
+            </trans-unit>
+            <trans-unit id="events.comment.message_from">
+                <source>events.comment.message_from</source>
+                <target>Message de %firstName%</target>
+            </trans-unit>
+            <trans-unit id="events.comment.answer">
+                <source>events.comment.answer</source>
+                <target>Vous pouvez lui répondre directement à l'adresse e-mail suivante : %email%</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

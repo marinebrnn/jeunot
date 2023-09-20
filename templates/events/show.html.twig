@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ event.title }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ event.title }}</h1>
+    <div>
+        {{ event.startDate|date('d/m/Y H:i') }} {{ event.endDate|date('d/m/Y H:i') }}<br/>
+        {{ event.description|raw }}
+        {{ event.location }}<br/>
+        {{ event.nbAttendees }}<br/>
+        {{ event.nbAvailablePlaces }}<br/>
+        {{ event.owner.firstName }}<br/>
+    </div>
+    {% if is_granted('ROLE_USER') and event.nbAvailablePlaces > 0 %}
+        <a data-testid="register-link" href="{{ path('app_event_register', { uuid: event.uuid }) }}">S'inscrire</a>
+    {% endif %}
+{% endblock %}

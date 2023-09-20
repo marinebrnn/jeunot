@@ -162,6 +162,46 @@
                 <source>reset_password.token.error</source>
                 <target>Le changement de mot de passe a échoué, veuillez faire une nouvelle demande.</target>
             </trans-unit>
+            <trans-unit id="events.title">
+                <source>events.title</source>
+                <target>Événements</target>
+            </trans-unit>
+            <trans-unit id="events.list.attendee">
+                <source>events.list.attendee</source>
+                <target>{0} Aucun participant | {1} 1 participant | ]1,Inf[ %count% participants</target>
+            </trans-unit>
+            <trans-unit id="events.register.title">
+                <source>events.register.title</source>
+                <target>Inscription à l'événement</target>
+            </trans-unit>
+            <trans-unit id="events.register.comment">
+                <source>events.register.comment</source>
+                <target>Commentaire</target>
+            </trans-unit>
+            <trans-unit id="events.register.comment.help">
+                <source>events.register.comment.help</source>
+                <target>Si vous avez une remarque, une question, un besoin, vous pouvez le communiquer à l’origanisateur ici. A noter que les organisateurs sont des bénévoles.</target>
+            </trans-unit>
+            <trans-unit id="events.register.submit">
+                <source>events.register.submit</source>
+                <target>Valider mon inscription</target>
+            </trans-unit>
+            <trans-unit id="events.register.failed">
+                <source>events.register.failed</source>
+                <target>Vous ne pouvez pas vous inscrire à l'événement. Il se peut que vous soyez déjà inscrit ou qu'il n'y ai plus de place disponible.</target>
+            </trans-unit>
+            <trans-unit id="events.register.full">
+                <source>events.register.full</source>
+                <target>Cet événement est complet.</target>
+            </trans-unit>
+            <trans-unit id="events.register.succeded.title">
+                <source>events.register.succeded.title</source>
+                <target>Vous êtes bien inscrit·e</target>
+            </trans-unit>
+            <trans-unit id="events.register.succeded.detail">
+                <source>events.register.succeded.detail</source>
+                <target>Votre inscription est confirmée à "%title%". Vous recevrez plus d’informations dans les jours précédant l’événement. Pensez à surveiller vos e-mails !</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
