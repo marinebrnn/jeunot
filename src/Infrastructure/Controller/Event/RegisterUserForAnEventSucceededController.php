@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
 
-final readonly class ShowEventController
+final readonly class RegisterUserForAnEventSucceededController
 {
     public function __construct(
         private \Twig\Environment $twig,
@@ -21,8 +21,8 @@ final readonly class ShowEventController
     }
 
     #[Route(
-        '/events/{uuid}',
-        name: 'app_event_show',
+        '/events/{uuid}/register/succeeded',
+        name: 'app_event_register_succeeded',
         requirements: ['uuid' => Requirement::UUID],
         methods: ['GET'],
     )]
@@ -36,7 +36,7 @@ final readonly class ShowEventController
 
         return new Response(
             content: $this->twig->render(
-                name: 'events/show.html.twig',
+                name: 'events/register_succeeded.html.twig',
                 context : [
                     'event' => $event,
                 ],

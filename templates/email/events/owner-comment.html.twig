@@ -1,0 +1,11 @@
+{% extends 'email/base.html.twig' %}
+{% trans_default_domain 'emails' %}
+
+{% block body %}
+    <p>{{ 'events.comment.title'|trans({ '%title%': event.title }) }}</p>
+    <b>{{ 'events.comment.message_from'|trans({ '%firstName%': attendee.firstName }) }}</b>
+    <blockquote>
+        <p>{{ comment|nl2br }}</p>
+    </blockquote>
+    <p>{{ 'events.comment.answer'|trans({ '%email%': attendee.email }) }}</p>
+{% endblock %}

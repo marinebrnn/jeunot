@@ -25,6 +25,30 @@ final class EventFixture extends Fixture implements DependentFixtureInterface
         $publishedEvent->setPublished(true);
         $publishedEvent->setLocation('Saint Remy les Chevreuses');
 
+        $fullyBookedEvent = new Event(
+            '89f72b23-55e9-4975-b640-da24890095b7',
+            $this->getReference('admin'),
+        );
+        $fullyBookedEvent->setTitle('Balade à vélo en tandem');
+        $fullyBookedEvent->setDescription('Lorem ipsum');
+        $fullyBookedEvent->setInitialAvailablePlaces(2);
+        $fullyBookedEvent->setStartDate(new \DateTime('2023-09-14 20:00:00'));
+        $fullyBookedEvent->setEndDate(new \DateTime('2023-09-14 21:00:00'));
+        $fullyBookedEvent->setPublished(true);
+        $fullyBookedEvent->setLocation('Paris');
+
+        $eventWithOnlyOnePlaceAvailable = new Event(
+            'a6ed00e5-a566-4115-a547-01378baba9b1',
+            $this->getReference('admin'),
+        );
+        $eventWithOnlyOnePlaceAvailable->setTitle('Dîner au restaurant');
+        $eventWithOnlyOnePlaceAvailable->setDescription('Lorem ipsum');
+        $eventWithOnlyOnePlaceAvailable->setInitialAvailablePlaces(2);
+        $eventWithOnlyOnePlaceAvailable->setStartDate(new \DateTime('2023-09-20 20:00:00'));
+        $eventWithOnlyOnePlaceAvailable->setEndDate(new \DateTime('2023-09-20 21:00:00'));
+        $eventWithOnlyOnePlaceAvailable->setPublished(true);
+        $eventWithOnlyOnePlaceAvailable->setLocation('Paris');
+
         $unpublishedEvent = new Event(
             '8d9947e2-02c1-4064-b385-2749b85f1f2d',
             $this->getReference('user'),
@@ -39,7 +63,12 @@ final class EventFixture extends Fixture implements DependentFixtureInterface
 
         $manager->persist($publishedEvent);
         $manager->persist($unpublishedEvent);
+        $manager->persist($fullyBookedEvent);
+        $manager->persist($eventWithOnlyOnePlaceAvailable);
         $manager->flush();
+
+        $this->addReference('fullyBookedEvent', $fullyBookedEvent);
+        $this->addReference('eventWithOnlyOnePlaceAvailable', $eventWithOnlyOnePlaceAvailable);
     }
 
     public function getDependencies(): array

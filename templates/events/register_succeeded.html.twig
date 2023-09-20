@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'events.register.succeded.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'events.register.succeded.title'|trans }} !</h1>
+    <p>{{ 'events.register.succeded.detail'|trans({ '%title%': event.title }) }}</p>
+{% endblock %}

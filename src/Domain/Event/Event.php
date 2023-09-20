@@ -8,7 +8,7 @@ use App\Domain\User\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
-final class Event
+class Event
 {
     private string $title;
     private string $description;
