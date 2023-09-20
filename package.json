@@ -8,14 +8,18 @@
         "@symfony/stimulus-bundle": "file:vendor/symfony/stimulus-bundle/assets",
         "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets",
         "@symfony/webpack-encore": "^4.0.0",
+        "autoprefixer": "^10.4.15",
         "core-js": "^3.23.0",
         "dotenv": "^16.3.1",
         "file-loader": "^6.0.0",
         "husky": "^8.0.3",
+        "postcss": "^8.4.30",
+        "postcss-loader": "^7.3.3",
         "purgecss-webpack-plugin": "^5.0.0",
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.56.1",
         "sass-loader": "^13.2.0",
+        "tailwindcss": "^3.3.3",
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0",
         "webpack-notifier": "^1.15.0"
@@ -27,7 +31,5 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "prepare": "husky install"
-    },
-    "dependencies": {
     }
 }
