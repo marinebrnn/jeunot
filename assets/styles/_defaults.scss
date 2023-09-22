@@ -1,0 +1,21 @@
+body {
+    background-color: var(--background-default);
+    color: var(--text-default);
+    font-family: var(--font-default);
+    font-size: var(--font-size-default);
+    font-weight: var(--font-weight-default);
+}
+
+h1 {
+    color: var(--text-bleue);
+    margin-bottom: calc(3 * var(--w));
+    font-weight: var(--font-weight-title);
+    font-size: calc(2.4 * var(--font-size-default));
+}
+
+h2 {
+    color: var(--text-bleue);
+    font-weight: var(--font-weight-title);
+    font-size: calc(1.8 * var(--font-size-default));
+}
+

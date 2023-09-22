@@ -1,0 +1,45 @@
+.j-center {
+  display: grid;
+  place-items: center;
+}
+
+.j-row {
+  display: flex;
+}
+
+.j-row--middle {
+  align-items: center;
+}
+
+.j-cols--even {
+  --cols: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap, calc(2 * var(--w)));
+}
+
+.j-m {
+  margin: var(--m);
+}
+
+.j-mt {
+  margin-top: var(--mt);
+}
+
+.j-ml {
+  margin-left: var(--ml);
+}
+
+.j-p {
+  padding: var(--p);
+}
+
+.j-text--center {
+  text-align: center;
+}
+
+.j-raw-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

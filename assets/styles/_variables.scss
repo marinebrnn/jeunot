@@ -1,0 +1,23 @@
+:root {
+    /* Spacing */
+    --v: 0.25rem;
+    --w: 0.5rem;
+    /* Fonts */
+    --font-default: font-family: Rebond Grotesque;
+    --font-size-md: 1.25rem;
+    --font-size-sm: calc(0.8 * var(--font-size-md));
+    --font-size-lg: calc(1.2 * var(--font-size-md));
+    --font-size-default: var(--font-size-md);
+    --font-weight-default: 400;
+    --font-weight-title: 600;
+    /* Colors */
+    --background-default: #ffffff;
+    --border-default: #e2e8f0;
+    --text-default: #262626;
+    --text-blue: #2F3372;
+
+    /* Shadows */
+    --shadow-default: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-inner: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
