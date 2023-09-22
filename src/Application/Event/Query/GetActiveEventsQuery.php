@@ -6,11 +6,12 @@ namespace App\Application\Event\Query;
 
 use App\Application\QueryInterface;
 
-final class GetActiveEventsQuery implements QueryInterface
+final readonly class GetActiveEventsQuery implements QueryInterface
 {
     public function __construct(
-        public readonly int $page,
-        public readonly int $pageSize,
+        public int $page,
+        public int $pageSize,
+        public ?string $loggedUserUuid = null,
     ) {
     }
 }

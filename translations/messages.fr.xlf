@@ -202,6 +202,10 @@
                 <source>events.register.succeded.detail</source>
                 <target>Votre inscription est confirmée à "%title%". Vous recevrez plus d’informations dans les jours précédant l’événement. Pensez à surveiller vos e-mails !</target>
             </trans-unit>
+            <trans-unit id="events.registered">
+                <source>events.registered</source>
+                <target>Inscrit·e !</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
