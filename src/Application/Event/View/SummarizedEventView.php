@@ -12,6 +12,7 @@ final readonly class SummarizedEventView
         public string $location,
         public int $nbAttendees,
         public \DateTimeInterface $startDate,
+        public bool $isLoggedUserRegisteredForEvent,
         public ?string $picture,
     ) {
     }

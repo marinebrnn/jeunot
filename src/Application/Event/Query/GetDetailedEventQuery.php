@@ -10,6 +10,7 @@ final class GetDetailedEventQuery implements QueryInterface
 {
     public function __construct(
         public readonly string $uuid,
+        public ?string $loggedUserUuid = null,
     ) {
     }
 }

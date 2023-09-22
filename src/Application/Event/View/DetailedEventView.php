@@ -16,6 +16,7 @@ final readonly class DetailedEventView
         public \DateTimeInterface $startDate,
         public \DateTimeInterface $endDate,
         public OwnerView $owner,
+        public bool $isLoggedUserRegisteredForEvent,
         public ?string $picture,
     ) {
     }

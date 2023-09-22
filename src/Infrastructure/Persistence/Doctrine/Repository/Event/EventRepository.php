@@ -18,21 +18,33 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
     }
 
     private const NB_ATTENDEE_QUERY = '
-        SELECT count(a.uuid)
-        FROM App\Domain\Event\Attendee a
-        WHERE a.event = e.uuid';
+        SELECT count(DISTINCT a1.uuid)
+        FROM App\Domain\Event\Attendee a1
+        WHERE a1.event = e.uuid';
 
-    public function findActiveEvents(int $pageSize, int $page): array
+    private const IS_LOGGED_USER_REGISTERED_FOR_EVENT_QUERY = '
+        SELECT count(DISTINCT a2.uuid)
+        FROM App\Domain\Event\Attendee a2
+        WHERE a2.event = e.uuid
+        AND a2.user = :userUuid';
+
+    public function findActiveEvents(int $pageSize, int $page, ?string $loggedUserUuid): array
     {
-        $query = $this->createQueryBuilder('e')
+        $qb = $this->createQueryBuilder('e')
             ->select('e.uuid, e.title, e.location, e.picture, e.startDate')
             ->addSelect(sprintf('(%s) as nbAttendees', self::NB_ATTENDEE_QUERY))
             ->where('e.published = true')
             ->orderBy('e.startDate', 'DESC')
             ->setFirstResult($pageSize * ($page - 1))
-            ->setMaxResults($pageSize)
-            ->getQuery();
+            ->setMaxResults($pageSize);
 
+        if ($loggedUserUuid) {
+            $qb
+                ->addSelect(sprintf('(%s) as isLoggedUserRegisteredForEvent', self::IS_LOGGED_USER_REGISTERED_FOR_EVENT_QUERY))
+                ->setParameter('userUuid', $loggedUserUuid);
+        }
+
+        $query = $qb->getQuery();
         $paginator = new Paginator($query, false);
         $paginator->setUseOutputWalkers(false);
 
@@ -48,9 +60,9 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
         return $result;
     }
 
-    public function findDetailedEvent(string $uuid): array
+    public function findDetailedEvent(string $uuid, ?string $loggedUserUuid): array
     {
-        return $this->createQueryBuilder('e')
+        $qb = $this->createQueryBuilder('e')
             ->select('
                 e.uuid,
                 e.title,
@@ -67,9 +79,15 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
             ->where('e.published = true')
             ->andWhere('e.uuid = :uuid')
             ->setParameter('uuid', $uuid)
-            ->setMaxResults(1)
-            ->getQuery()
-            ->getResult();
+            ->setMaxResults(1);
+
+        if ($loggedUserUuid) {
+            $qb
+                ->addSelect(sprintf('(%s) as isLoggedUserRegisteredForEvent', self::IS_LOGGED_USER_REGISTERED_FOR_EVENT_QUERY))
+                ->setParameter('userUuid', $loggedUserUuid);
+        }
+
+        return $qb->getQuery()->getResult();
     }
 
     public function findOneByUuid(string $uuid): ?Event

@@ -44,15 +44,17 @@ final readonly class RegisterUserForAnEventController
     )]
     public function __invoke(Request $request, string $uuid): Response
     {
+        $loggedUser = $this->authenticatedUser->getUser();
+
         try {
-            $event = $this->queryBus->handle(new GetDetailedEventQuery($uuid));
+            $event = $this->queryBus->handle(new GetDetailedEventQuery($uuid, $loggedUser->getUuid()));
         } catch (EventNotFoundException) {
             throw new NotFoundHttpException();
         }
 
         /** @var FlashBagAwareSessionInterface */
         $session = $request->getSession();
-        $command = new RegisterUserForAnEventCommand($uuid, $this->authenticatedUser->getUser());
+        $command = new RegisterUserForAnEventCommand($uuid, $loggedUser);
         $form = $this->formFactory->create(RegisterFormType::class, $command);
         $form->handleRequest($request);
 

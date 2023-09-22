@@ -20,6 +20,7 @@ final class GetActiveEventsQueryHandler
         ['events' => $events, 'count' => $count] = $this->eventRepository->findActiveEvents(
             $query->pageSize,
             $query->page,
+            $query->loggedUserUuid,
         );
 
         $views = [];
@@ -30,6 +31,7 @@ final class GetActiveEventsQueryHandler
                 location: $event['location'],
                 nbAttendees: $event['nbAttendees'],
                 startDate: $event['startDate'],
+                isLoggedUserRegisteredForEvent: !empty($event['isLoggedUserRegisteredForEvent']) ? true : false,
                 picture: $event['picture'],
             );
         }

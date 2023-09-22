@@ -18,7 +18,7 @@ final class GetDetailedEventQueryHandler
 
     public function __invoke(GetDetailedEventQuery $query): DetailedEventView
     {
-        $event = $this->eventRepository->findDetailedEvent($query->uuid);
+        $event = $this->eventRepository->findDetailedEvent($query->uuid, $query->loggedUserUuid);
         if (!$event) {
             throw new EventNotFoundException();
         }
@@ -35,6 +35,7 @@ final class GetDetailedEventQueryHandler
             startDate: $event['startDate'],
             endDate: $event['endDate'],
             owner: new OwnerView($event['ownerFirstName']),
+            isLoggedUserRegisteredForEvent: !empty($event['isLoggedUserRegisteredForEvent']) ? true : false,
             picture: $event['picture'],
         );
     }

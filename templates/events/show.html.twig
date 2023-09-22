@@ -14,7 +14,8 @@
         {{ event.nbAvailablePlaces }}<br/>
         {{ event.owner.firstName }}<br/>
     </div>
-    {% if is_granted('ROLE_USER') and event.nbAvailablePlaces > 0 %}
+    {% if is_granted('ROLE_USER') and event.nbAvailablePlaces > 0 and not event.isLoggedUserRegisteredForEvent %}
         <a data-testid="register-link" href="{{ path('app_event_register', { uuid: event.uuid }) }}">S'inscrire</a>
     {% endif %}
+    {% if event.isLoggedUserRegisteredForEvent %}{{ 'events.registered'|trans }}{% endif %}
 {% endblock %}

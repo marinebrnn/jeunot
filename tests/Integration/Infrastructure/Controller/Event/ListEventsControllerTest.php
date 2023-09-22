@@ -19,9 +19,25 @@ final class ListEventsControllerTest extends AbstractWebTestCase
         $this->assertSame('Événements', $crawler->filter('h1')->text());
         $this->assertMetaTitle('Événements - Jeunot', $crawler);
         $this->assertSame(3, $li->count());
-        $this->assertSame('Dîner au restaurant - Paris - 20/09/2023 - 1 participant', $li->eq(0)->text());
-        $this->assertSame('Balade à vélo en tandem - Paris - 14/09/2023 - 2 participants', $li->eq(1)->text());
-        $this->assertSame('Balade et pique-nique en forêt de Chevreuse - Saint Remy les Chevreuses - 13/09/2023 - Aucun participant', $li->eq(2)->text());
+        $this->assertSame('Dîner au restaurant - Paris - 20/09/2023 1 participant', $li->eq(0)->text());
+        $this->assertSame('Balade à vélo en tandem - Paris - 14/09/2023 2 participants', $li->eq(1)->text());
+        $this->assertSame('Balade et pique-nique en forêt de Chevreuse - Saint Remy les Chevreuses - 13/09/2023 Aucun participant', $li->eq(2)->text());
+    }
+
+    public function testLoggedGetEvents(): void
+    {
+        $client = $this->login();
+        $crawler = $client->request('GET', '/events?pageSize=20');
+        $li = $crawler->filter('ul > li');
+
+        $this->assertResponseStatusCodeSame(200);
+        $this->assertSecurityHeaders();
+        $this->assertSame('Événements', $crawler->filter('h1')->text());
+        $this->assertMetaTitle('Événements - Jeunot', $crawler);
+        $this->assertSame(3, $li->count());
+        $this->assertSame('Dîner au restaurant - Paris - 20/09/2023 1 participant - Inscrit·e !', $li->eq(0)->text());
+        $this->assertSame('Balade à vélo en tandem - Paris - 14/09/2023 2 participants - Inscrit·e !', $li->eq(1)->text());
+        $this->assertSame('Balade et pique-nique en forêt de Chevreuse - Saint Remy les Chevreuses - 13/09/2023 Aucun participant', $li->eq(2)->text());
     }
 
     public function testBadPageParameter(): void
