@@ -14,5 +14,6 @@ class Kernel extends BaseKernel
     public function boot(): void
     {
         parent::boot();
+        setlocale(LC_ALL, 'fr_FR');
     }
 }

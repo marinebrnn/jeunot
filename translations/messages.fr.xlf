@@ -6,6 +6,102 @@
                 <source>common.title</source>
                 <target>Jeunot</target>
             </trans-unit>
+            <trans-unit id="common.tagline">
+                <source>common.tagline</source>
+                <target>La communauté où les 60 ans et plus se rencontrent !</target>
+            </trans-unit>
+            <trans-unit id="nav.brand.title">
+                <source>nav.brand.title</source>
+                <target>Retour à l'accueil</target>
+            </trans-unit>
+            <trans-unit id="nav.title">
+                <source>nav.title</source>
+                <target>Navigation principale</target>
+            </trans-unit>
+            <trans-unit id="nav.menu.open">
+                <source>nav.menu.open</source>
+                <target>Ouvrir le menu</target>
+            </trans-unit>
+            <trans-unit id="nav.home">
+                <source>nav.home</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="nav.events">
+                <source>nav.events</source>
+                <target>Événements</target>
+            </trans-unit>
+            <trans-unit id="nav.login">
+                <source>nav.login</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="nav.register">
+                <source>nav.register</source>
+                <target>Créer un compte</target>
+            </trans-unit>
+            <trans-unit id="nav.my_space">
+                <source>nav.my_space</source>
+                <target>Mon espace</target>
+            </trans-unit>
+            <trans-unit id="nav.logout">
+                <source>nav.logout</source>
+                <target>Se déconnecter</target>
+            </trans-unit>
+            <trans-unit id="nav.help">
+                <source>nav.help</source>
+                <target>Aide</target>
+            </trans-unit>
+            <trans-unit id="nav.privacy">
+                <source>nav.privacy</source>
+                <target>Politique de confidentialité</target>
+            </trans-unit>
+            <trans-unit id="nav.terms">
+                <source>nav.terms</source>
+                <target>Conditions générales d'utilisation</target>
+            </trans-unit>
+            <trans-unit id="nav.terms.short">
+                <source>nav.terms.short</source>
+                <target>CGU</target>
+            </trans-unit>
+            <trans-unit id="footer.freepik_disclaimer">
+                <source>footer.freepik_disclaimer</source>
+                <target>Illustrations made by Freepik from storyset.com</target>
+            </trans-unit>
+            <trans-unit id="footer.events">
+                <source>footer.events</source>
+                <target>Événements</target>
+            </trans-unit>
+            <trans-unit id="footer.flatsharing">
+                <source>footer.flatsharing</source>
+                <target>Colocation</target>
+            </trans-unit>
+            <trans-unit id="footer.about_us">
+                <source>footer.about_us</source>
+                <target>Qui sommes-nous ?</target>
+            </trans-unit>
+            <trans-unit id="footer.articles">
+                <source>footer.articles</source>
+                <target>Articles</target>
+            </trans-unit>
+            <trans-unit id="footer.join">
+                <source>footer.join</source>
+                <target>Rejoindre</target>
+            </trans-unit>
+            <trans-unit id="footer.contact">
+                <source>footer.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="home.jumbotron.line1">
+                <source>home.jumbotron.line1</source>
+                <target>Participez à des événements près de chez vous et rencontrez des personnes partageant les mêmes envies et centres d’intérêts.</target>
+            </trans-unit>
+            <trans-unit id="home.jumbotron.line2">
+                <source>home.jumbotron.line2</source>
+                <target>Qui sait, vous pourriez très bien vous entendre voire rencontrer votre futur·e colocataire ? ;)</target>
+            </trans-unit>
+            <trans-unit id="home.jumbotron.cta">
+                <source>home.jumbotron.cta</source>
+                <target>Créer un compte</target>
+            </trans-unit>
             <trans-unit id="login.title">
                 <source>login.title</source>
                 <target>Se connecter</target>
@@ -166,6 +262,18 @@
                 <source>events.title</source>
                 <target>Événements</target>
             </trans-unit>
+            <trans-unit id="events.jumbotron.line1">
+                <source>events.jumbotron.line1</source>
+                <target>Les Jeunots se rencontrent régulièrement pour partager autour de leurs centres d’intérêt (ou en découvrir de nouveaux) et tisser de nouvelles amitiés !</target>
+            </trans-unit>
+            <trans-unit id="events.jumbotron.line2">
+                <source>events.jumbotron.line2</source>
+                <target>Et si vous partiez à la rencontre de Jeunots près de chez vous ? 😉</target>
+            </trans-unit>
+            <trans-unit id="events.next_events.title">
+                <source>events.next_events.title</source>
+                <target>Événements à venir</target>
+            </trans-unit>
             <trans-unit id="events.list.attendee">
                 <source>events.list.attendee</source>
                 <target>{0} Aucun participant | {1} 1 participant | ]1,Inf[ %count% participants</target>
@@ -201,6 +309,23 @@
             <trans-unit id="events.register.succeded.detail">
                 <source>events.register.succeded.detail</source>
                 <target>Votre inscription est confirmée à "%title%". Vous recevrez plus d’informations dans les jours précédant l’événement. Pensez à surveiller vos e-mails !</target>
+            </trans-unit>
+            <trans-unit id="events.detail.owner.title">
+                <source>events.detail.owner.title</source>
+                <target>Cet événement est organisé par</target>
+            </trans-unit>
+            <trans-unit id="events.detail.registrations">
+                <source>events.detail.registrations</source>
+                <!-- TODO: pluralize -->
+                <target>%nbAttendees% inscrits - <![CDATA[<strong>]]>%nbAvailablePlaces% places disponibles<![CDATA[</strong>]]></target>
+            </trans-unit>
+            <trans-unit id="events.detail.register.anonymousWarning">
+                <source>events.detail.register.anonymousWarning</source>
+                <target>Vous devez être connecté·e pour vous inscrire et recevoir les informations de rendez-vous.</target>
+            </trans-unit>
+            <trans-unit id="events.detail.register">
+                <source>events.detail.register</source>
+                <target>S'inscrire à cet événement</target>
             </trans-unit>
             <trans-unit id="events.registered">
                 <source>events.registered</source>

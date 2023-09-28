@@ -1,0 +1,4 @@
+.j-stack > * + * {
+  /* Define a vertical stack of items with a fixed gap in-between. */
+  margin-top: var(--stack-gap, calc(2 * var(--w)));
+}

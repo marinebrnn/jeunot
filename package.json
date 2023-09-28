@@ -12,7 +12,7 @@
         "dotenv": "^16.3.1",
         "file-loader": "^6.0.0",
         "husky": "^8.0.3",
-        "purgecss-webpack-plugin": "^5.0.0",
+        "prettier": "^3.0.3",
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.56.1",
         "sass-loader": "^13.2.0",
@@ -26,8 +26,8 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress",
-        "prepare": "husky install"
-    },
-    "dependencies": {
+        "prepare": "husky install",
+        "format": "prettier --write 'assets/**/*'",
+        "check": "prettier --check 'assets/**/*'"
     }
 }

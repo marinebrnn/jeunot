@@ -1,0 +1,112 @@
+<footer>
+    <div class="j-container" style="--container-width: calc(120 * var(--w))">
+        <div class="j-cluster j-box" style="--cluster-justify: space-between; --cluster-gap: calc(4 * var(--w)); --box-padding: calc(4 * var(--w)) 0">
+            <div class="j-max-w" style="--max-w: 20ch">
+                <img src="{{ asset('images/logo-blanc.svg') }}" alt="{{ 'common.title'|trans }}" width="200px">
+
+                <div>
+                    {{ 'common.tagline'|trans }}    
+                </div>
+            </div>
+            <div class="j-cluster" style="--cluster-gap: calc(4 * var(--w))">
+                <div class="j-stack">
+                    <div class="j-h3 j-text-yellow">
+                        {{ 'common.title'|trans }}
+                    </div>
+                    <ul class="j-raw-list j-stack j-text-small">
+                        <li>
+                            <a href="{{ path('app_events_list') }}">
+                                {{ 'nav.events'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{ 'footer.flatsharing'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{ 'footer.about_us'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {{ 'footer.articles'|trans }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="j-stack">
+                    <div class="j-h3 j-text-yellow">
+                        {{ 'footer.join'|trans }}
+                    </div>
+                    <ul class="j-raw-list j-cluster j-text-small" style="--cluster-gap: var(--w)">
+                        <li>
+                            <a href="{{ path('app_login') }}" class="j-btn j-btn--secondary j-btn--yellow">
+                                {{ 'nav.login'|trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_register') }}" class="j-btn j-btn--yellow">
+                                {{ 'nav.register'|trans }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="j-stack">
+                    <div class="j-h3 j-text-yellow">
+                        {{ 'footer.contact'|trans }}
+                    </div>
+                    <div>
+                        <a href="mailto:contact@jeunot.fr" class="j-text-small">
+                            contact@jeunot.fr
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="j-cluster j-box" style="--cluster-justify: space-between; --cluster-align: center; --cluster-gap: calc(2 * var(--w)); --box-padding: calc(2 * var(--w)) 0">
+            <small>{{ 'footer.freepik_disclaimer'|trans }}</small>
+
+            <nav id="footer-nav" class="j-text-small j-cluster" style="--cluster-gap: 0" aria-label="Navigation de pied de page">
+                <ul class="j-raw-list j-cluster">
+                    <li>
+                        <a href="#">
+                            Plan du site
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Accessibilité
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Mentions légales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            {{ 'nav.terms.short'|trans }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            {{ 'nav.privacy'|trans }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Cookies
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+</footer>

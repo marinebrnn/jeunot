@@ -152,6 +152,7 @@ check: ## Run checks
 	make psr_lint
 	make twig_lint
 	make phpstan
+	${BIN_NPM} run check
 	${BIN_CONSOLE} doctrine:schema:validate
 
 husky: ## Husky pre-commit hook
@@ -160,6 +161,7 @@ husky: ## Husky pre-commit hook
 	make twig_lint_no_tty
 
 format: php_lint ## Format code
+	${BIN_NPM} run format
 
 ##
 ## ----------------

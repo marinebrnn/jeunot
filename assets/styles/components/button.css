@@ -1,0 +1,42 @@
+.j-btn {
+  --tint: var(--background-action-blue);
+  --hover-tint: var(--background-action-blue-hover);
+  display: inline-block;
+  padding: calc(1.5 * var(--v)) calc(1.6 * var(--w));
+  background-color: var(--tint);
+  color: var(--text-on-background-action-blue);
+  border: none;
+  border-radius: var(--v);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.j-btn--lg {
+  padding: calc(1.6 * var(--w)) calc(2.6 * var(--w));
+}
+
+.j-btn--blank {
+  background-color: transparent;
+  color: inherit;
+  border-radius: 0;
+}
+
+/* Note: order of these declarations is important (specificity of overlapping properties). */
+
+.j-btn:not(:disabled):hover {
+  background-color: var(--hover-tint);
+}
+
+.j-btn--yellow {
+  --tint: var(--background-flat-yellow);
+  --hover-tint: var(--background-flat-yellow-hover);
+  color: var(--text-on-background-flat-yellow);
+}
+
+.j-btn--secondary {
+  --hover-tint: rgba(0, 0, 0, 0.05);
+  background-color: transparent;
+  color: var(--tint);
+  border: 1px solid var(--tint);
+}

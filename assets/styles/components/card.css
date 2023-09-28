@@ -1,0 +1,23 @@
+.j-card {
+  position: relative;
+  box-shadow: var(--shadow-default);
+  color: var(--blue-estate);
+  line-height: var(--line-height-card);
+  border-radius: calc(2 * var(--w));
+  overflow: hidden;
+}
+
+.j-card p {
+  font-size: var(--font-size-card);
+}
+
+/* Push last section of card down. */
+.j-card > :last-child {
+  margin-block-start: auto;
+}
+
+/* Elevate card on hover or if its link is focused (keyboard usage). */
+.j-card:hover,
+.j-card:focus-within {
+  box-shadow: var(--shadow-lg);
+}

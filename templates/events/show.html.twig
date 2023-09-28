@@ -1,21 +1,63 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/app.html.twig' %}
 
 {% block title %}
     {{ event.title }} - {{ parent() }}
 {% endblock %}
 
-{% block body %}
-    <h1>{{ event.title }}</h1>
-    <div>
-        {{ event.startDate|date('d/m/Y H:i') }} {{ event.endDate|date('d/m/Y H:i') }}<br/>
-        {{ event.description|raw }}
-        {{ event.location }}<br/>
-        {{ event.nbAttendees }}<br/>
-        {{ event.nbAvailablePlaces }}<br/>
-        {{ event.owner.firstName }}<br/>
-        {% if is_granted('ROLE_USER') and event.nbAvailablePlaces > 0 and not event.isLoggedUserRegisteredForEvent %}
-            <a data-testid="register-link" href="{{ path('app_event_register', { uuid: event.uuid }) }}">S'inscrire</a>
-        {% endif %}
-        {% if event.isLoggedUserRegisteredForEvent %}{{ 'events.registered'|trans }}{% endif %}
+{% block main_tag %}<main class="j-background-alt-yellow">{% endblock %}
+
+{% block main %}
+    <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <div class="j-frame" style="--frame-ratio: 16 / 9">
+            <img src="{{ asset('images/placeholder.webp') }}" alt="">
+        </div>
+        <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(3 * var(--w))">
+            <h1>{{ event.title }}</h1>
+            <div>
+                <p class="j-text-bold">
+                    {{ event.startDate|date('j F Y à H\\hi') }} - {{ event.endDate|date('j F Y à H\\hi') }}
+                </p>
+                <p class="j-text-bold">
+                    {{ event.location }}
+                </p>
+            </div>
+
+            <div>
+                {{ event.description|raw }}
+            </div>
+
+            <div>
+                {# TODO: this should be styled as a <label> #}
+                <h3>
+                    {{ 'events.detail.owner.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ event.owner.firstName }}
+                </p>
+
+            </div>
+            <p>
+                {{ 'events.detail.registrations'|trans({ '%nbAttendees%': event.nbAttendees, '%nbAvailablePlaces%': event.nbAvailablePlaces })|raw }}
+            </p>
+
+
+            {% if not app.user %}
+                <p>
+                    {{ 'events.detail.register.anonymousWarning'|trans }}
+                </p>
+            {% endif %}
+
+            {% if event.isLoggedUserRegisteredForEvent %}
+                <p>
+                    {{ 'events.registered'|trans }}
+                </p>
+            {% elseif is_granted('ROLE_USER') and event.nbAvailablePlaces > 0  %}
+                <a data-testid="register-link" class="j-btn" href="{{ path('app_event_register', { uuid: event.uuid }) }}">
+                    {{ 'events.detail.register'|trans }}
+                </a>
+            {% endif %}
+            </div>
+        </div>
     </div>
-{% endblock %}
+{% endblock main %}

@@ -1,0 +1,6 @@
+.j-container {
+  /* Define a padded container with fixed maximum width */
+  max-inline-size: var(--container-width, calc(121 * var(--w)));
+  margin-inline: auto;
+  padding-inline: var(--container-padding, calc(3 * var(--w)));
+}

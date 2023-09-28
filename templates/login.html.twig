@@ -1,41 +1,43 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/default.html.twig' %}
 
 {% block title %}
     {{ 'login.title'|trans }} - {{ parent() }}
 {% endblock %}
 
-{% block body %}
-    <h1>{{ 'login.title'|trans }}</h1>
-    <p>{{ 'login.description'|trans }}</p>
-    <form action="{{ path('app_login') }}" method="post">
-        <div>
-            <label for="email">{{ 'login.email'|trans }}</label>
-            <input type="email" autocomplete="email" id="email" required name="email" value="{{ last_username }}"/>
-        </div>
+{% block main %}
+    <div class="j-container">
+        <h1>{{ 'login.title'|trans }}</h1>
+        <p>{{ 'login.description'|trans }}</p>
+        <form action="{{ path('app_login') }}" method="post">
+            <div>
+                <label for="email">{{ 'login.email'|trans }}</label>
+                <input type="email" autocomplete="email" id="email" required name="email" value="{{ last_username }}"/>
+            </div>
 
-        <div>
-            <label for="password">{{ 'login.password'|trans }}</label>
-            <input aria-required="true" required name="password" autocomplete="current-password" id="password" type="password"/>
-        </div>
-        <a href="{{ path('app_forgot_password') }}">{{ 'login.forgot_password'|trans }}</a>
+            <div>
+                <label for="password">{{ 'login.password'|trans }}</label>
+                <input aria-required="true" required name="password" autocomplete="current-password" id="password" type="password"/>
+            </div>
+            <a href="{{ path('app_forgot_password') }}">{{ 'login.forgot_password'|trans }}</a>
 
-        {% if error %}
-            <p class="error">
-                {{ error.messageKey|trans(error.messageData, 'security') }}
-            </p>
-        {% endif %}
-        <div>
-            <label>
-                <input type="checkbox" name="_remember_me" checked />
-                {{ 'login.remember_me'|trans }}
-            </label>
-        </div>
-        <button>{{ 'login.submit'|trans }}</button>
-        <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-    </form>
-    <p>
-        {{ 'login.not_registered'|trans }}
-        <a href="{{ path('app_register') }}">{{ 'register.title'|trans }}</a>
-    </p>
-{% endblock %}
+            {% if error %}
+                <p class="error">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </p>
+            {% endif %}
+            <div>
+                <label>
+                    <input type="checkbox" name="_remember_me" checked />
+                    {{ 'login.remember_me'|trans }}
+                </label>
+            </div>
+            <button>{{ 'login.submit'|trans }}</button>
+            <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        </form>
+        <p>
+            {{ 'login.not_registered'|trans }}
+            <a href="{{ path('app_register') }}">{{ 'register.title'|trans }}</a>
+        </p>
+    </div>
+{% endblock main %}

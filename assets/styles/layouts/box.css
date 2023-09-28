@@ -1,0 +1,4 @@
+.j-box {
+  /* Define a padded box. */
+  padding: var(--box-padding, 0);
+}
