@@ -13,7 +13,7 @@ final class HomeControllerTest extends AbstractWebTestCase
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
-        $this->assertSame('HOME', $crawler->filter('h1')->text());
+        $this->assertSame('La communauté où les 60 ans et plus se rencontrent !', $crawler->filter('h1')->text());
         $this->assertMetaTitle('Jeunot', $crawler);
     }
 }

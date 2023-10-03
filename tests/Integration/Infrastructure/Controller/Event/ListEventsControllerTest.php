@@ -12,7 +12,7 @@ final class ListEventsControllerTest extends AbstractWebTestCase
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/events?pageSize=20');
-        $li = $crawler->filter('ul > li');
+        $li = $crawler->filter('main ul.j-raw-list > li');
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
@@ -28,7 +28,7 @@ final class ListEventsControllerTest extends AbstractWebTestCase
     {
         $client = $this->login();
         $crawler = $client->request('GET', '/events?pageSize=20');
-        $li = $crawler->filter('ul > li');
+        $li = $crawler->filter('main ul.j-raw-list > li');
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();

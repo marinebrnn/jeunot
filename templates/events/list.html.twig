@@ -22,7 +22,10 @@
             {% for event in paginatedEvents.items %}
                 <li class="j-card" is="j-card-li">
                     <div class="j-frame" style="--frame-ratio: 10 / 7">
-                        <img src="{{ asset('images/placeholder.webp') }}" alt="">
+                        <figure>
+                            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+                            <figcaption>{{ event.location }}</figcaption>
+                        </figure>
                     </div>
                     <div class="j-box" style="--box-padding: calc(2 * var(--w))">
                         <p>
