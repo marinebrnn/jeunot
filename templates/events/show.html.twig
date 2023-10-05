@@ -9,7 +9,7 @@
 {% block main %}
     <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
         <div class="j-frame" style="--frame-ratio: 16 / 9">
-            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+            <img src="{{ asset('images/placeholder.webp') }}" alt="" />
         </div>
         <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(3 * var(--w))">
             <h1>{{ event.title }}</h1>
@@ -27,7 +27,6 @@
             </div>
 
             <div>
-                {# TODO: this should be styled as a <label> #}
                 <h3>
                     {{ 'events.detail.owner.title'|trans }}
                 </h3>
@@ -35,12 +34,11 @@
                 <p>
                     {{ event.owner.firstName }}
                 </p>
-
             </div>
+
             <p>
                 {{ 'events.detail.registrations'|trans({ '%nbAttendees%': event.nbAttendees, '%nbAvailablePlaces%': event.nbAvailablePlaces })|raw }}
             </p>
-
 
             {% if not app.user %}
                 <p>

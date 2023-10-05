@@ -33,5 +33,5 @@
   padding: calc(var(--v) / 2) var(--v);
   color: var(--blue-estate);
   background: var(--blue-pastel1);
-  font-weight: var(--font-weight-semi-bold);
+  font-weight: var(--font-weight-bold);
 }
