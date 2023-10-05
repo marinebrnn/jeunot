@@ -1,0 +1,17 @@
+.j-text-small {
+  font-size: var(--font-size-sm);
+}
+
+.j-text-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.j-text-yellow {
+  color: var(--uri-yellow);
+}
+
+.j-text-display,
+.j-text-display p {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+}

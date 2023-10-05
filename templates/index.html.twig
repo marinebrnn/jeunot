@@ -1,5 +1,28 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/default.html.twig' %}
 
-{% block body %}
-    <h1>HOME</h1>
+{% block main %}
+    <div class="j-box j-background-flat-yellow" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0">
+        <div class="j-container">
+            <div class="j-stack" style="--stack-gap: calc(3 * var(--w))">
+                <img src="{{ asset('images/logo-orange.svg') }}" width="150px" height="auto" alt="">
+
+                <h1 class="j-max-w" style="--max-w: 25ch">
+                    {{ 'common.tagline'|trans }}
+                </h1>
+
+                <div class="j-text-display j-max-w" style="--max-w: 60ch">
+                    <p>
+                        {{ 'home.jumbotron.line1'|trans }}
+                    </p>
+                    <p>
+                        {{ 'home.jumbotron.line2'|trans }}
+                    </p>
+                </div>
+
+                <a class="j-btn j-btn--lg" href="{{ path('app_register') }}">
+                    {{ 'home.jumbotron.cta'|trans }}
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,101 @@
+:root {
+  /* Spacing */
+  --v: 0.3125rem;
+  --w: 0.625rem;
+
+  /* Fonts */
+  --font-default: Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-title: var(--font-default);
+
+  --font-size-default: 1rem;
+  --line-height-default: 1.5rem;
+
+  --font-size-card: 1rem;
+  --line-height-card: 1.875rem;
+
+  --font-size-sm: 0.875rem;
+
+  --font-size-display: 1.25rem;
+  --line-height-display: 1.625rem;
+
+  --font-size-h3: 1.25rem;
+  --line-height-h3: 1.875rem;
+
+  --font-size-h2: 1.3175rem;
+  --line-height-h2: 1.625rem;
+
+  --font-size-h1: 1.875rem;
+  --line-height-h1: 2.125rem;
+
+  --font-weight-md: 500;
+  --font-weight-bold: 600;
+  --font-weight-semi-bold: 700;
+
+  /* Colors */
+  --nero: #262626;
+  --white-smoke: #f2f2f2;
+  --white: #ffffff;
+  --blue-estate: #2f3372;
+  --early-spring-night: #4b3ab6;
+  --ligh-sky-blue: #89bffa;
+  --blue-pastel1: #c3e0ff;
+  --blue-pastel2: #f3f9ff;
+  --frozen-tomato: #de5836;
+  --saffron-desires: #c6425a;
+  --mulberry: #8c0846;
+  --pink-pastel1: #ffeff2;
+  --pink-pastel2: #ffdbda;
+  --peach: #fff0e8;
+  --artisans-gold: #f1af42;
+  --uri-yellow: #ffd230;
+  --yellow-light: #ffefb6;
+  --success: #00936f;
+  --success-pastel: #cafff2;
+  /* Contextual colors */
+  --background-default: var(--white);
+  --background-default-hover: var(--white-smoke);
+  --background-alt-yellow: var(--yellow-light);
+  --background-alt-blue: var(--blue-pastel2);
+  --background-alt-pink: var(--pink-pastel1);
+  --background-alt-peach: var(--peach);
+  --background-flat-black: var(--nero);
+  --background-flat-yellow: var(--uri-yellow);
+  --background-flat-yellow-hover: var(--yellow-light);
+  --background-flat-black: var(--nero);
+  --background-flat-red: var(--mulberry);
+  --background-action-blue: var(--early-spring-night);
+  --background-action-blue-hover: var(--blue-estate);
+  --background-success: var(--success);
+  --background-alt-success: var(--success-pastel);
+  --text-default: var(--nero);
+  --text-action-blue: var(--blue-estate);
+  --text-on-background-action-blue: var(--white);
+  --text-on-background-flat-black: var(--white-smoke);
+  --text-on-background-flat-yellow: var(--nero);
+
+  /* Borders */
+  --border-action-blue: var(--early-spring-night);
+
+  /* Shadows */
+  --shadow-default: 0px 0px 20px 0px #49495a26;
+  --shadow-lg: 0px 10px 20px 10px #49495a26;
+}
+
+@media screen and (min-width: 900px) {
+  :root {
+    --font-size-default: 1.25rem;
+    --line-height-default: 1.625rem;
+
+    --font-size-display: 1.5rem;
+    --line-height-display: 2rem;
+
+    /* -- h3 is unchanged -- */
+
+    --font-size-h2: 2.25rem;
+    --line-height-h2: 2.56rem;
+
+    --font-size-h1: 3rem;
+    --line-height-h1: 3.42rem;
+  }
+}

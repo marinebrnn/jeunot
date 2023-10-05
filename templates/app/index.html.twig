@@ -1,9 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/app.html.twig' %}
 
 {% block title %}
     DASHBOARD - {{ parent() }}
 {% endblock %}
 
-{% block body %}
-    <h1>DASHBOARD</h1>
-{% endblock %}
+{% block main %}
+    <div class="j-box j-background-flat-yellow" style="--box-padding: calc(3 * var(--w)) 0">
+        <div class="j-container">
+            <h1>DASHBOARD</h1>
+        </div>
+    </div>
+{% endblock main %}

@@ -1,20 +1,51 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/default.html.twig' %}
 
 {% block title %}
     {{ 'events.title'|trans }} - {{ parent() }}
 {% endblock %}
 
-{% block body %}
-    <h1>{{ 'events.title'|trans }}</h1>
-    <ul>
-        {% for event in paginatedEvents.items %}
-            <li>
-                <a href="{{ path('app_event_show', { uuid: event.uuid } )}}">
-                    {{ event.title }} - {{ event.location }} - {{ event.startDate|date('d/m/Y') }}<br/>
-                    {{ 'events.list.attendee'|trans({'%count%' : event.nbAttendees }) }}
-                    {% if event.isLoggedUserRegisteredForEvent %} - {{ 'events.registered'|trans }}{% endif %}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+{% block main %}
+    <div class="j-box j-background-flat-yellow" style="--box-padding: calc(3 * var(--w)) 0">
+        <div class="j-container">
+            <h1>{{ 'events.title'|trans }}</h1>
+            <div class="j-text-display">
+                <p>{{ 'events.jumbotron.line1'|trans }}</p>
+                <p>{{ 'events.jumbotron.line2'|trans }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="j-container j-box" style="--box-padding: calc(6 * var(--w)) 0">
+        <h2>{{ 'events.next_events.title'|trans }}</h2>
+
+        <ul class="j-raw-list j-grid" style="--grid-item-min: 340px">
+            {% for event in paginatedEvents.items %}
+                <li class="j-card" is="j-card-li">
+                    <div class="j-frame" style="--frame-ratio: 10 / 7">
+                        <figure>
+                            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+                            <figcaption>{{ event.location }}</figcaption>
+                        </figure>
+                    </div>
+                    <div class="j-box" style="--box-padding: calc(2 * var(--w))">
+                        <p>
+                            {{ event.startDate|date('d/m/Y') }}
+                        </p>
+                        <h3>
+                            <a href="{{ path('app_event_show', { uuid: event.uuid } )}}" data-card-li-target="link">
+                                {{ event.title }}
+                            </a>
+                        </h3>
+                        <div class="j-cluster" style="--cluster-justify: space-between">
+                            <small>
+                                {{ 'events.list.attendee'|trans({'%count%' : event.nbAttendees }) }}
+                                {% if event.isLoggedUserRegisteredForEvent %} - {{ 'events.registered'|trans }}{% endif %}
+                            </small>
+                            {% include 'common/icons/arrow-right-big.svg.twig' %}
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock main %}

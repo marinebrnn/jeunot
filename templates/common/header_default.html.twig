@@ -1,0 +1,57 @@
+<header class="j-header">
+    <button class="j-btn j-btn--blank j-header-hamburger" title="{{ 'nav.menu.open'|trans }}"></button>
+
+    <a class="j-header-brand" href="{{ path('app_home') }}" title="{{ 'nav.brand.title'|trans }}">
+        <img src="{{ asset('images/logo-moutarde.svg') }}">
+    </a>
+
+    <nav aria-label="{{ 'nav.title'|trans }}">
+        <ul class="j-raw-list j-cluster" style="--cluster-gap: calc(2 * var(--w))">
+            <li>
+                <a href="{{ path('app_home') }}" {% if app.current_route == 'app_home' %}aria-current="page"{% endif %}>
+                    {{ 'nav.home'|trans }}
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_events_list') }}" {% if app.current_route == 'app_events_list' %}aria-current="page"{% endif %}>
+                    {{ 'nav.events'|trans }}
+                </a>
+            </li>
+        </ul>
+
+        <hr>
+
+        <ul class="j-raw-list j-cluster" style="--cluster-gap: calc(2 * var(--w))">
+            <li>
+                <a class="j-btn" href="{{ path('app_login') }}">
+                    {{ 'nav.login'|trans }}
+                </a>
+            </li>
+            <li>
+                <a class="j-btn j-btn--secondary" href="{{ path('app_register') }}">
+                    {{ 'nav.register'|trans }}
+                </a>
+            </li>
+        </ul>
+
+        <hr>
+
+        <ul class="j-raw-list j-cluster" data-mobile-only style="--cluster-gap: calc(2 * var(--w))">
+            <li>
+                <a href="#">
+                    Aide
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Politique de confidentialité
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Conditions générales d'utilisation
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

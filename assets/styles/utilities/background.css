@@ -1,0 +1,11 @@
+.j-background-default {
+  background-color: var(--background-default);
+}
+
+.j-background-alt-yellow {
+  background-color: var(--background-alt-yellow);
+}
+
+.j-background-flat-yellow {
+  background-color: var(--background-flat-yellow);
+}

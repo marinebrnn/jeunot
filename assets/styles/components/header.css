@@ -1,0 +1,84 @@
+.j-header {
+  --direction: column;
+  position: relative;
+  display: flex;
+  flex-direction: var(--direction);
+  gap: calc(2 * var(--w));
+  background-color: var(--background-default);
+  z-index: 1;
+  box-shadow: var(--shadow-default);
+  padding: calc(2 * var(--w));
+}
+
+.j-header-brand img {
+  height: calc(5 * var(--w));
+  /* Center on mobile */
+  margin-inline: auto;
+}
+
+.j-header nav {
+  display: flex;
+  flex-direction: var(--direction);
+  gap: calc(2 * var(--w));
+}
+
+.j-header nav a:not(.j-btn) {
+  padding: var(--w);
+}
+
+.j-header nav a[aria-current="page"],
+.j-header nav a:not(.j-btn):hover,
+.j-header nav a:not(.j-btn):focus {
+  text-decoration: underline;
+  text-decoration-color: var(--frozen-tomato);
+  text-underline-offset: var(--w);
+}
+
+.j-header-hamburger {
+  --size: 1.5rem;
+  /* Stick it in the top-left corner. */
+  position: absolute;
+  width: calc(1.2 * var(--size));
+  height: var(--size);
+  top: calc(2.5 * var(--w));
+  left: calc(2 * var(--w));
+  /* Draw the 3-bar hamburger */
+  background: linear-gradient(
+    to bottom,
+    var(--border-action-blue),
+    var(--border-action-blue) 10%,
+    white 10%,
+    white 45%,
+    var(--border-action-blue) 45%,
+    var(--border-action-blue) 55%,
+    white 55%,
+    white 90%,
+    var(--border-action-blue) 90%,
+    var(--border-action-blue) 100%
+  );
+}
+
+@media screen and (min-width: 950px) {
+  .j-header {
+    --direction: row;
+    justify-content: space-between;
+  }
+
+  .j-header nav {
+    align-items: center;
+  }
+
+  .j-header-brand {
+    /* Allow to grow slightly on desktop so that there is additional spacing on the left of the logo. */
+    flex-grow: 0.2;
+  }
+
+  .j-header-brand img {
+    height: calc(7 * var(--w));
+  }
+
+  .j-header-hamburger,
+  .j-header nav [data-mobile-only] {
+    display: none;
+  }
+}

@@ -1,14 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/default.html.twig' %}
 
 {% block title %}
     {{ 'register.succeeded.title'|trans }} - {{ parent() }}
 {% endblock %}
 
-{% block body %}
-    <h1>{{ 'register.succeeded.title'|trans }}</h1>
-    <p>{{ 'register.succeeded.description'|trans }}</p>
-    <p>{{ 'register.succeeded.email_not_received'|trans }}</p>
-    <form method="POST" action="{{ path('app_resend_confirmation_mail', { email }) }}">
-        <button type="submit">{{ 'register.succeeded.send_link'|trans }}</button>
-    </form>
-{% endblock %}
+{% block main %}
+    <div class="j-container">
+        <h1>{{ 'register.succeeded.title'|trans }}</h1>
+        <p>{{ 'register.succeeded.description'|trans }}</p>
+        <p>{{ 'register.succeeded.email_not_received'|trans }}</p>
+        <form method="POST" action="{{ path('app_resend_confirmation_mail', { email }) }}">
+            <button type="submit">{{ 'register.succeeded.send_link'|trans }}</button>
+        </form>
+    </div>
+{% endblock main %}

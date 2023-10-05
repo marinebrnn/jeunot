@@ -1,0 +1,80 @@
+body {
+  background-color: var(--background-default);
+  color: var(--text-default);
+  font-family: var(--font-default);
+  font-size: var(--font-size-default);
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+footer {
+  flex-grow: 1;
+  background-color: var(--background-flat-black);
+  color: var(--text-on-background-flat-black);
+}
+
+footer #footer-nav > ul li:not(:last-child)::after {
+  content: "|";
+  margin-inline: calc(1.5 * var(--v));
+}
+
+footer hr {
+  border-top: 2px dashed currentColor;
+}
+
+h1,
+h2,
+h3,
+.j-h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-action-blue);
+  /*
+  NOTE: 'em' is relative to the font size (as opposed to 'rem'),
+  so the effective margin will grow with each header level.
+  */
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+}
+
+h3,
+.j-h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+}
+
+p {
+  font-size: var(--font-size-default);
+  line-height: var(--line-height-default);
+}
+
+/* Add margin *between* paragraphs. */
+p:not(:last-of-type) {
+  margin-block-end: calc(2 * var(--w));
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+a {
+  font-weight: var(--font-weight-bold);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--artisans-gold);
+}
