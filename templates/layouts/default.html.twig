@@ -1,0 +1,11 @@
+{% extends 'layouts/_base.html.twig' %}
+
+{% block body %}
+    {% include 'common/header_default.html.twig' %}
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    {% include 'common/footer.html.twig' %}
+{% endblock body %}

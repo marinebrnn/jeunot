@@ -1,0 +1,41 @@
+{% set mainPath = app.user ? 'app_regulations_list' : 'app_landing' %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{{ 'common.title'|trans }}{% endblock %}</title>
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+  </head>
+
+  <body data-controller="grid-observer" data-grid-observer-grid-outlet=".j-grid">
+    {% for label, messages in app.flashes %}
+        {% if loop.first %}<div class="fr-container">{% endif %}
+        {% for message in messages %}
+            <div class="alert--{{ label }}">
+                {{ message|raw }}
+            </div>
+        {% endfor %}
+        {% if loop.last %}</div>{% endif %}
+    {% endfor %}
+
+    {% if app.user and app.current_route != 'app_home' %}
+        {% include 'common/header_app.html.twig' %}
+    {% else %}
+        {% include 'common/header_default.html.twig' %}
+    {% endif %}
+
+    {% block main_tag %}<main>{% endblock %}
+        {% block main %}{% endblock %}
+    </main>
+
+    {% include 'common/footer.html.twig' %}
+  </body>
+</html>
