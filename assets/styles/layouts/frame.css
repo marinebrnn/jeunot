@@ -5,22 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-.j-frame > figure > img {
+.j-frame > img {
   /* Cover entire frame, image will be scaled if necessary */
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
-}
-
-.j-frame > figure > figcaption {
-  position: absolute;
-  bottom: calc(2 * var(--w));
-  padding: calc(var(--v) / 2) var(--v);
-  right: 0;
-  color: var(--blue-estate);
-  background: var(--blue-pastel1);
-  font-weight: var(--font-weight-semi-bold);
 }

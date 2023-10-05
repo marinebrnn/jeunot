@@ -21,12 +21,12 @@
         <ul class="j-raw-list j-grid" style="--grid-item-min: 340px">
             {% for event in paginatedEvents.items %}
                 <li class="j-card" is="j-card-li">
-                    <div class="j-frame" style="--frame-ratio: 10 / 7">
-                        <figure>
+                    <figure>
+                        <div class="j-frame" style="--frame-ratio: 10 / 7">
                             <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
-                            <figcaption>{{ event.location }}</figcaption>
-                        </figure>
-                    </div>
+                        </div>
+                        <figcaption>{{ event.location }}</figcaption>
+                    </figure>
                     <div class="j-box" style="--box-padding: calc(2 * var(--w))">
                         <p>
                             {{ event.startDate|date('d/m/Y') }}
