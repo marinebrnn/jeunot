@@ -8,5 +8,6 @@
     <div class="j-container">
         <h1>{{ 'events.register.succeded.title'|trans }} !</h1>
         <p>{{ 'events.register.succeded.detail'|trans({ '%title%': event.title }) }}</p>
+        {% include 'events/_unregistration_form.html.twig' with { event } only %}
     </div>
 {% endblock main %}

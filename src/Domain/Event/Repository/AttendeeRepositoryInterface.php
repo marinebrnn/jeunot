@@ -15,4 +15,8 @@ interface AttendeeRepositoryInterface
     public function countByEvent(Event $event): int;
 
     public function countByEventAndUser(Event $event, User $user): int;
+
+    public function findOneByEventAndUser(Event $event, User $user): ?Attendee;
+
+    public function delete(Attendee $attendee): void;
 }

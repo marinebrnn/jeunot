@@ -6,7 +6,7 @@ namespace App\Tests\Integration\Infrastructure\Controller\Event;
 
 use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
 
-final class ShowEventControllerTest extends AbstractWebTestCase
+final class DetailEventControllerTest extends AbstractWebTestCase
 {
     public function testEvent(): void
     {
@@ -29,7 +29,7 @@ final class ShowEventControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
         $this->assertSame('Balade à vélo en tandem', $crawler->filter('h1')->text());
-        $this->assertSame('Balade à vélo en tandem 14 September 2023 à 20h00 - 14 September 2023 à 21h00 Paris Lorem ipsum Cet événement est organisé par Mathieu 2 inscrits - 0 places disponibles Inscrit·e !', $crawler->filter('div')->text());
+        $this->assertSame('Balade à vélo en tandem 14 September 2023 à 20h00 - 14 September 2023 à 21h00 Paris Lorem ipsum Cet événement est organisé par Mathieu 2 inscrits - 0 places disponibles Inscrit·e ! Annuler mon inscription', $crawler->filter('div')->text());
         $this->assertSame(0, $crawler->filter('[data-testid="register-link"]')->count()); // No register link
     }
 

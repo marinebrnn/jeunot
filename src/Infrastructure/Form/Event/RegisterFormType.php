@@ -21,6 +21,9 @@ final class RegisterFormType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'events.register.submit',
+                'attr' => [
+                    'class' => 'j-btn',
+                ],
             ])
         ;
     }

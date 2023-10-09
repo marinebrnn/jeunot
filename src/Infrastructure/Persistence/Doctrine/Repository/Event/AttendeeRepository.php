@@ -48,4 +48,23 @@ final class AttendeeRepository extends ServiceEntityRepository implements Attend
             ->getQuery()
             ->getSingleScalarResult();
     }
+
+    public function findOneByEventAndUser(Event $event, User $user): ?Attendee
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.event = :event')
+            ->andWhere('a.user = :user')
+            ->setParameters([
+                'user' => $user,
+                'event' => $event,
+            ])
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+    public function delete(Attendee $attendee): void
+    {
+        $this->getEntityManager()->remove($attendee);
+    }
 }

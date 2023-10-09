@@ -9,7 +9,7 @@
 {% block main %}
     <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
         <div class="j-frame" style="--frame-ratio: 16 / 9">
-            <img src="{{ asset('images/placeholder.webp') }}" alt="" />
+            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
         </div>
         <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(3 * var(--w))">
             <h1>{{ event.title }}</h1>
@@ -50,12 +50,12 @@
                 <p>
                     {{ 'events.registered'|trans }}
                 </p>
+                {% include 'events/_unregistration_form.html.twig' with { event } only %}
             {% elseif is_granted('ROLE_USER') and event.nbAvailablePlaces > 0  %}
                 <a data-testid="register-link" class="j-btn" href="{{ path('app_event_register', { uuid: event.uuid }) }}">
                     {{ 'events.detail.register'|trans }}
                 </a>
             {% endif %}
-            </div>
         </div>
     </div>
 {% endblock main %}

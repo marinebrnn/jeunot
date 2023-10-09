@@ -34,6 +34,11 @@
   color: var(--text-on-background-flat-yellow);
 }
 
+.j-btn--mulberry {
+  --tint: var(--background-mulberry);
+  --hover-tint: var(--background-mulberry);
+}
+
 .j-btn--secondary {
   --hover-tint: rgba(0, 0, 0, 0.05);
   background-color: transparent;

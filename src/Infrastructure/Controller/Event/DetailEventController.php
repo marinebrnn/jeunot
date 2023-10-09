@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
 
-final readonly class ShowEventController
+final readonly class DetailEventController
 {
     public function __construct(
         private \Twig\Environment $twig,
@@ -39,7 +39,7 @@ final readonly class ShowEventController
 
         return new Response(
             content: $this->twig->render(
-                name: 'events/show.html.twig',
+                name: 'events/detail.html.twig',
                 context : [
                     'event' => $event,
                 ],
