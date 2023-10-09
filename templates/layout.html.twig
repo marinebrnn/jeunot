@@ -27,9 +27,9 @@
     {% endfor %}
 
     {% if app.user and app.current_route != 'app_home' %}
-        {% include 'common/header_app.html.twig' %}
+        {% include 'common/header_authenticated.html.twig' %}
     {% else %}
-        {% include 'common/header_default.html.twig' %}
+        {% include 'common/header_anonymous.html.twig' %}
     {% endif %}
 
     {% block main_tag %}<main>{% endblock %}

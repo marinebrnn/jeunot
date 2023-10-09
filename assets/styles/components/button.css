@@ -16,10 +16,15 @@
   padding: calc(1.6 * var(--w)) calc(2.6 * var(--w));
 }
 
-.j-btn--blank {
-  background-color: transparent;
-  color: inherit;
-  border-radius: 0;
+.j-btn--icon {
+  --tint: transparent;
+  --hover-tint: transparent;
+  color: var(--text-action-blue);
+}
+
+.j-btn--icon > svg {
+  min-width: var(--btn-icon-size, 24px);
+  min-height: var(--btn-icon-size, 24px);
 }
 
 /* Note: order of these declarations is important (specificity of overlapping properties). */

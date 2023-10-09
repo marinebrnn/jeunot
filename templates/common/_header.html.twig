@@ -1,0 +1,48 @@
+<header class="j-header">
+    <div class="j-header-brand-container">
+        <button id="mobile-menu-trigger" class="j-btn j-btn--icon j-header-brand-menu-btn j-header-brand-left" aria-label="{{ 'nav.mobile.open'|trans }}">
+            {% include 'common/icons/menu.svg.twig' %}
+        </button>
+
+        {% block brand %}
+            <a class="j-header-brand" href="{{ brand_url }}" title="{{ 'nav.brand.title'|trans }}">
+                <img src="{{ asset('images/logo-moutarde.svg') }}">
+            </a>
+        {% endblock %}
+    </div>
+
+    <div class="j-header-desktop-menu">
+        <nav aria-label="{{ 'nav.title'|trans }}" class="j-nav">
+            {% block nav_content %}{% endblock %}
+        </nav>
+    </div>
+</header>
+
+<dialog
+    is="j-dialog"
+    data-dialog-trigger="#mobile-menu-trigger"
+    data-dialog-closed="true"
+    class="j-header-mobile-menu j-fullscreen j-box j-stack"
+    style="--box-padding: var(--w)"
+    tabindex="-1"
+    aria-modal="true"
+    aria-label="{{ 'nav.mobile.title'|trans }}"
+>
+    <form method="dialog" class="j-header-brand-container">
+        <button value="close" class="j-btn j-btn--icon j-header-brand-left" aria-label="{{ 'nav.mobile.close'|trans }}">
+            {% include 'common/icons/close.svg.twig' %}
+        </button>
+
+        <a class="j-header-brand" href="{{ brand_url }}" title="{{ 'nav.brand.title'|trans }}">
+            <img src="{{ asset('images/logo-moutarde.svg') }}">
+        </a>
+
+        <button disabled class="j-btn j-btn--icon j-header-brand-right" aria-label="{{ 'nav.mobile.search'|trans }}">
+            {% include 'common/icons/search.svg.twig' %}
+        </button>
+    </form>
+
+    <nav aria-label="{{ 'nav.title'|trans }}" class="j-nav">
+        {{ block('nav_content') }}
+    </nav>
+</dialog>

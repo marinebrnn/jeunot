@@ -18,9 +18,21 @@
                 <source>nav.title</source>
                 <target>Navigation principale</target>
             </trans-unit>
-            <trans-unit id="nav.menu.open">
-                <source>nav.menu.open</source>
+            <trans-unit id="nav.mobile.open">
+                <source>nav.mobile.open</source>
                 <target>Ouvrir le menu</target>
+            </trans-unit>
+            <trans-unit id="nav.mobile.title">
+                <source>nav.mobile.title</source>
+                <target>Navigation principale</target>
+            </trans-unit>
+            <trans-unit id="nav.mobile.close">
+                <source>nav.mobile.close</source>
+                <target>Fermer la navigation</target>
+            </trans-unit>
+            <trans-unit id="nav.mobile.search">
+                <source>nav.mobile.search</source>
+                <target>Rechercher</target>
             </trans-unit>
             <trans-unit id="nav.home">
                 <source>nav.home</source>
@@ -38,8 +50,8 @@
                 <source>nav.register</source>
                 <target>Créer un compte</target>
             </trans-unit>
-            <trans-unit id="nav.my_space">
-                <source>nav.my_space</source>
+            <trans-unit id="nav.dashboard">
+                <source>nav.dashboard</source>
                 <target>Mon espace</target>
             </trans-unit>
             <trans-unit id="nav.logout">

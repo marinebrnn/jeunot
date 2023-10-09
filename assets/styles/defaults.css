@@ -78,3 +78,8 @@ hr {
   border: none;
   border-top: 1px solid var(--artisans-gold);
 }
+
+dialog {
+  border: none;
+  padding: 0;
+}
