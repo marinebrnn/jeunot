@@ -8,7 +8,7 @@ final class HomeControllerTest extends AbstractWebTestCase
 {
     public function testHome(): void
     {
-        $client = $this->login();
+        $client = static::createClient();
         $crawler = $client->request('GET', '/');
 
         $this->assertResponseStatusCodeSame(200);

@@ -118,4 +118,15 @@ final class RegisterControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(422);
         $this->assertSame('Un compte est déjà associé à cette adresse e-mail.', $crawler->filter('#register_user_form_email_error')->text());
     }
+
+    public function testLoggedRegister(): void
+    {
+        $client = $this->login();
+        $client->request('GET', '/register');
+
+        $this->assertResponseStatusCodeSame(302);
+        $client->followRedirect();
+        $this->assertResponseStatusCodeSame(200);
+        $this->assertRouteSame('app_dashboard');
+    }
 }

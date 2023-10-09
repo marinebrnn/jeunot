@@ -26,6 +26,16 @@
         {% if loop.last %}</div>{% endif %}
     {% endfor %}
 
-    {% block body %}{% endblock %}
+    {% if app.user and app.current_route != 'app_home' %}
+        {% include 'common/header_app.html.twig' %}
+    {% else %}
+        {% include 'common/header_default.html.twig' %}
+    {% endif %}
+
+    {% block main_tag %}<main>{% endblock %}
+        {% block main %}{% endblock %}
+    </main>
+
+    {% include 'common/footer.html.twig' %}
   </body>
 </html>

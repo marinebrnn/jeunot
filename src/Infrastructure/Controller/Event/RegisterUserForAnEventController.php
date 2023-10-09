@@ -64,7 +64,7 @@ final readonly class RegisterUserForAnEventController
             } catch (UserCannotRegisterToEventException) {
                 $session->getFlashBag()->add('error', $this->translator->trans('events.register.failed'));
 
-                return new RedirectResponse($this->urlGenerator->generate('app_event_show', ['uuid' => $uuid]));
+                return new RedirectResponse($this->urlGenerator->generate('app_events_detail', ['uuid' => $uuid]));
             }
 
             return new RedirectResponse($this->urlGenerator->generate('app_event_register_succeeded', ['uuid' => $uuid]));
