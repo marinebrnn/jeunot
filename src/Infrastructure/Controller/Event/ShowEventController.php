@@ -24,7 +24,7 @@ final readonly class ShowEventController
 
     #[Route(
         '/events/{uuid}',
-        name: 'app_event_show',
+        name: 'app_events_detail',
         requirements: ['uuid' => Requirement::UUID],
         methods: ['GET'],
     )]

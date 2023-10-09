@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ path('app_events_list') }}" {% if app.current_route == 'app_events_list' %}aria-current="page"{% endif %}>
+                <a href="{{ path('app_events_list') }}" {% if app.current_route starts with 'app_events' %}aria-current="page"{% endif %}>
                     {{ 'nav.events'|trans }}
                 </a>
             </li>
