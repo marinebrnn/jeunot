@@ -34,7 +34,7 @@ final class RegisterUserForAnEventControllerTest extends AbstractWebTestCase
 
         $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
-        $this->assertRouteSame('app_event_register_succeeded');
+        $this->assertRouteSame('app_events_register_succeeded');
     }
 
     public function testFullyBookedEvent(): void

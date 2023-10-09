@@ -286,6 +286,14 @@
                 <source>events.register.comment</source>
                 <target>Commentaire</target>
             </trans-unit>
+            <trans-unit id="events.cancel_registration">
+                <source>events.cancel_registration</source>
+                <target>Annuler mon inscription</target>
+            </trans-unit>
+            <trans-unit id="events.cancel_registration.success">
+                <source>events.cancel_registration.success</source>
+                <target>Votre désinscription a bien été prise en compte !</target>
+            </trans-unit>
             <trans-unit id="events.register.comment.help">
                 <source>events.register.comment.help</source>
                 <target>Si vous avez une remarque, une question, un besoin, vous pouvez le communiquer à l’origanisateur ici. A noter que les organisateurs sont des bénévoles.</target>

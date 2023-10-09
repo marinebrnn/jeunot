@@ -27,7 +27,7 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/app, roles: ROLE_USER }
-        - { path: ^/events/.*/register, roles: ROLE_USER }
+        - { path: ^/events/.*/register|unregister, roles: ROLE_USER }
         - { path: ^/, roles: PUBLIC_ACCESS }
 
     role_hierarchy:

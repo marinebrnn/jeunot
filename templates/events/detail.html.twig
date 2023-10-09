@@ -50,28 +50,12 @@
                 <p>
                     {{ 'events.registered'|trans }}
                 </p>
+                {% include 'events/_unregistration_form.html.twig' with { event } only %}
             {% elseif is_granted('ROLE_USER') and event.nbAvailablePlaces > 0  %}
                 <a data-testid="register-link" class="j-btn" href="{{ path('app_event_register', { uuid: event.uuid }) }}">
                     {{ 'events.detail.register'|trans }}
                 </a>
             {% endif %}
-
-            <form
-                method="delete"
-                action="{{ path('app_event_unregister', {uuid:event.uuid}) }}">
-                    {% if errors is defined %}
-                        <ul class="errors">
-                            {% for error in errors %}
-                                <li>{{ error }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                    <button>
-                        Annuler mon inscription
-                    </button>
-                    <input type="hidden" name="token" value="{{ deleteCsrfToken }}">
-            </form>
-            </div>
         </div>
     </div>
 {% endblock main %}

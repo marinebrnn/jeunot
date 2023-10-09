@@ -24,7 +24,7 @@ final readonly class RegisterUserForAnEventSucceededController
 
     #[Route(
         '/events/{uuid}/register/succeeded',
-        name: 'app_event_register_succeeded',
+        name: 'app_events_register_succeeded',
         requirements: ['uuid' => Requirement::UUID],
         methods: ['GET'],
     )]

@@ -67,7 +67,7 @@ final readonly class RegisterUserForAnEventController
                 return new RedirectResponse($this->urlGenerator->generate('app_events_detail', ['uuid' => $uuid]));
             }
 
-            return new RedirectResponse($this->urlGenerator->generate('app_event_register_succeeded', ['uuid' => $uuid]));
+            return new RedirectResponse($this->urlGenerator->generate('app_events_register_succeeded', ['uuid' => $uuid]));
         }
 
         return new Response(
