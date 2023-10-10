@@ -97,6 +97,19 @@ class Event
         return $this->picture;
     }
 
+    public function getPictureUrl(): ?string
+    {
+        if (!$this->picture) {
+            return null;
+        }
+
+        if (strpos($this->picture, '/') !== false) {
+            return $this->picture;
+        }
+
+        return sprintf('/uploads/events/%s', $this->picture);
+
+    }
     public function setPicture(string $picture): void
     {
         $this->picture = $picture;

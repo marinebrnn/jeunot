@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -40,6 +41,10 @@ final class EventCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            ImageField::new('picture')
+                ->setBasePath('uploads/events')
+                ->setUploadDir('public/uploads/events')
+                ->setUploadedFileNamePattern('[slug]-[contenthash].[extension]'),
             TextField::new('title')
                 ->setLabel($this->translator->trans('admin.events.form.title', [], 'admin')),
             TextEditorField::new('description')

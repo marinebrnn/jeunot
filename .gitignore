@@ -38,3 +38,4 @@ test-results/
 playwright-report/
 playwright/
 ###< playwright ###
+public/uploads

@@ -1,0 +1,24 @@
+# Read the documentation at https://github.com/thephpleague/flysystem-bundle/blob/master/docs/1-getting-started.md
+services:
+    scaleway_spaces_client:
+        class: 'AsyncAws\S3\S3Client'
+        arguments:
+            -  endpoint: '%env(SCALEWAY_SPACES_ENDPOINT)%'
+               accessKeyId: '%env(SCALEWAY_SPACES_ID)%'
+               accessKeySecret: '%env(SCALEWAY_SPACES_SECRET)%'
+
+flysystem:
+    storages:
+        uploads.storage.s3:
+            adapter: 'asyncaws'
+            options:
+                client: 'scaleway_spaces_client'
+                bucket: '%env(SCALEWAY_SPACES_BUCKET)%'
+        uploads.storage.local:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/public/uploads'
+        uploads.storage:
+            adapter: 'lazy'
+            options:
+                source: '%env(APP_UPLOADS_SOURCE)%'
