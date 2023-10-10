@@ -21,6 +21,7 @@ final class GetActiveEventsQueryHandler
             $query->pageSize,
             $query->page,
             $query->loggedUserUuid,
+            $query->displayOnlyLoggedUserEvents,
         );
 
         $views = [];
@@ -31,7 +32,7 @@ final class GetActiveEventsQueryHandler
                 location: $event['location'],
                 nbAttendees: $event['nbAttendees'],
                 startDate: $event['startDate'],
-                isLoggedUserRegisteredForEvent: !empty($event['isLoggedUserRegisteredForEvent']) ? true : false,
+                isLoggedUserRegisteredForEvent: $query->displayOnlyLoggedUserEvents || !empty($event['isLoggedUserRegisteredForEvent']) ? true : false,
                 picture: $event['picture'],
             );
         }

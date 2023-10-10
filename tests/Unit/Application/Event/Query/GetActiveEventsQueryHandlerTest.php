@@ -21,6 +21,7 @@ final class GetActiveEventsQueryHandlerTest extends TestCase
         $eventRepository
             ->expects(self::once())
             ->method('findActiveEvents')
+            ->with(20, 1, null, false)
             ->willReturn([
                 'count' => 3,
                 'events' => [
@@ -95,12 +96,60 @@ final class GetActiveEventsQueryHandlerTest extends TestCase
         );
     }
 
+    public function testLoggedUserEvents(): void
+    {
+        $startDate = new \DateTime('2023-09-13 09:00:00');
+
+        $eventRepository = $this->createMock(EventRepositoryInterface::class);
+        $eventRepository
+            ->expects(self::once())
+            ->method('findActiveEvents')
+            ->with(6, 1, '475d9b57-af6b-4e9e-892c-00133591c7db', true)
+            ->willReturn([
+                'count' => 1,
+                'events' => [
+                    [
+                        'uuid' => '018a8e0b-ad0a-711d-becc-f963913de524',
+                        'title' => 'Balade et pique-nique en forêt de Chevreuse',
+                        'location' => 'Saint Remy les Chevreuses',
+                        'picture' => null,
+                        'nbAttendees' => 0,
+                        'startDate' => $startDate,
+                    ],
+                ],
+            ]);
+
+        $query = new GetActiveEventsQuery(1, 6, '475d9b57-af6b-4e9e-892c-00133591c7db', true);
+        $handler = new GetActiveEventsQueryHandler($eventRepository);
+
+        $this->assertEquals(
+            new Pagination(
+                [
+                    new SummarizedEventView(
+                        uuid: '018a8e0b-ad0a-711d-becc-f963913de524',
+                        title: 'Balade et pique-nique en forêt de Chevreuse',
+                        location: 'Saint Remy les Chevreuses',
+                        picture: null,
+                        nbAttendees: 0,
+                        startDate: $startDate,
+                        isLoggedUserRegisteredForEvent: true,
+                    ),
+                ],
+                1,
+                1,
+                6,
+            ),
+            ($handler)($query),
+        );
+    }
+
     public function testEmptyList(): void
     {
         $eventRepository = $this->createMock(EventRepositoryInterface::class);
         $eventRepository
             ->expects(self::once())
             ->method('findActiveEvents')
+            ->with(20, 1, null, false)
             ->willReturn([
                 'count' => 0,
                 'events' => [],

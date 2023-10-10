@@ -1,13 +1,38 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-    DASHBOARD - {{ parent() }}
+    {{ 'my_space.title'|trans }} - {{ parent() }}
 {% endblock %}
 
 {% block main %}
-    <div class="j-box j-background-flat-yellow" style="--box-padding: calc(3 * var(--w)) 0">
+    <div class="j-box j-background-mulberry" style="--box-padding: calc(6 * var(--w))">
         <div class="j-container">
-            <h1>DASHBOARD</h1>
+            <h1 class="j-text-white">{{ 'my_space.welcome'|trans({'%firstName%': app.user.firstName }) }}</h1>
+            <div class="j-text-display j-text-white">
+                <p>{{ 'my_space.description'|trans }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="j-container j-box" style="--box-padding: calc(6 * var(--w)) 0">
+        <h2>{{ 'my_space.upcoming_events'|trans }}</h2>
+        <ul class="j-raw-list j-grid" style="--grid-item-min: 340px" data-testid="event-list">
+            {% for event in paginatedEvents.items %}
+                {% include 'events/_card.html.twig' with { event } only %}
+            {% endfor %}
+        </ul>
+        <div class="j-center" style="--box-margin: calc(3 * var(--w)) 0 0 0">
+            <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
+                {{ 'my_space.upcoming_events.see_more'|trans }}
+            </a>
+        </div>
+    </div>
+
+    <div class="j-box j-background-alt-blue" style="--box-padding: calc(6 * var(--w)) 0">
+        <div class="j-container">
+            <h2>{{ 'my_space.new_event'|trans }}</h1>
+            <div class="j-text-display">
+                <p>{{ 'my_space.new_event.description'|trans|raw }}</p>
+            </div>
         </div>
     </div>
 {% endblock main %}

@@ -15,8 +15,15 @@ final class DashboardControllerTest extends AbstractWebTestCase
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
-        $this->assertSame('DASHBOARD', $crawler->filter('h1')->text());
-        $this->assertMetaTitle('DASHBOARD - Jeunot', $crawler);
+        $this->assertSame('Bonjour Mathieu !', $crawler->filter('h1')->text());
+        $this->assertMetaTitle('Mon espace - Jeunot', $crawler);
+
+        $li = $crawler->filter('[data-testid="event-list"] li');
+        $eventTitle = $li->filter('h3');
+
+        $this->assertSame(2, $crawler->filter('[data-testid="event-list"] li')->count());
+        $this->assertSame('Dîner au restaurant', $eventTitle->eq(0)->text());
+        $this->assertSame('Balade à vélo en tandem', $eventTitle->eq(1)->text());
     }
 
     public function testWithoutAuthenticatedUser(): void

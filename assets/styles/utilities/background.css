@@ -9,3 +9,11 @@
 .j-background-flat-yellow {
   background-color: var(--background-flat-yellow);
 }
+
+.j-background-mulberry {
+  background-color: var(--background-mulberry);
+}
+
+.j-background-alt-blue {
+  background-color: var(--background-alt-blue);
+}

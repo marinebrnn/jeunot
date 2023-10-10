@@ -20,31 +20,7 @@
 
         <ul class="j-raw-list j-grid" style="--grid-item-min: 340px" data-testid="event-list">
             {% for event in paginatedEvents.items %}
-                <li class="j-card" is="j-card-li">
-                    <figure>
-                        <div class="j-frame" style="--frame-ratio: 10 / 7">
-                            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
-                        </div>
-                        <figcaption data-testid="event-location">{{ event.location }}</figcaption>
-                    </figure>
-                    <div class="j-box" style="--box-padding: calc(2 * var(--w))">
-                        <p>
-                            {{ event.startDate|date('d/m/Y') }}
-                        </p>
-                        <h3>
-                            <a href="{{ path('app_events_detail', { uuid: event.uuid } )}}" data-card-li-target="link">
-                                {{ event.title }}
-                            </a>
-                        </h3>
-                        <div class="j-cluster" style="--cluster-justify: space-between">
-                            <small data-testid="event-attendees">
-                                {{ 'events.list.attendee'|trans({'%count%' : event.nbAttendees }) }}
-                                {% if event.isLoggedUserRegisteredForEvent %} - {{ 'events.registered'|trans }}{% endif %}
-                            </small>
-                            {% include 'common/icons/arrow-right-big.svg.twig' %}
-                        </div>
-                    </div>
-                </li>
+                {% include 'events/_card.html.twig' with { event } only %}
             {% endfor %}
         </ul>
     </div>
