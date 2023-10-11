@@ -1,0 +1,22 @@
+.j-breadcrumb {
+  background-color: var(--background-mulberry);
+  padding: calc(1.5 * var(--w));
+  color: var(--white);
+  font-family: var(--font-default);
+  font-size: var(--font-size-default);
+}
+
+.j-breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.j-breadcrumb ul li:not(:last-child)::after {
+  content: ">";
+  margin-inline: calc(1.5 * var(--v));
+  color: var(--uri-yellow);
+}
+
+.j-breadcrumb ul li:last-child {
+  color: var(--uri-yellow);
+}

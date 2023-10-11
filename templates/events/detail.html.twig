@@ -7,10 +7,25 @@
 {% block main_tag %}<main class="j-background-alt-yellow">{% endblock %}
 
 {% block main %}
-    <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
-        <div class="j-frame" style="--frame-ratio: 16 / 9">
-            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
-        </div>
+    {% include 'common/breadcrumb.html.twig' with {
+        items: [
+            {
+                title: 'nav.events'|trans,
+                path: path('app_events_list'),
+            },
+            {
+                title: event.title,
+            }
+        ]
+    } only %}
+
+    <div data-testid="event" class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <figure>
+            <div class="j-frame" style="--frame-ratio: 16 / 9">
+                <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+            </div>
+            <figcaption data-testid="event-location">{{ event.location }}</figcaption>
+        </figure>
         <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(3 * var(--w))">
             <h1>{{ event.title }}</h1>
             <div>

@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block main %}
+    {% include 'common/breadcrumb.html.twig' with {
+        items: [ { title: 'nav.events'|trans } ]
+    } only %}
     <div class="j-box j-background-flat-yellow" style="--box-padding: calc(3 * var(--w)) 0">
         <div class="j-container">
             <h1>{{ 'events.title'|trans }}</h1>
