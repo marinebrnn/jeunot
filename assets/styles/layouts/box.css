@@ -2,3 +2,10 @@
   /* Define a padded box. */
   padding: var(--box-padding, 0);
 }
+
+.j-center {
+  margin: var(--box-margin, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

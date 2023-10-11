@@ -23,8 +23,9 @@ final class LoginControllerTest extends AbstractWebTestCase
         $client->submit($form);
 
         $this->assertResponseStatusCodeSame(302);
-        $crawler = $client->followRedirect();
-        $this->assertSame('DASHBOARD', $crawler->filter('h1')->text());
+        $client->followRedirect();
+        $this->assertResponseStatusCodeSame(200);
+        $this->assertRouteSame('app_dashboard');
     }
 
     public function testLoginWithNonVerifiedAccount(): void
