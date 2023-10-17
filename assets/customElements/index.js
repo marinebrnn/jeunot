@@ -1,5 +1,5 @@
 import cardListItem from "./cardListItem";
-import dialog from "./dialog";
+import navButton from "./navButton";
 
 customElements.define("j-card-li", cardListItem, { extends: "li" });
-customElements.define("j-dialog", dialog, { extends: "dialog" });
+customElements.define("j-nav-button", navButton, { extends: "button" });

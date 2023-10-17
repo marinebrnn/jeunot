@@ -37,7 +37,11 @@
   display: none;
 }
 
-@media screen and (min-width: 800px) {
+.j-header-mobile-menu {
+  background-color: var(--background-default);
+}
+
+@media screen and (min-width: 900px) {
   .j-header {
     display: flex;
     align-items: center;

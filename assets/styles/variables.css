@@ -82,7 +82,7 @@
   --shadow-lg: 0px 10px 20px 10px #49495a26;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   :root {
     --font-size-default: 1.25rem;
     --line-height-default: 1.625rem;

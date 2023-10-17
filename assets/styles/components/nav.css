@@ -29,7 +29,7 @@
   text-underline-offset: var(--w);
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .j-nav {
     flex-direction: row;
     align-items: center;

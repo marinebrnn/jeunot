@@ -1,10 +1,10 @@
 {% embed 'common/_header.html.twig' with { brand_url: path('app_dashboard') } only %}
     {% block brand %}
-        <a class="j-header-brand" data-mobile-only href="{{ brand_url }}" title="{{ 'nav.brand.title'|trans }}">
-            <img src="{{ asset('images/logo-moutarde.svg') }}">
+        <a class="j-header-brand" data-mobile-only href="{{ brand_url }}">
+            <img src="{{ asset('images/logo-moutarde.svg') }}" alt="{{ 'nav.brand.title'|trans }}">
         </a>
-        <a class="j-header-brand" data-desktop-only href="{{ brand_url }}" title="{{ 'nav.brand.title'|trans }}">
-            <img src="{{ asset('images/logo-n-fushia.svg') }}">
+        <a class="j-header-brand" data-desktop-only href="{{ brand_url }}">
+            <img src="{{ asset('images/logo-n-fushia.svg') }}" alt="{{ 'nav.brand.title'|trans }}">
         </a>
     {% endblock %}
 
