@@ -20,15 +20,11 @@
             </trans-unit>
             <trans-unit id="nav.mobile.open">
                 <source>nav.mobile.open</source>
-                <target>Ouvrir le menu</target>
-            </trans-unit>
-            <trans-unit id="nav.mobile.title">
-                <source>nav.mobile.title</source>
-                <target>Navigation principale</target>
+                <target>Ouvrir la navigation principale</target>
             </trans-unit>
             <trans-unit id="nav.mobile.close">
                 <source>nav.mobile.close</source>
-                <target>Fermer la navigation</target>
+                <target>Fermer la navigation principale</target>
             </trans-unit>
             <trans-unit id="nav.mobile.search">
                 <source>nav.mobile.search</source>
