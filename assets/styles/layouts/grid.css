@@ -2,15 +2,18 @@
   /* Define a flexible grid of elements that share the same size */
   display: grid;
   grid-gap: var(--grid-gap, calc(4 * var(--w)));
+  justify-items: var(--grid-justify-items, normal);
 }
 
 /* Most current browsers should support min() here, but if they don't, the grid will fallback to a single-column layout. */
 @supports (width: min(100px, 100%)) {
   .j-grid {
-    /* auto-fit tells the browser to wrap items into more rows when they can't fit without any overflow. */
-    /* --grid-item-min defines the minimum size an element is allowed to have before wrapping. */
-    /* 1fr ensures elements grow to fill the row, instead of leaving empty space at the end of the row. */
     /*
+    How does this work?
+    * auto-fit tells the browser to wrap items into more rows when they can't fit without any overflow.
+    * --grid-item-min defines the minimum size an element is allowed to have before wrapping.
+    * A max of 1fr ensures elements grow to fill the row, instead of leaving empty space at the end of the row.
+  
     For example, assuming there are 3 items in the grid, no gap (to simplify), and --grid-item-min is 500px...
     Then in a 1200px-wide container, there will be 2 rows: one with 2 items of size 600px, another with 1 item of size 600px and an empty 600px-wide slot.
     In a 800px-wide container, there will be 3 rows of 800px each.
