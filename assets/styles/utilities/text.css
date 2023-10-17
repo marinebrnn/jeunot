@@ -6,14 +6,6 @@
   font-weight: var(--font-weight-bold);
 }
 
-.j-text-yellow {
-  color: var(--uri-yellow);
-}
-
-.j-text-white {
-  color: var(--white);
-}
-
 .j-text-display,
 .j-text-display p {
   font-size: var(--font-size-display);
