@@ -50,6 +50,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys:
+            ${{ runner.os }}-node-
+
       - name: Init CI environment variables
         # HACK: Symfony won't read from 'env: { DATABASE_URL: ... }', so we need to edit
         # .env directly.
@@ -59,10 +66,23 @@ jobs:
           echo "MESSENGER_TRANSPORT_DSN=redis://localhost:6379/messages" >> .env
           echo "MAILER_DSN=smtp://localhost:1025" >> .env
 
+      # Required for E2E testing
+      - name: Install Symfony CLI
+        run: |
+          curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
+          sudo apt install symfony-cli
+
       - name: CI
-        run: make ci CI=1 BIN_PHP="php" BIN_CONSOLE="php bin/console" BIN_COMPOSER="composer" BIN_NPM="npm" BIN_NPX="npx"
+        run: make ci CI=1 BIN_PHP="php" BIN_CONSOLE="php bin/console" BIN_COMPOSER="composer" BIN_NPM="npm" BIN_NPX="npx" PLAYWRIGHT_ARGS="-x --forbid-only"
 
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage.xml
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

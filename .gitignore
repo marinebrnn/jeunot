@@ -32,3 +32,9 @@ coverage/
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+###> playwright ###
+test-results/
+playwright-report/
+playwright/
+###< playwright ###
