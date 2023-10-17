@@ -46,8 +46,8 @@
                 <source>nav.register</source>
                 <target>Créer un compte</target>
             </trans-unit>
-            <trans-unit id="nav.dashboard">
-                <source>nav.dashboard</source>
+            <trans-unit id="nav.my_space">
+                <source>nav.my_space</source>
                 <target>Mon espace</target>
             </trans-unit>
             <trans-unit id="nav.logout">
