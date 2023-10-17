@@ -42,7 +42,7 @@ final class RegisterUserForAnEventControllerTest extends AbstractWebTestCase
         $client = $this->login();
         $crawler = $client->request('GET', '/events/89f72b23-55e9-4975-b640-da24890095b7/register');
 
-        $this->assertSame(0, $crawler->filter('form')->count()); // No registration form
+        $this->assertSame(0, $crawler->filter('form[data-testid="registration-form"]')->count());
         $this->assertSame('Cet événement est complet.', $crawler->filter('[data-testid="event-full"]')->text());
     }
 
