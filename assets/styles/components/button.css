@@ -39,9 +39,9 @@
   color: var(--text-on-background-flat-yellow);
 }
 
-.j-btn--mulberry {
-  --tint: var(--background-mulberry);
-  --hover-tint: var(--background-mulberry);
+.j-btn--red {
+  --tint: var(--background-flat-red);
+  --hover-tint: var(--background-flat-red-hover);
 }
 
 .j-btn--secondary {
