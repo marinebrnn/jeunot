@@ -1,7 +1,7 @@
 .j-breadcrumb {
-  background-color: var(--background-mulberry);
+  background-color: var(--background-flat-red);
+  color: var(--text-on-background-flat-red);
   padding: calc(1.5 * var(--w));
-  color: var(--white);
   font-family: var(--font-default);
   font-size: var(--font-size-default);
 }

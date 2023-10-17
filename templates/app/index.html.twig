@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-    <div class="j-box j-background-mulberry" style="--box-padding: calc(6 * var(--w))">
+    <div class="j-box j-background-flat-red" style="--box-padding: calc(6 * var(--w))">
         <div class="j-container">
-            <h1 class="j-text-white">{{ 'my_space.welcome'|trans({'%firstName%': app.user.firstName }) }}</h1>
-            <div class="j-text-display j-text-white">
+            <h1>{{ 'my_space.welcome'|trans({'%firstName%': app.user.firstName }) }}</h1>
+            <div class="j-text-display">
                 <p>{{ 'my_space.description'|trans }}</p>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="j-container j-box" style="--box-padding: calc(6 * var(--w)) 0">
         <h2>{{ 'my_space.upcoming_events'|trans }}</h2>
         {% include 'events/_event_grid.html.twig' with { events: paginatedEvents.items } only %}
-        <div class="j-center" style="--box-margin: calc(3 * var(--w)) 0 0 0">
+        <div class="j-box j-center" style="--box-margin: calc(3 * var(--w)) 0 0 0">
             <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
                 {{ 'my_space.upcoming_events.see_more'|trans }}
             </a>

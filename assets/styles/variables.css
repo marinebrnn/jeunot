@@ -59,11 +59,11 @@
   --background-alt-pink: var(--pink-pastel1);
   --background-alt-peach: var(--peach);
   --background-flat-black: var(--nero);
-  --background-mulberry: var(--mulberry);
   --background-flat-yellow: var(--uri-yellow);
   --background-flat-yellow-hover: var(--yellow-light);
   --background-flat-black: var(--nero);
   --background-flat-red: var(--mulberry);
+  --background-flat-red-hover: var(--saffron-desires);
   --background-action-blue: var(--early-spring-night);
   --background-action-blue-hover: var(--blue-estate);
   --background-success: var(--success);
@@ -73,6 +73,7 @@
   --text-on-background-action-blue: var(--white);
   --text-on-background-flat-black: var(--white-smoke);
   --text-on-background-flat-yellow: var(--nero);
+  --text-on-background-flat-red: var(--white);
 
   /* Borders */
   --border-action-blue: var(--early-spring-night);
