@@ -15,7 +15,7 @@
     {% endblock %}
   </head>
 
-  <body data-controller="grid-observer" data-grid-observer-grid-outlet=".j-grid">
+  <body>
     {% for label, messages in app.flashes %}
         {% if loop.first %}<div class="fr-container">{% endif %}
         {% for message in messages %}
