@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    
+        <h2>Participants</h2>
+        <p>Pique-nique</p>
+        <br/>
+    
+    <div>
+        <h3>
+            {{ 'events.detail.owner.title'|trans }}
+        </h3>
+
+        <p>
+            {{ event }}
+        </p> 
+    </div>
+
+    <h3>
+        {{ 'events.detail.Attendees'|trans }}
+    </h3>
+
+    <ul>
+        {% for attendee in attendees %}
+            <li>{{ attendee.firstName }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock main %}

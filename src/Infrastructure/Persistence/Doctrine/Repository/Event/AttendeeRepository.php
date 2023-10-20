@@ -63,6 +63,19 @@ final class AttendeeRepository extends ServiceEntityRepository implements Attend
             ->getOneOrNullResult();
     }
 
+    public function findAttendeesByEvent(Event $event): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('u.firstName', 'u.lastName')
+            ->where('a.event =  :event')
+            ->innerJoin('a.user', 'u')
+            ->setParameters([
+                'event' => $event,
+            ])
+            ->getQuery()
+            ->getResult();
+    }
+
     public function delete(Attendee $attendee): void
     {
         $this->getEntityManager()->remove($attendee);
