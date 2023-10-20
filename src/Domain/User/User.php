@@ -6,6 +6,11 @@ namespace App\Domain\User;
 
 class User
 {
+    private ?string $biography = '';
+    private ?string $city = '';
+    private ?bool $displayMyAge = false;
+    private ?string $gender = '';
+
     public function __construct(
         private string $uuid,
         private string $firstName,
@@ -14,6 +19,7 @@ class User
         private string $password,
         private string $role,
         private \DateTimeInterface $birthday,
+        private \DateTimeInterface $registrationDate,
         private bool $isVerified = false,
     ) {
     }
@@ -58,6 +64,31 @@ class User
         return $this->birthday;
     }
 
+    public function getRegistrationDate(): \DateTimeInterface
+    {
+        return $this->registrationDate;
+    }
+
+    public function getGender(): ?string
+    {
+        return $this->gender;
+    }
+
+    public function getBiography(): ?string
+    {
+        return $this->biography;
+    }
+
+    public function shouldDisplayMyAge(): ?bool
+    {
+        return $this->displayMyAge;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
     public function verified(): void
     {
         $this->isVerified = true;
@@ -66,5 +97,25 @@ class User
     public function updatePassword(string $password): void
     {
         $this->password = $password;
+    }
+
+    public function updateProfile(
+        string $firstName,
+        string $lastName,
+        string $email,
+        string $biography,
+        string $gender,
+        string $city,
+        bool $displayMyAge,
+        \DateTimeInterface $birthday,
+    ) {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->email = $email;
+        $this->biography = $biography;
+        $this->gender = $gender;
+        $this->city = $city;
+        $this->displayMyAge = $displayMyAge;
+        $this->birthday = $birthday;
     }
 }
