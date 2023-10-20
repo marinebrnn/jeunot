@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Persistence\Doctrine\Fixtures;
 
+use App\Domain\User\Enum\UserRoleEnum;
 use App\Domain\User\User;
-use App\Domain\User\UserRoleEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -21,6 +21,7 @@ final class UserFixture extends Fixture
             'password1',
             UserRoleEnum::ROLE_ADMIN->value,
             new \DateTime('1989-09-17'),
+            new \DateTime('2023-10-10'),
             true,
         );
 
@@ -32,6 +33,7 @@ final class UserFixture extends Fixture
             'password2',
             UserRoleEnum::ROLE_USER->value,
             new \DateTime('1984-01-01'),
+            new \DateTime('2023-09-17'),
             false,
         );
 

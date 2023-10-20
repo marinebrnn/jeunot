@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ 'profile.edit.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    {% include 'common/breadcrumb.html.twig' with {
+        items: [
+            {
+                title: 'nav.profile'|trans,
+                path: path('app_profile_detail', { uuid: app.user.uuid }),
+            },
+            {
+                title: 'profile.edit.title'|trans,
+            }
+        ]
+    } only %}
+
+    <div class="j-container j-box">
+        <h1>{{ 'profile.edit.title'|trans }}</h1>
+
+        {{ form_start(form) }}
+            <h2>{{ 'profile.edit.public'|trans }}</h2>
+            {{ form_row(form.firstName)}}
+            {{ form_row(form.biography)}}
+            {{ form_row(form.city)}}
+            {{ form_row(form.displayMyAge)}}
+            {{ form_row(form.gender)}}
+            <hr/>
+            <h2>{{ 'profile.edit.private'|trans }}</h2>
+            {{ form_row(form.lastName)}}
+            {{ form_row(form.email)}}
+            {{ form_row(form.birthday)}}
+            {{ form_row(form.save)}}
+            <a href="{{ path('app_profile_detail', {'uuid': app.user.uuid }) }}">{{ 'profile.cancel'|trans }}</a>
+        {{ form_end(form) }}
+    </div>
+{% endblock main %}

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Test\Unit\Infrastructure\Security;
 
+use App\Domain\User\Enum\UserRoleEnum;
 use App\Domain\User\User;
-use App\Domain\User\UserRoleEnum;
 use App\Infrastructure\Security\SymfonyUser;
 use PHPUnit\Framework\TestCase;
 

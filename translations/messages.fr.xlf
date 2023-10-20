@@ -18,6 +18,10 @@
                 <source>nav.title</source>
                 <target>Navigation principale</target>
             </trans-unit>
+            <trans-unit id="nav.profile">
+                <source>nav.profile</source>
+                <target>Mon profil</target>
+            </trans-unit>
             <trans-unit id="nav.menu.open">
                 <source>nav.menu.open</source>
                 <target>Ouvrir le menu</target>
@@ -366,6 +370,74 @@
             <trans-unit id="my_space.upcoming_events.see_more">
                 <source>my_space.upcoming_events.see_more</source>
                 <target>Voir plus d'événements</target>
+            </trans-unit>
+            <trans-unit id="profile.edit.title">
+                <source>profile.edit.title</source>
+                <target>Modifier mon profil</target>
+            </trans-unit>
+            <trans-unit id="profile.edit.public">
+                <source>profile.edit.public</source>
+                <target>Mes informations publiques</target>
+            </trans-unit>
+            <trans-unit id="profile.edit.private">
+                <source>profile.edit.private</source>
+                <target>Mes informations privées</target>
+            </trans-unit>
+            <trans-unit id="profile.firstName">
+                <source>profile.firstName</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="profile.lastName">
+                <source>profile.lastName</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="profile.email">
+                <source>profile.email</source>
+                <target>Adresse email / courriel</target>
+            </trans-unit>
+            <trans-unit id="profile.gender">
+                <source>profile.gender</source>
+                <target>Mon genre</target>
+            </trans-unit>
+            <trans-unit id="profile.gender.male">
+                <source>profile.gender.male</source>
+                <target>Homme</target>
+            </trans-unit>
+            <trans-unit id="profile.gender.female">
+                <source>profile.gender.female</source>
+                <target>Femme</target>
+            </trans-unit>
+            <trans-unit id="profile.gender.other">
+                <source>profile.gender.other</source>
+                <target>Autre</target>
+            </trans-unit>
+            <trans-unit id="profile.gender.no-binary">
+                <source>profile.gender.no-binary</source>
+                <target>Non-binaire</target>
+            </trans-unit>
+            <trans-unit id="profile.biography">
+                <source>profile.biography</source>
+                <target>A propos de moi</target>
+            </trans-unit>
+            <trans-unit id="profile.birthday">
+                <source>profile.birthday</source>
+                <target>Ma date de naissance</target>
+            </trans-unit>
+            <trans-unit id="profile.city">
+                <source>profile.city</source>
+                <target>Ma ville</target>
+            </trans-unit>
+            <trans-unit id="profile.displayMyAge">
+                <source>profile.displayMyAge</source>
+                <target>Afficher mon âge sur mon profil</target>
+            </trans-unit>
+            <trans-unit id="profile.submit">
+                <source>profile.submit</source>
+                <target>Enregistrer</target>
+            </trans-unit>
+            <trans-unit id="profile.cancel">
+                <source>profile.cancel</source>
+                <target>Annuler</target>
             </trans-unit>
         </body>
     </file>
