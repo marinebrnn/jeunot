@@ -8,4 +8,5 @@ Les e-mails en environnement de développement ne sont pas réellement envoyés 
 
 ## Environnement de production
 
-A définir ...
+En production, nous utilisons [SendGrid](https://sendgrid.com). Il est nécéssaire de définir une variable d'environnement `MAILER_DSN` spécifiant quel est le DSN à utiliser : `sendgrid://KEY@default`.
+La clef d'API est à récupérer dans le compte SendGrid.
