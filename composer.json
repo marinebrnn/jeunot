@@ -27,6 +27,7 @@
         "symfony/redis-messenger": "6.3.*",
         "symfony/runtime": "6.3.*",
         "symfony/security-bundle": "6.3.*",
+        "symfony/sendgrid-mailer": "6.3.*",
         "symfony/translation": "6.3.*",
         "symfony/twig-bundle": "6.3.*",
         "symfony/uid": "6.3.*",
