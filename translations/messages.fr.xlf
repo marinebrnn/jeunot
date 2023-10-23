@@ -463,6 +463,10 @@
                 <source>profile.cancel</source>
                 <target>Annuler</target>
             </trans-unit>
+            <trans-unit id="profile.delete">
+                <source>profile.delete</source>
+                <target>Supprimer mon compte</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
