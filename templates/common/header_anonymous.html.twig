@@ -1,12 +1,6 @@
-<header class="j-header">
-    <button class="j-btn j-btn--blank j-header-hamburger" title="{{ 'nav.menu.open'|trans }}"></button>
-
-    <a class="j-header-brand" href="{{ path('app_home') }}" title="{{ 'nav.brand.title'|trans }}">
-        <img src="{{ asset('images/logo-moutarde.svg') }}">
-    </a>
-
-    <nav aria-label="{{ 'nav.title'|trans }}">
-        <ul class="j-raw-list j-cluster" style="--cluster-gap: calc(2 * var(--w))">
+{% embed 'common/_header.html.twig' with { brand_url: path('app_home') } only %}
+    {% block nav_content %}
+        <ul class="j-raw-list j-nav-right">
             <li>
                 <a href="{{ path('app_home') }}" {% if app.current_route == 'app_home' %}aria-current="page"{% endif %}>
                     {{ 'nav.home'|trans }}
@@ -36,7 +30,7 @@
 
         <hr>
 
-        <ul class="j-raw-list j-cluster" data-mobile-only style="--cluster-gap: calc(2 * var(--w))">
+        <ul class="j-raw-list" data-mobile-only>
             <li>
                 <a href="#">
                     Aide
@@ -53,5 +47,5 @@
                 </a>
             </li>
         </ul>
-    </nav>
-</header>
+    {% endblock %}
+{% endembed %}

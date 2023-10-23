@@ -1,3 +1,10 @@
 .j-max-w {
   max-width: var(--max-w);
 }
+
+.j-fullscreen {
+  position: fixed;
+  z-index: 999;
+  min-width: 100vw;
+  min-height: 100vh;
+}

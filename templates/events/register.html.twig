@@ -13,7 +13,7 @@
             {{ event.location }}<br/>
         </div>
         {% if event.nbAvailablePlaces > 0 %}
-            {{ form(form) }}
+            {{ form(form, { attr: { 'data-testid': 'registration-form' } }) }}
         {% else %}
             <div data-testid="event-full">{{ 'events.register.full'|trans }}</div>
         {% endif %}

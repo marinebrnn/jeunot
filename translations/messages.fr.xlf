@@ -18,13 +18,21 @@
                 <source>nav.title</source>
                 <target>Navigation principale</target>
             </trans-unit>
+            <trans-unit id="nav.mobile.open">
+                <source>nav.mobile.open</source>
+                <target>Ouvrir la navigation principale</target>
+            </trans-unit>
+            <trans-unit id="nav.mobile.close">
+                <source>nav.mobile.close</source>
+                <target>Fermer la navigation principale</target>
+            </trans-unit>
+            <trans-unit id="nav.mobile.search">
+                <source>nav.mobile.search</source>
+                <target>Rechercher</target>
+             </trans-unit>
             <trans-unit id="nav.profile">
                 <source>nav.profile</source>
                 <target>Mon profil</target>
-            </trans-unit>
-            <trans-unit id="nav.menu.open">
-                <source>nav.menu.open</source>
-                <target>Ouvrir le menu</target>
             </trans-unit>
             <trans-unit id="nav.home">
                 <source>nav.home</source>

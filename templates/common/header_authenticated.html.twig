@@ -1,12 +1,15 @@
-<header class="j-header">
-    <button class="j-btn j-btn--blank j-header-hamburger" title="{{ 'nav.menu.open'|trans }}"></button>
+{% embed 'common/_header.html.twig' with { brand_url: path('app_dashboard') } only %}
+    {% block brand %}
+        <a class="j-header-brand" data-mobile-only href="{{ brand_url }}">
+            <img src="{{ asset('images/logo-moutarde.svg') }}" alt="{{ 'nav.brand.title'|trans }}">
+        </a>
+        <a class="j-header-brand" data-desktop-only href="{{ brand_url }}">
+            <img src="{{ asset('images/logo-n-fushia.svg') }}" alt="{{ 'nav.brand.title'|trans }}">
+        </a>
+    {% endblock %}
 
-    <a class="j-header-brand" href="{{ path('app_dashboard') }}" title="{{ 'nav.brand.title'|trans }}">
-        <img src="{{ asset('images/logo-n-fushia.svg') }}">
-    </a>
-
-    <nav aria-label="{{ 'nav.title'|trans }}">
-        <ul class="j-raw-list j-cluster" style="--cluster-gap: calc(2 * var(--w))">
+    {% block nav_content %}
+        <ul class="j-raw-list">
             <li>
                 <a href="{{ path('app_dashboard') }}" {% if app.current_route == 'app_dashboard' %}aria-current="page"{% endif %}>
                     {{ 'nav.my_space'|trans }}
@@ -21,7 +24,12 @@
 
         <hr>
 
-        <ul class="j-raw-list j-cluster" style="--cluster-gap: calc(2 * var(--w))">
+        <ul class="j-raw-list j-nav-right">
+            <li>
+                <a href="#">
+                    Profil
+                </a>
+            </li>
             <li>
                 <a href="#">
                     {{ 'nav.help'|trans }}
@@ -36,7 +44,7 @@
 
         <hr>
 
-        <ul class="j-raw-list j-cluster" data-mobile-only style="--cluster-gap: calc(2 * var(--w))">
+        <ul class="j-raw-list" data-mobile-only>
             <li>
                 <a href="#">
                     {{ 'nav.privacy'|trans }}
@@ -48,5 +56,5 @@
                 </a>
             </li>
         </ul>
-    </nav>
-</header>
+    {% endblock %}
+{% endembed %}
