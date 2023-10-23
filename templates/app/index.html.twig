@@ -16,11 +16,13 @@
     <div class="j-container j-box" style="--box-padding: calc(6 * var(--w)) 0">
         <h2>{{ 'my_space.upcoming_events'|trans }}</h2>
         {% include 'events/_event_grid.html.twig' with { events: paginatedEvents.items } only %}
-        <div class="j-box j-center" style="--box-margin: calc(3 * var(--w)) 0 0 0">
-            <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
-                {{ 'my_space.upcoming_events.see_more'|trans }}
-            </a>
-        </div>
+        {% if paginatedEvents.items %}
+            <div class="j-box j-center" style="--box-margin: calc(3 * var(--w)) 0 0 0">
+                <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
+                    {{ 'my_space.upcoming_events.see_more'|trans }}
+                </a>
+            </div>
+        {% endif %}
     </div>
     <div class="j-box j-background-alt-blue" style="--box-padding: calc(6 * var(--w)) 0">
         <div class="j-container">

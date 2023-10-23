@@ -35,5 +35,9 @@
             {{ form_row(form.save)}}
             <a href="{{ path('app_profile_detail', {'uuid': app.user.uuid }) }}">{{ 'profile.cancel'|trans }}</a>
         {{ form_end(form) }}
+        <form method="post" action="{{ path('app_profile_delete') }}">
+            <button class="j-btn j-btn--red">{{ 'profile.delete'|trans }}</button>
+            <input type="hidden" name="token" value="{{ csrf_token('delete-user-account') }}"/>
+        </form>
     </div>
 {% endblock main %}
