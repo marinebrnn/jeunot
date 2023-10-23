@@ -44,6 +44,7 @@ final class ProfileFormType extends AbstractType
             ])
             ->add('displayMyAge', CheckboxType::class, [
                 'label' => 'profile.displayMyAge',
+                'required' => false,
             ])
             ->add('biography', TextareaType::class, [
                 'label' => 'profile.biography',

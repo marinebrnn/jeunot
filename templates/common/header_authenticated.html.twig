@@ -26,8 +26,8 @@
 
         <ul class="j-raw-list j-nav-right">
             <li>
-                <a href="#">
-                    Profil
+                <a href="{{ path('app_profile_detail', { uuid: app.user.uuid }) }}" {% if app.current_route starts with 'app_profile' %}aria-current="page"{% endif %}>
+                    {{ 'nav.profile'|trans }}
                 </a>
             </li>
             <li>

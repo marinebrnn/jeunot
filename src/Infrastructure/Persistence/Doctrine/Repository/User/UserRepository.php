@@ -33,4 +33,16 @@ final class UserRepository extends ServiceEntityRepository implements UserReposi
             ->getOneOrNullResult()
         ;
     }
+
+    public function findProfileByUuid(string $uuid): array
+    {
+        return $this->createQueryBuilder('u')
+            ->select('u.firstName, u.lastName, u.biography, u.displayMyAge, u.city, u.birthday, u.registrationDate')
+            ->where('u.uuid = :uuid')
+            ->setParameter('uuid', $uuid)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }
