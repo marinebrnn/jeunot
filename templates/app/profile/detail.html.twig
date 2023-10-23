@@ -1,19 +1,39 @@
 {% extends 'layout.html.twig' %}
 
+{% set pageTitle = app.user.uuid == uuid ? 'profile.detail.title'|trans : user.username %}
+
 {% block title %}
-    {{ 'profile.detail.title'|trans }} - {{ parent() }}
+    {{ pageTitle }} - {{ parent() }}
 {% endblock %}
 
 {% block main %}
     {% include 'common/breadcrumb.html.twig' with {
         items: [
-            {
-                title: 'nav.profile'|trans,
-            }
+            { title: pageTitle }
         ]
     } only %}
 
     <div class="j-container j-box">
-        <h1>{{ 'profile.edit.title'|trans }}</h1>
+        <h1 class="j-center">{{ user.username }}</h1>
+        <div data-testid="profile">
+            {{ 'profile.detail.registration'|trans({'%date%': user.registrationDate|date('M Y') }) }}
+
+            <hr/>
+
+            <h2>{{ 'profile.detail.biography'|trans }}</h2>
+            {{ user.biography|default('N.C') }}
+
+            <div>{{ user.city }}</div>
+
+            {% if user.age %}
+                <div>{{ 'profile.detail.age'|trans({ '%age%': user.age }) }}</div>
+            {% endif %}
+        </div>
+
+        {% if uuid == app.user.uuid %}
+            <a data-testid="edit-link" href="{{ path('app_profile_edit') }}" class="j-center j-btn">
+                {{ 'profile.edit.title'|trans }}
+            </a>
+        {% endif %}
     </div>
 {% endblock main %}

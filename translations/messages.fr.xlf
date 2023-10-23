@@ -383,6 +383,22 @@
                 <source>profile.edit.title</source>
                 <target>Modifier mon profil</target>
             </trans-unit>
+            <trans-unit id="profile.detail.title">
+                <source>profile.detail.title</source>
+                <target>Mon profil</target>
+            </trans-unit>
+            <trans-unit id="profile.detail.registration">
+                <source>profile.detail.registration</source>
+                <target>Inscrit.e depuis %date%</target>
+            </trans-unit>
+            <trans-unit id="profile.detail.age">
+                <source>profile.detail.age</source>
+                <target>%age% ans</target>
+            </trans-unit>
+            <trans-unit id="profile.detail.biography">
+                <source>profile.detail.biography</source>
+                <target>A propos de moi</target>
+            </trans-unit>
             <trans-unit id="profile.edit.public">
                 <source>profile.edit.public</source>
                 <target>Mes informations publiques</target>
