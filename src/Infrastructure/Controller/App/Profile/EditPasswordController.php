@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Infrastructure\Controller\App\Profile;
 
 use App\Application\CommandBusInterface;
-use App\Application\User\Command\UpdateProfileCommand;
-use App\Domain\User\Exception\UserAlreadyRegisteredException;
-use App\Infrastructure\Form\User\ProfileFormType;
+use App\Application\User\Command\ChangePasswordCommand;
+use App\Domain\User\Exception\PasswordDoesntMatchException;
+use App\Infrastructure\Form\User\ChangePasswordFormType;
 use App\Infrastructure\Security\AuthenticatedUser;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-final class EditProfileController
+final class EditPasswordController
 {
     public function __construct(
         private \Twig\Environment $twig,
@@ -30,12 +30,12 @@ final class EditProfileController
     ) {
     }
 
-    #[Route('/profile/edit', name: 'app_profile_edit', methods: ['GET', 'POST'])]
+    #[Route('/profile/edit/password', name: 'app_profile_edit_password', methods: ['GET', 'POST'])]
     public function __invoke(Request $request): Response
     {
         $user = $this->authenticatedUser->getUser();
-        $command = new UpdateProfileCommand($user);
-        $form = $this->formFactory->create(ProfileFormType::class, $command);
+        $command = new ChangePasswordCommand($user->getUuid());
+        $form = $this->formFactory->create(ChangePasswordFormType::class, $command);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -46,10 +46,10 @@ final class EditProfileController
                 return new RedirectResponse(
                     $this->urlGenerator->generate('app_profile_detail', ['uuid' => $user->getUuid()]),
                 );
-            } catch (UserAlreadyRegisteredException) {
-                $form->get('email')->addError(
+            } catch (PasswordDoesntMatchException) {
+                $form->get('oldPassword')->addError(
                     new FormError(
-                        $this->translator->trans('login.error.user_already_registered', [], 'validators'),
+                        $this->translator->trans('profile.error.old_password', [], 'validators'),
                     ),
                 );
             }
@@ -57,7 +57,7 @@ final class EditProfileController
 
         return new Response(
             content: $this->twig->render(
-                name: 'app/profile/edit.html.twig',
+                name: 'app/profile/password.html.twig',
                 context: [
                     'form' => $form->createView(),
                 ],

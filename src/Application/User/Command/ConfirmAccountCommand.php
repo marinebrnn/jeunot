@@ -8,7 +8,8 @@ use App\Application\CommandInterface;
 
 final class ConfirmAccountCommand implements CommandInterface
 {
-    public function __construct(public readonly string $token)
-    {
+    public function __construct(
+        public readonly string $token,
+    ) {
     }
 }

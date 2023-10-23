@@ -22,7 +22,7 @@ final class EditProfileControllerTest extends AbstractWebTestCase
         $form = $saveButton->form();
         $form['profile_form[firstName]'] = 'Mathieu';
         $form['profile_form[lastName]'] = 'Marchois';
-        $form['profile_form[email]'] = 'mathieu@fairness.coop';
+        $form['profile_form[email]'] = 'mathieu.marchois@fairness.coop';
         $form['profile_form[gender]'] = 'male';
         $form['profile_form[biography]'] = 'Je suis un développeur';
         $form['profile_form[city]'] = 'Paris';

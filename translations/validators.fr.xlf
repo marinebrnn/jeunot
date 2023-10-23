@@ -10,6 +10,10 @@
                 <source>register.error.minimum_age_to_register</source>
                 <target>La mission de Jeunot étant de contribuer au “mieux vieillir”, la plateforme est réservée aux plus de 55 ans.</target>
             </trans-unit>
+            <trans-unit id="profile.error.old_password">
+                <source>profile.error.old_password</source>
+                <target>Votre ancien mot de passe ne correspond pas</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

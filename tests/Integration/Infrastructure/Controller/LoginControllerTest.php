@@ -19,7 +19,7 @@ final class LoginControllerTest extends AbstractWebTestCase
         $saveButton = $crawler->selectButton('Se connecter');
         $form = $saveButton->form();
         $form['email'] = 'mathieu@fairness.coop';
-        $form['password'] = 'password1';
+        $form['password'] = 'password123';
         $client->submit($form);
 
         $this->assertResponseStatusCodeSame(302);
@@ -38,7 +38,7 @@ final class LoginControllerTest extends AbstractWebTestCase
         $saveButton = $crawler->selectButton('Se connecter');
         $form = $saveButton->form();
         $form['email'] = 'gregory.pelletier@fairness.coop';
-        $form['password'] = 'password2';
+        $form['password'] = 'password234';
 
         $client->submit($form);
         $this->assertResponseStatusCodeSame(302);

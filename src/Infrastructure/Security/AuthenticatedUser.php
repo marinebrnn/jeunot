@@ -18,11 +18,18 @@ final class AuthenticatedUser
 
     public function getUser(): ?User
     {
-        /** @var SymfonyUser|null */
-        $user = $this->security->getUser();
+        $user = $this->getSymfonyUser();
 
         return $user
             ? $this->entityManager->getReference(User::class, $user->getUuid())
             : null;
+    }
+
+    public function getSymfonyUser(): ?SymfonyUser
+    {
+        /** @var SymfonyUser|null */
+        $user = $this->security->getUser();
+
+        return $user;
     }
 }
