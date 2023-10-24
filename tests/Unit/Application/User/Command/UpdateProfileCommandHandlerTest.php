@@ -69,7 +69,7 @@ final class UpdateProfileCommandHandlerTest extends TestCase
             ->method('isSatisfiedBy');
 
         $handler = new UpdateProfileCommandHandler($this->isUserAlreadyRegistered);
-        ($handler)($this->command);
+        $this->assertEquals(($handler)($this->command), $this->user);
     }
 
     public function testUserAlreadyExisted(): void

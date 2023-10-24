@@ -29,6 +29,7 @@
             {{ form_row(form.gender)}}
             <hr/>
             <h2>{{ 'profile.edit.private'|trans }}</h2>
+            <a href="{{ path('app_profile_edit_password') }}">{{ 'profile.edit.password'|trans }}</a>
             {{ form_row(form.lastName)}}
             {{ form_row(form.email)}}
             {{ form_row(form.birthday)}}

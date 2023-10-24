@@ -383,6 +383,14 @@
                 <source>profile.edit.title</source>
                 <target>Modifier mon profil</target>
             </trans-unit>
+            <trans-unit id="profile.edit.password.old">
+                <source>profile.edit.password.old</source>
+                <target>Ancien mot de passe</target>
+            </trans-unit>
+            <trans-unit id="profile.edit.password">
+                <source>profile.edit.password</source>
+                <target>Modifier mon mot de passe</target>
+            </trans-unit>
             <trans-unit id="profile.detail.title">
                 <source>profile.detail.title</source>
                 <target>Mon profil</target>
