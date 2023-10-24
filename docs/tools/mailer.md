@@ -8,5 +8,5 @@ Les e-mails en environnement de développement ne sont pas réellement envoyés 
 
 ## Environnement de production
 
-En production, nous utilisons [sendinblue](https://brevo.com). Il est nécéssaire de définir une variable d'environnement `MAILER_DSN` spécifiant quel est le DSN à utiliser : `sendinblue+api://KEY@default`.
+En production, nous utilisons [Brevo (anciennement SendInBlue)](https://brevo.com). Il est nécéssaire de définir une variable d'environnement `MAILER_DSN` spécifiant quel est le DSN à utiliser : `sendinblue+api://KEY@default`.
 La clef d'API est à récupérer dans le compte sendinblue.
