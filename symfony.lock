@@ -249,13 +249,13 @@
             "config/packages/security.yaml"
         ]
     },
-    "symfony/sendgrid-mailer": {
+    "symfony/sendinblue-mailer": {
         "version": "6.3",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
-            "version": "4.4",
-            "ref": "224aedffb66812dc2b0965dabc14d5f800941da6"
+            "version": "5.2",
+            "ref": "ae1cf494ce06b9a4578a8445c610402a1676ee8d"
         }
     },
     "symfony/stimulus-bundle": {

@@ -12,7 +12,7 @@
 - [Turbo](https://turbo.hotwired.dev/) / [Stimulus](https://stimulus.hotwired.dev/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Redis](https://redis.io/)
-- [SendGrid](https://sendgrid.com)
+- [Sendinblue](https://brevo.com)
 
 ## Démarrage du projet
 

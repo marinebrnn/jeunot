@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a2c090a9c8d0465dcbd14482d3bf061",
+    "content-hash": "e3100f88441110c0e2c97d57c52ac5cd",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -6048,17 +6048,17 @@
             "time": "2023-10-13T10:26:24+00:00"
         },
         {
-            "name": "symfony/sendgrid-mailer",
-            "version": "v6.3.0",
+            "name": "symfony/sendinblue-mailer",
+            "version": "v6.3.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/sendgrid-mailer.git",
-                "reference": "1b1039bd5e3fdf31355d00f76133cff034f858a3"
+                "url": "https://github.com/symfony/sendinblue-mailer.git",
+                "reference": "668150fe48c5d111bb6f38ca92f249c88fa7055b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/sendgrid-mailer/zipball/1b1039bd5e3fdf31355d00f76133cff034f858a3",
-                "reference": "1b1039bd5e3fdf31355d00f76133cff034f858a3",
+                "url": "https://api.github.com/repos/symfony/sendinblue-mailer/zipball/668150fe48c5d111bb6f38ca92f249c88fa7055b",
+                "reference": "668150fe48c5d111bb6f38ca92f249c88fa7055b",
                 "shasum": ""
             },
             "require": {
@@ -6074,7 +6074,7 @@
             "type": "symfony-mailer-bridge",
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\": ""
+                    "Symfony\\Component\\Mailer\\Bridge\\Sendinblue\\": ""
                 },
                 "exclude-from-classmap": [
                     "/Tests/"
@@ -6094,10 +6094,10 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony Sendgrid Mailer Bridge",
+            "description": "Symfony Sendinblue Mailer Bridge",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/sendgrid-mailer/tree/v6.3.0"
+                "source": "https://github.com/symfony/sendinblue-mailer/tree/v6.3.6"
             },
             "funding": [
                 {
@@ -6113,7 +6113,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-14T16:23:31+00:00"
+            "time": "2023-10-17T11:32:53+00:00"
         },
         {
             "name": "symfony/service-contracts",
