@@ -61,8 +61,7 @@ p {
   line-height: var(--line-height-default);
 }
 
-/* Add margin *between* paragraphs. */
-p:not(:last-of-type) {
+p:not(:last-child) {
   margin-block-end: calc(2 * var(--w));
 }
 
@@ -70,8 +69,8 @@ small {
   font-size: var(--font-size-sm);
 }
 
-a {
-  font-weight: var(--font-weight-bold);
+p a {
+  color: var(--early-spring-night);
 }
 
 hr {

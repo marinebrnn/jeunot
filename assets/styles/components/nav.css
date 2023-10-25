@@ -19,6 +19,7 @@
 
 .j-nav a:not(.j-btn) {
   padding: var(--w);
+  font-weight: var(--font-weight-bold);
 }
 
 .j-nav a[aria-current="page"],

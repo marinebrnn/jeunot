@@ -11,3 +11,7 @@
   font-size: var(--font-size-display);
   line-height: var(--line-height-display);
 }
+
+.j-text-center {
+  text-align: center;
+}

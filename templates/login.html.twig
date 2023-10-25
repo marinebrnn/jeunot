@@ -5,36 +5,44 @@
 {% endblock %}
 
 {% block main %}
-    <div class="j-container">
-        <h1>{{ 'login.title'|trans }}</h1>
-        <p>{{ 'login.description'|trans }}</p>
+    {% include 'common/jumbotron_simple.html.twig' with { title: 'login.title'|trans, description: 'login.description'|trans } only %}
+
+    <div class="j-container j-box j-stack" style="--box-padding: calc(2 * var(--w))">
         <form action="{{ path('app_login') }}" method="post">
-            <div>
+            <div class="j-input-group">
                 <label for="email">{{ 'login.email'|trans }}</label>
                 <input type="email" autocomplete="email" id="email" required name="email" value="{{ last_username }}"/>
             </div>
 
-            <div>
+            <div class="j-input-group">
                 <label for="password">{{ 'login.password'|trans }}</label>
                 <input aria-required="true" required name="password" autocomplete="current-password" id="password" type="password"/>
+                <p>
+                    <a href="{{ path('app_forgot_password') }}">
+                        {{ 'login.forgot_password'|trans }}
+                    </a>
+                </p>
             </div>
-            <a href="{{ path('app_forgot_password') }}">{{ 'login.forgot_password'|trans }}</a>
 
             {% if error %}
                 <p class="error">
                     {{ error.messageKey|trans(error.messageData, 'security') }}
                 </p>
             {% endif %}
-            <div>
-                <label>
-                    <input type="checkbox" name="_remember_me" checked />
+
+            <div class="j-checkbox-group">
+                <input type="checkbox" id="_remember_me" name="_remember_me" checked />
+                <label for="_remember_me">
                     {{ 'login.remember_me'|trans }}
                 </label>
             </div>
-            <button>{{ 'login.submit'|trans }}</button>
+
+            <button type="submit" class="j-btn">{{ 'login.submit'|trans }}</button>
+
             <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
         </form>
+
         <p>
             {{ 'login.not_registered'|trans }}
             <a href="{{ path('app_register') }}">{{ 'register.title'|trans }}</a>

@@ -2,5 +2,14 @@
   /* Define a padded container with fixed maximum width */
   max-inline-size: var(--container-width, calc(121 * var(--w)));
   margin-inline: auto;
-  padding-inline: var(--container-padding, calc(3 * var(--w)));
+  padding-inline: var(--container-padding, calc(2 * var(--w)));
+}
+
+@media screen and (min-width: 900px) {
+  .j-container {
+    padding-inline: var(
+      --container-desktop-padding,
+      var(--container-padding, calc(3 * var(--w)))
+    );
+  }
 }

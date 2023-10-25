@@ -5,17 +5,18 @@
 {% endblock %}
 
 {% block main %}
-    <div class="j-container">
-        <h1>{{ 'register.title'|trans }}</h1>
-        <p>{{ 'register.description'|trans }}</p>
+    {% include 'common/jumbotron_simple.html.twig' with { title: 'register.title'|trans, description: 'register.description'|trans } only %}
+
+    <div class="j-container j-stack j-box" style="--box-padding: calc(2 * var(--w))">
         <p>{{ 'register.mandatory_fields'|trans }}</p>
         {{ form_start(form) }}
-            {{ form_row(form.firstName)}}
-            {{ form_row(form.lastName)}}
-            {{ form_row(form.email)}}
-            {{ form_row(form.password)}}
-            {{ form_row(form.birthday)}}
-            {{ form_row(form.save)}}
+            {{ form_row(form.firstName, { row_attr: { class: 'j-input-group' } }) }}
+            {{ form_row(form.lastName, { row_attr: { class: 'j-input-group' } }) }}
+            {{ form_row(form.email, { row_attr: { class: 'j-input-group' } }) }}
+            {{ form_row(form.password.first, { row_attr: { class: 'j-input-group' } }) }}
+            {{ form_row(form.password.second, { row_attr: { class: 'j-input-group' } }) }}
+            {{ form_row(form.birthday, { row_attr: { class: 'j-input-group' } }) }}
+            {{ form_row(form.save, { attr: { class: 'j-btn' } }) }}
         {{ form_end(form) }}
         <p>
             {{ 'register.already_registered'|trans }}

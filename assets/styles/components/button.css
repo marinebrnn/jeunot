@@ -2,18 +2,33 @@
   --tint: var(--background-action-blue);
   --hover-tint: var(--background-action-blue-hover);
   display: inline-block;
-  padding: calc(1.5 * var(--v)) calc(1.6 * var(--w));
+  padding: 0.4375rem 1rem;
+  --button-padding-lg: 1rem 1.625rem;
   background-color: var(--tint);
   color: var(--text-on-background-action-blue);
   border: none;
   border-radius: var(--v);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   cursor: pointer;
 }
 
 .j-btn--lg {
-  padding: calc(1.6 * var(--w)) calc(2.6 * var(--w));
+  font-size: var(--font-size-default);
+  padding: var(--button-padding-lg);
+}
+
+button[type="submit"].j-btn {
+  width: 100%;
+  font-size: var(--font-size-default);
+}
+
+@media screen and (min-width: 600px) {
+  button[type="submit"].j-btn {
+    width: initial;
+    padding: var(--button-padding-lg);
+  }
 }
 
 .j-btn--icon {

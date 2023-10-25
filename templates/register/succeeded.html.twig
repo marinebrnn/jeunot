@@ -5,12 +5,22 @@
 {% endblock %}
 
 {% block main %}
-    <div class="j-container">
-        <h1>{{ 'register.succeeded.title'|trans }}</h1>
-        <p>{{ 'register.succeeded.description'|trans }}</p>
-        <p>{{ 'register.succeeded.email_not_received'|trans }}</p>
+    <div class="j-container j-box j-stack" style="--box-padding: calc(3 * var(--w)) 0">
+        <div class="j-stack j-text-center">
+            {% include 'common/icons/mail_sent.svg.twig' %}
+            <h1>{{ 'register.succeeded.title'|trans }}</h1>
+        </div>
+
+        <p class="j-text-display">
+            {{ 'register.succeeded.description'|trans }}
+        </p>
+
+        <p class="j-text-small">
+            {{ 'register.succeeded.email_not_received'|trans }}
+        </p>
+
         <form method="POST" action="{{ path('app_resend_confirmation_mail', { email }) }}">
-            <button type="submit">{{ 'register.succeeded.send_link'|trans }}</button>
+            <button type="submit" class="j-btn">{{ 'register.succeeded.send_link'|trans }}</button>
         </form>
     </div>
 {% endblock main %}
