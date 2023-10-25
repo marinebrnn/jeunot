@@ -1,7 +1,7 @@
 :root {
   /* Spacing */
   --v: 0.3125rem;
-  --w: 0.625rem;
+  --w: calc(2 * var(--v));
 
   /* Fonts */
   --font-default: Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -31,13 +31,21 @@
   --font-weight-md: 500;
   --font-weight-bold: 600;
 
+  --font-size-label: 1.125rem;
+  --line-height-label: 1.625rem;
+
+  --font-size-help: 0.875rem;
+  --line-height-help: 1.375rem;
+
+  --checkbox-size: 1.5rem;
+
   /* Colors */
   --nero: #262626;
   --white-smoke: #f2f2f2;
   --white: #ffffff;
   --blue-estate: #2f3372;
   --early-spring-night: #4b3ab6;
-  --ligh-sky-blue: #89bffa;
+  --light-sky-blue: #89bffa;
   --blue-pastel1: #c3e0ff;
   --blue-pastel2: #f3f9ff;
   --frozen-tomato: #de5836;
@@ -70,13 +78,20 @@
   --background-alt-success: var(--success-pastel);
   --text-default: var(--nero);
   --text-action-blue: var(--blue-estate);
+  --text-error: var(--saffron-desires);
   --text-on-background-action-blue: var(--white);
   --text-on-background-flat-black: var(--white-smoke);
   --text-on-background-flat-yellow: var(--nero);
   --text-on-background-flat-red: var(--white);
+  --form-control-border-color: var(--blue-pastel1);
+  --form-control-color: var(--nero);
+  --form-control-disabled: #adadad;
 
   /* Borders */
   --border-action-blue: var(--early-spring-night);
+  --border-error: var(--saffron-desires);
+  --border-sm: var(--v);
+  --border-xs: calc(var(--v) / 2);
 
   /* Shadows */
   --shadow-default: 0px 0px 20px 0px #49495a26;
@@ -88,6 +103,8 @@
     --font-size-default: 1.25rem;
     --line-height-default: 1.625rem;
 
+    --font-size-sm: 1rem;
+
     --font-size-display: 1.5rem;
     --line-height-display: 2rem;
 
@@ -98,5 +115,8 @@
 
     --font-size-h1: 3rem;
     --line-height-h1: 3.42rem;
+
+    --font-size-help: 1.25rem;
+    --line-height-help: 1.625rem;
   }
 }

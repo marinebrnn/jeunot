@@ -1,0 +1,38 @@
+.j-input-group,
+.j-checkbox-group {
+  margin-bottom: calc(4 * var(--v));
+}
+
+.j-input-group > * + * {
+  margin-top: var(--w);
+}
+
+.j-input-group > label {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-label);
+}
+
+.j-checkbox-group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--w);
+}
+
+.j-help-text {
+  font-weight: var(--font-weight-md);
+  font-size: var(--font-size-help);
+  line-height: var(--line-height-help);
+}
+
+.j-input-group > label > .j-help-text {
+  margin-top: var(--v);
+}
+
+input.j-has-error {
+  --form-control-border-color: var(--border-error);
+}
+
+.j-error-message {
+  color: var(--text-error);
+}

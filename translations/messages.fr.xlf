@@ -212,7 +212,7 @@
             </trans-unit>
             <trans-unit id="register.succeeded.description">
                 <source>register.succeeded.description</source>
-                <target>Pour valider la création de votre compte et accéder à votre profil, confirmer votre adresse mail en cliquant sur le lien reçu à votre adresse.</target>
+                <target>Pour valider la création de votre compte et accéder à votre profil, confirmez votre adresse mail en cliquant sur le lien reçu à votre adresse.</target>
             </trans-unit>
             <trans-unit id="register.succeeded.email_not_received">
                 <source>register.succeeded.email_not_received</source>
