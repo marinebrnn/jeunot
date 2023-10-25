@@ -4,6 +4,8 @@
     {{ 'profile.edit.title'|trans }} - {{ parent() }}
 {% endblock %}
 
+{% block main_tag %}<main class="j-background-alt-yellow">{% endblock %}
+
 {% block main %}
     {% include 'common/breadcrumb.html.twig' with {
         items: [
@@ -17,28 +19,58 @@
         ]
     } only %}
 
-    <div class="j-container j-box">
-        <h1>{{ 'profile.edit.title'|trans }}</h1>
+    <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(3 * var(--w))">
+            <h1>{{ 'profile.edit.title'|trans }}</h1>
 
-        {{ form_start(form) }}
-            <h2>{{ 'profile.edit.public'|trans }}</h2>
-            {{ form_row(form.firstName)}}
-            {{ form_row(form.biography)}}
-            {{ form_row(form.city)}}
-            {{ form_row(form.displayMyAge)}}
-            {{ form_row(form.gender)}}
-            <hr/>
-            <h2>{{ 'profile.edit.private'|trans }}</h2>
-            <a href="{{ path('app_profile_edit_password') }}">{{ 'profile.edit.password'|trans }}</a>
-            {{ form_row(form.lastName)}}
-            {{ form_row(form.email)}}
-            {{ form_row(form.birthday)}}
-            {{ form_row(form.save)}}
-            <a href="{{ path('app_profile_detail', {'uuid': app.user.uuid }) }}">{{ 'profile.cancel'|trans }}</a>
-        {{ form_end(form) }}
-        <form method="post" action="{{ path('app_profile_delete') }}">
-            <button class="j-btn j-btn--red">{{ 'profile.delete'|trans }}</button>
-            <input type="hidden" name="token" value="{{ csrf_token('delete-user-account') }}"/>
-        </form>
+            {{ form_start(form, { attr: { class: 'j-stack' } }) }}
+                <div>
+                    <h2>{{ 'profile.edit.public'|trans }}</h2>
+
+                    {{ form_row(form.firstName, { row_attr: { class: 'j-input-group' } }) }}
+                    {{ form_row(form.biography, { row_attr: { class: 'j-input-group' } }) }}
+                    {{ form_row(form.city, { row_attr: { class: 'j-input-group' } }) }}
+                    {{ form_row(form.displayMyAge, { row_attr: { class: 'j-input-group' } }) }}
+                    {{ form_row(form.gender, { row_attr: { class: 'j-select-group' } }) }}
+                </div>
+
+                <hr>
+
+                <div>
+                    <h2>{{ 'profile.edit.private'|trans }}</h2>
+
+                    {{ form_row(form.lastName, { row_attr: { class: 'j-input-group' } }) }}
+                    {{ form_row(form.email, { row_attr: { class: 'j-input-group' } }) }}
+
+                    <div class="j-input-group">
+                        <label>
+                            {{ 'profile.edit.password'|trans }}
+                        </label>
+                        <p>
+                            <a href="{{ path('app_profile_edit_password') }}">
+                                {{ 'profile.edit.password.change'|trans }}
+                            </a>
+                        </p>
+                    </div>
+
+                    {{ form_row(form.birthday, { row_attr: { class: 'j-input-group' } }) }}
+                </div>
+
+                <div class="j-cluster" style="--cluster-justify: space-between; --cluster-wrap: wrap-reverse; --cluster-gap: calc(2 * var(--w))">
+                    <a href="{{ path('app_profile_detail', {'uuid': app.user.uuid }) }}" class="j-btn j-btn--action j-btn--secondary">
+                        {{ 'profile.cancel'|trans }}
+                    </a>
+                    {{ form_widget(form.save, { attr: { class: 'j-btn' } }) }}
+                </div>
+            {{ form_end(form) }}
+
+            <form method="post" action="{{ path('app_profile_delete') }}">
+                <button class="j-btn j-btn--red j-btn--tertiary j-icon--left">
+                    {% include 'common/icons/trash.svg.twig' with { attr: { class: 'j-icon j-icon--sm' } } only %}
+                    {{ 'profile.delete'|trans }}
+                </button>
+                <input type="hidden" name="token" value="{{ csrf_token('delete-user-account') }}"/>
+            </form>
+        </div>
     </div>
 {% endblock main %}

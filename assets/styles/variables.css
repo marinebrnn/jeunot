@@ -83,12 +83,10 @@
   --text-on-background-flat-black: var(--white-smoke);
   --text-on-background-flat-yellow: var(--nero);
   --text-on-background-flat-red: var(--white);
-  --form-control-border-color: var(--blue-pastel1);
-  --form-control-color: var(--nero);
-  --form-control-disabled: #adadad;
 
   /* Borders */
   --border-action-blue: var(--early-spring-night);
+  --border-alt-blue: var(--blue-pastel1);
   --border-error: var(--saffron-desires);
   --border-sm: var(--v);
   --border-xs: calc(var(--v) / 2);
@@ -96,6 +94,11 @@
   /* Shadows */
   --shadow-default: 0px 0px 20px 0px #49495a26;
   --shadow-lg: 0px 10px 20px 10px #49495a26;
+
+  /* Form controls */
+  --form-control-border-color: var(--border-alt-blue);
+  --form-control-color: var(--text-default);
+  --form-control-disabled: #adadad;
 }
 
 @media screen and (min-width: 900px) {

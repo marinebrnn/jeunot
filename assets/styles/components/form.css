@@ -1,11 +1,23 @@
-input:not([type="checkbox"]) {
+input:not([type="checkbox"]),
+textarea {
   display: block;
   width: 100%;
-  max-width: 40ch;
+  max-width: var(--input-width, 40ch);
   color: var(--form-control-color, inherit);
   border: 1px solid var(--form-control-border-color);
   border-radius: var(--border-sm);
   padding: var(--v) var(--w);
+}
+
+textarea {
+  --input-width: 50ch;
+}
+
+input:disabled,
+textarea:disabled {
+  --form-control-border-color: var(--form-control-disabled);
+  --form-control-color: var(--form-control-disabled);
+  cursor: not-allowed;
 }
 
 /* Credit: https://moderncss.dev/pure-css-custom-checkbox-style/ */
@@ -41,11 +53,6 @@ input[type="checkbox"]:checked::before {
 }
 input[type="checkbox"]:hover {
   border-color: var(--form-control-color);
-}
-input[type="checkbox"]:disabled {
-  --form-control-border-color: var(--form-control-disabled);
-  --form-control-color: var(--form-control-disabled);
-  cursor: not-allowed;
 }
 
 input.j-has-error {
