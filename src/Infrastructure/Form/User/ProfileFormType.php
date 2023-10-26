@@ -38,6 +38,7 @@ final class ProfileFormType extends AbstractType
             ->add('gender', ChoiceType::class, [
                 'label' => 'profile.gender',
                 'choices' => $choices,
+                'placeholder' => 'profile.gender.placeholder',
             ])
             ->add('city', TextType::class, [
                 'label' => 'profile.city',

@@ -14,7 +14,8 @@ textarea {
 }
 
 input:disabled,
-textarea:disabled {
+textarea:disabled,
+select:disabled {
   --form-control-border-color: var(--form-control-disabled);
   --form-control-color: var(--form-control-disabled);
   cursor: not-allowed;
@@ -59,22 +60,70 @@ input.j-has-error {
   --form-control-border-color: var(--border-error);
 }
 
+/* Credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/ */
+.j-select {
+  --form-control-color: var(--early-spring-night);
+}
+.j-select > select {
+  /* Remove the default dropdown arrow */
+  appearance: none;
+  /* Our own styles */
+  background-color: var(--background-default);
+  border: 1px solid var(--form-control-border-color);
+  border-radius: var(--border-sm);
+  color: var(--form-control-color);
+  padding: var(--w) calc(3 * var(--v));
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: var(--line-height-select);
+}
+/* A custom dropdown arrow cannot be set on <select> itself. */
+/* This is because ::after would be *inside* the <select> (at the end of its content), rather than after it. */
+/* So we need a wrapper element. */
+.j-select {
+  position: relative;
+}
+.j-select::after {
+  --dropdown-size: 0.5rem;
+  content: "";
+  position: absolute;
+  top: calc(50% - var(--dropdown-size) / 2);
+  right: calc(2 * var(--w));
+  pointer-events: none;
+  width: calc(1.5 * var(--dropdown-size));
+  height: var(--dropdown-size);
+  background-color: var(--form-control-color);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
 .j-input-group,
-.j-checkbox-group {
+*:not(fieldset) > .j-checkbox-group,
+.j-select-group,
+fieldset {
   margin-bottom: calc(4 * var(--v));
 }
 
-.j-input-group > * + * {
+.j-input-group > * + *,
+.j-select-group > * + *,
+fieldset > * + * {
   margin-top: var(--w);
 }
 
-.j-input-group > label {
+:where(.j-input-group, .j-select-group) > label,
+fieldset > legend {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-label);
   line-height: var(--line-height-label);
 }
 
-.j-input-group > label > .j-help-text {
+:where(.j-input-group, .j-select-group) > label > .j-help-text {
   margin-top: var(--v);
 }
 

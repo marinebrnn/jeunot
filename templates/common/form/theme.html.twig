@@ -1,3 +1,7 @@
+{#
+Tweaks to the default Symfony form theme.
+Source: https://github.com/symfony/symfony/blob/6.3/src/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig
+#}
 {% use "form_div_layout.html.twig" %}
 
 {% block form_row %}
@@ -34,3 +38,17 @@
   {%- set help_attr = help_attr|merge({class: (help_attr.class|default('') ~ ' j-help-text')}) -%}
   {{ parent() }}
 {% endblock %}
+
+{%- block checkbox_row -%}
+    <div {% with { attr: row_attr } %} {{ block('attributes') }} {% endwith %}>
+        {{- form_widget(form) -}}
+        {{- form_label(form) -}}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock checkbox_row -%}
+
+{%- block choice_widget_collapsed -%}
+    <div class="j-select">
+        {{ parent() }}
+    </div>
+{%- endblock choice_widget_collapsed -%}

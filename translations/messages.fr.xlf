@@ -395,6 +395,10 @@
                 <source>profile.edit.password.change</source>
                 <target>Modifier mon mot de passe</target>
             </trans-unit>
+            <trans-unit id="profile.edit.password.title">
+                <source>profile.edit.password.title</source>
+                <target>Modifier mon mot de passe</target>
+            </trans-unit>
             <trans-unit id="profile.detail.title">
                 <source>profile.detail.title</source>
                 <target>Mon profil</target>
@@ -435,6 +439,10 @@
                 <source>profile.gender</source>
                 <target>Mon genre</target>
             </trans-unit>
+            <trans-unit id="profile.gender.placeholder">
+                <source>profile.gender.placeholder</source>
+                <target>Sélectionner mon genre</target>
+            </trans-unit>
             <trans-unit id="profile.gender.male">
                 <source>profile.gender.male</source>
                 <target>Homme</target>
@@ -462,6 +470,10 @@
             <trans-unit id="profile.city">
                 <source>profile.city</source>
                 <target>Ma ville</target>
+            </trans-unit>
+            <trans-unit id="profile.myAge">
+                <source>profile.myAge</source>
+                <target>Mon âge</target>
             </trans-unit>
             <trans-unit id="profile.displayMyAge">
                 <source>profile.displayMyAge</source>

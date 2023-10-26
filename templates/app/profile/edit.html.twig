@@ -30,7 +30,12 @@
                     {{ form_row(form.firstName, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.biography, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.city, { row_attr: { class: 'j-input-group' } }) }}
-                    {{ form_row(form.displayMyAge, { row_attr: { class: 'j-input-group' } }) }}
+                    <fieldset aria-labelledby="_my_age_legend">
+                        <legend id="_my_age_legend">
+                            {{ 'profile.myAge'|trans }}
+                        </legend>
+                        {{ form_row(form.displayMyAge, { row_attr: { class: 'j-checkbox-group' } }) }}
+                    </fieldset>
                     {{ form_row(form.gender, { row_attr: { class: 'j-select-group' } }) }}
                 </div>
 
