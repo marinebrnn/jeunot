@@ -1,0 +1,22 @@
+services:
+    scaleway_spaces_client:
+        class: 'AsyncAws\S3\S3Client'
+        arguments:
+            -  endpoint: '%env(SCALEWAY_SPACES_ENDPOINT)%'
+               accessKeyId: '%env(SCALEWAY_SPACES_ID)%'
+               accessKeySecret: '%env(SCALEWAY_SPACES_SECRET)%'
+               region: "fr-par"
+
+flysystem:
+    storages:
+        cdn.storage:
+            adapter: 'asyncaws'
+            options:
+                client: 'scaleway_spaces_client'
+                bucket: '%env(SCALEWAY_SPACES_BUCKET)%'
+        memory.storage:
+            adapter: 'memory'
+        storage:
+            adapter: 'lazy'
+            options:
+                source: '%env(APP_UPLOADS_SOURCE)%'

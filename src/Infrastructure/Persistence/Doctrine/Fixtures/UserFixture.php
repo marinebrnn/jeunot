@@ -24,6 +24,7 @@ final class UserFixture extends Fixture
             new \DateTime('1989-09-17'),
             new \DateTime('2023-10-10'),
             true,
+            'picture.jpeg',
         );
 
         $admin->updateProfile(

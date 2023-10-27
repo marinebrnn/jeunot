@@ -14,6 +14,10 @@
                 <source>profile.error.old_password</source>
                 <target>Votre ancien mot de passe ne correspond pas</target>
             </trans-unit>
+            <trans-unit id="profile.error.file">
+                <source>profile.error.file</source>
+                <target>Merci de fournir un format d'image valide (.jpg, .jpeg, .png, .webp)</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

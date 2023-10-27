@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Integration\Infrastructure\Controller\App\Profile;
 
 use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 final class EditProfileControllerTest extends AbstractWebTestCase
 {
@@ -18,6 +19,11 @@ final class EditProfileControllerTest extends AbstractWebTestCase
         $this->assertSame('Modifier mon profil', $crawler->filter('h1')->text());
         $this->assertMetaTitle('Modifier mon profil - Jeunot', $crawler);
 
+        $uploadedFile = new UploadedFile(
+            __DIR__ . '/../../../../../fixtures/fairness.png',
+            'fairness.png',
+        );
+
         $saveButton = $crawler->selectButton('Enregistrer');
         $form = $saveButton->form();
         $form['profile_form[firstName]'] = 'Mathieu';
@@ -27,6 +33,7 @@ final class EditProfileControllerTest extends AbstractWebTestCase
         $form['profile_form[biography]'] = 'Je suis un développeur';
         $form['profile_form[city]'] = 'Paris';
         $form['profile_form[birthday]'] = '1900-01-01';
+        $form['profile_form[file]'] = $uploadedFile;
         $client->submit($form);
 
         $this->assertResponseStatusCodeSame(302);
@@ -73,6 +80,7 @@ final class EditProfileControllerTest extends AbstractWebTestCase
         $form['profile_form[biography]'] = str_repeat('a', 256);
         $form['profile_form[city]'] = str_repeat('a', 151);
         $form['profile_form[birthday]'] = 'date';
+
         $crawler = $client->submit($form);
 
         $this->assertResponseStatusCodeSame(422);

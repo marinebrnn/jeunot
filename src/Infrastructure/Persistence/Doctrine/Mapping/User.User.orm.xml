@@ -6,6 +6,7 @@
     <field name="lastName" type="string" length="100" nullable="false"/>
     <field name="email" type="string" length="100" nullable="false"/>
     <field name="password" type="string" length="100" nullable="false"/>
+    <field name="avatar" type="string" length="100" nullable="true"/>
     <field name="role" type="string" length="10" nullable="false"/>
     <field name="birthday" type="datetimetz" nullable="false"/>
     <field name="registrationDate" type="datetimetz" nullable="false">

@@ -43,6 +43,7 @@ final class UserTest extends TestCase
         $this->assertEmpty($user->getBiography());
         $this->assertFalse($user->shouldDisplayMyAge());
         $this->assertFalse($user->isVerified());
+        $this->assertEmpty($user->getAvatar());
 
         $user->verified();
         $this->assertTrue($user->isVerified());
@@ -60,6 +61,8 @@ final class UserTest extends TestCase
             true,
             $birthday2,
         );
+        $user->updateAvatar('picture.jpeg');
+        $this->assertSame('picture.jpeg', $user->getAvatar());
         $this->assertSame('Hélène', $user->getFirstName());
         $this->assertSame('MAITRE-MARCHOIS', $user->getLastName());
         $this->assertSame('helene@fairness.coop', $user->getEmail());

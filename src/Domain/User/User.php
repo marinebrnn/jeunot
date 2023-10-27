@@ -10,6 +10,7 @@ class User
     private ?string $city = '';
     private ?bool $displayMyAge = false;
     private ?string $gender = '';
+    private ?string $avatar = '';
 
     public function __construct(
         private string $uuid,
@@ -60,6 +61,11 @@ class User
         return $this->role;
     }
 
+    public function getAvatar(): string
+    {
+        return $this->avatar;
+    }
+
     public function getBirthday(): \DateTimeInterface
     {
         return $this->birthday;
@@ -103,6 +109,11 @@ class User
     public function updatePassword(string $password): void
     {
         $this->password = $password;
+    }
+
+    public function updateAvatar(string $avatar): void
+    {
+        $this->avatar = $avatar;
     }
 
     public function updateProfile(

@@ -6,9 +6,11 @@ namespace App\Application\User\Command;
 
 use App\Application\CommandInterface;
 use App\Domain\User\User;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 final class UpdateProfileCommand implements CommandInterface
 {
+    public ?UploadedFile $file = null;
     public ?string $firstName;
     public ?string $lastName;
     public ?string $email;

@@ -14,7 +14,7 @@ final class AboutController
     ) {
     }
 
-    #[Route('/a-propos', name: 'app_about', methods: ['GET'])]
+    #[Route('/about', name: 'app_about', methods: ['GET'])]
     public function __invoke(): Response
     {
         return new Response($this->twig->render('about.html.twig'));

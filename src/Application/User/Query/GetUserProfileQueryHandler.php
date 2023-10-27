@@ -14,6 +14,7 @@ final class GetUserProfileQueryHandler
     public function __construct(
         private UserRepositoryInterface $userRepository,
         private DateUtilsInterface $dateUtils,
+        private string $storageCdn,
     ) {
     }
 
@@ -33,11 +34,14 @@ final class GetUserProfileQueryHandler
                 ->y;
         }
 
+        $avatar = $user['avatar'] ? sprintf('%s/%s', $this->storageCdn, $user['avatar']) : null;
+
         return new ProfileView(
             username: sprintf('%s %s.', $user['firstName'], $user['lastName'][0]),
             city: $user['city'],
             biography: $user['biography'],
             age: $age,
+            avatar: $avatar,
             registrationDate: $user['registrationDate'],
         );
     }

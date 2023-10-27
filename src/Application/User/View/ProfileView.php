@@ -11,6 +11,7 @@ final readonly class ProfileView
         public ?string $city,
         public ?string $biography,
         public ?int $age,
+        public ?string $avatar,
         public ?\DateTimeInterface $registrationDate,
     ) {
     }
