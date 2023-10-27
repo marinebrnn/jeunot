@@ -65,6 +65,7 @@ final class RegisterControllerTest extends AbstractWebTestCase
         $form = $saveButton->form();
         $form['register_user_form[firstName]'] = str_repeat('a', 101);
         $form['register_user_form[lastName]'] = str_repeat('a', 101);
+        $form['register_user_form[howYouHeardAboutUs]'] = str_repeat('a', 256);
         $form['register_user_form[email]'] = 'helene';
         $form['register_user_form[password][first]'] = 'password1234';
         $form['register_user_form[password][second]'] = 'password12345678910';
@@ -75,6 +76,7 @@ final class RegisterControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(422);
         $this->assertSame('Cette chaîne est trop longue. Elle doit avoir au maximum 100 caractères.', $crawler->filter('#register_user_form_firstName_error')->text());
         $this->assertSame('Cette chaîne est trop longue. Elle doit avoir au maximum 100 caractères.', $crawler->filter('#register_user_form_lastName_error')->text());
+        $this->assertSame('Cette chaîne est trop longue. Elle doit avoir au maximum 255 caractères.', $crawler->filter('#register_user_form_howYouHeardAboutUs_error')->text());
         $this->assertSame("Cette valeur n'est pas une adresse email valide.", $crawler->filter('#register_user_form_email_error')->text());
         $this->assertSame('Les valeurs ne correspondent pas.', $crawler->filter('#register_user_form_password_first_error')->text());
         $this->assertSame('Veuillez entrer une date de naissance valide.', $crawler->filter('#register_user_form_birthday_error')->text());

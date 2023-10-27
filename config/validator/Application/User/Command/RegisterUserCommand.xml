@@ -28,6 +28,11 @@
                 <option name="min">10</option>
             </constraint>
         </property>
+        <property name="howYouHeardAboutUs">
+            <constraint name="Length">
+                <option name="max">255</option>
+            </constraint>
+        </property>
         <property name="birthday">
             <constraint name="App\Infrastructure\Validator\MinimumAgeToRegisterConstraint" />
         </property>

@@ -21,6 +21,7 @@ class User
         private \DateTimeInterface $birthday,
         private \DateTimeInterface $registrationDate,
         private bool $isVerified = false,
+        private ?string $howYouHeardAboutUs = null,
     ) {
     }
 
@@ -77,6 +78,11 @@ class User
     public function getBiography(): ?string
     {
         return $this->biography;
+    }
+
+    public function getHowYouHeardAboutUs(): ?string
+    {
+        return $this->howYouHeardAboutUs;
     }
 
     public function shouldDisplayMyAge(): ?bool

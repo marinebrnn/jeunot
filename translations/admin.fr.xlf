@@ -46,6 +46,14 @@
                 <source>admin.tag</source>
                 <target>Tag</target>
             </trans-unit>
+            <trans-unit id="admin.users">
+                <source>admin.users</source>
+                <target>Utilisateurs</target>
+            </trans-unit>
+            <trans-unit id="admin.user">
+                <source>admin.user</source>
+                <target>Utilisateur</target>
+            </trans-unit>
             <trans-unit id="admin.tags">
                 <source>admin.tags</source>
                 <target>Tags</target>
@@ -77,6 +85,26 @@
             <trans-unit id="admin.posts.form.published">
                 <source>admin.posts.form.published</source>
                 <target>Publié</target>
+            </trans-unit>
+            <trans-unit id="admin.users.firstName">
+                <source>admin.users.firstName</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="admin.users.lastName">
+                <source>admin.users.lastName</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="admin.users.email">
+                <source>admin.users.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="admin.users.location">
+                <source>admin.users.location</source>
+                <target>Localisation</target>
+            </trans-unit>
+            <trans-unit id="admin.users.howYouHeardAboutUs">
+                <source>admin.users.howYouHeardAboutUs</source>
+                <target>Comment vous nous avez connus ?</target>
             </trans-unit>
         </body>
     </file>

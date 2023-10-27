@@ -17,6 +17,7 @@
     <field name="city" type="string" length="150" nullable="true"/>
     <field name="displayMyAge" type="boolean" nullable="true"/>
     <field name="biography" type="string" nullable="true"/>
+    <field name="howYouHeardAboutUs" type="string" nullable="true"/>
     <field name="isVerified" type="boolean" nullable="false"/>
     <unique-constraints>
         <unique-constraint columns="email" name="user_email" />

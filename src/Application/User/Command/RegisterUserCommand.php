@@ -12,5 +12,6 @@ final class RegisterUserCommand implements CommandInterface
     public ?string $lastName;
     public ?string $email;
     public ?string $password;
+    public ?string $howYouHeardAboutUs = '';
     public ?\DateTimeInterface $birthday;
 }
