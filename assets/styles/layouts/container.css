@@ -8,7 +8,7 @@
 @media screen and (min-width: 900px) {
   .j-container {
     padding-inline: var(
-      --container-desktop-padding,
+      --container-padding-desktop,
       var(--container-padding, calc(3 * var(--w)))
     );
   }

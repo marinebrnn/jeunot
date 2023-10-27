@@ -15,3 +15,7 @@
 .j-text-center {
   text-align: center;
 }
+
+.j-text-default {
+  color: var(--text-default);
+}

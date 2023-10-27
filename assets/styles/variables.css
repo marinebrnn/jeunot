@@ -88,6 +88,7 @@
   /* Borders */
   --border-action-blue: var(--early-spring-night);
   --border-alt-blue: var(--blue-pastel1);
+  --border-flat-yellow: var(--uri-yellow);
   --border-error: var(--saffron-desires);
   --border-sm: var(--v);
   --border-xs: calc(var(--v) / 2);
