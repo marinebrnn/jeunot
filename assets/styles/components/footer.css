@@ -1,3 +1,30 @@
+footer {
+  flex-grow: 1;
+  background-color: var(--background-flat-black);
+  color: var(--text-on-background-flat-black);
+}
+
+#footer-nav a {
+  display: inline-block;
+  padding-block: var(--w);
+}
+
+@media screen and (min-width: 600px) {
+  #footer-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #footer-nav > ul li:not(:last-child)::after {
+    content: "|";
+    margin-inline: calc(1.5 * var(--v));
+  }
+}
+
+footer hr {
+  border-top: 2px dashed currentColor;
+  width: 100%;
+}
+
 footer .j-h3 {
   color: var(--uri-yellow);
 }

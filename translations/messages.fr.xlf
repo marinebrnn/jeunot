@@ -373,7 +373,7 @@
             </trans-unit>
             <trans-unit id="dashboard.new_event.description">
                 <source>dashboard.new_event.description</source>
-                <target>Vous avez des idées ? Discutons-en ! Ecrivez nous à : <![CDATA[<b>]]>contact@jeunot.fr<![CDATA[</b>]]></target>
+                <target>Vous avez des idées ? Discutons-en ! Écrivez-nous à : <![CDATA[<a href="mailto:contact@jeunot.fr">]]>contact@jeunot.fr<![CDATA[</a>]]></target>
             </trans-unit>
             <trans-unit id="dashboard.upcoming_events">
                 <source>dashboard.upcoming_events</source>
