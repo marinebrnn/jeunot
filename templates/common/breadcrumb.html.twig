@@ -1,9 +1,6 @@
 <div class="j-breadcrumb" style="--box-padding: var(--w)">
     <div class="j-container">
         <ul class="j-raw-list">
-            <li>
-                <a href="{{ path('app_home') }}">Accueil</a>
-            </li>
             {% for item in items %}
                 <li>
                     {% if item.path is defined %}
