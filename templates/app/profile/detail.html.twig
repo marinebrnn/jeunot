@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% set pageTitle = app.user.uuid == uuid ? 'profile.detail.title'|trans : user.username %}
+{% set pageTitle = app.user.uuid == uuid ? 'profile.detail.title'|trans : 'profile.detail.otherUser.title'|trans({ '%username%': user.username }) %}
 
 {% block title %}
     {{ pageTitle }} - {{ parent() }}
@@ -58,7 +58,7 @@
 
                         <div class="j-icon--left">
                             {% include 'common/icons/calendar.svg.twig' with { attr: { class: 'j-icon j-icon--sm' } } only %}
-                            {{ 'profile.detail.registration'|trans({'%date%': user.registrationDate|date('F Y') }) }}
+                            {{ 'profile.detail.registration'|trans({'%date%': user.registrationDate|date('M Y') }) }}
                         </div>
                     </div>
                 </div>

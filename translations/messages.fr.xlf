@@ -403,6 +403,10 @@
                 <source>profile.detail.title</source>
                 <target>Mon profil</target>
             </trans-unit>
+            <trans-unit id="profile.detail.otherUser.title">
+                <source>profile.detail.otherUser.title</source>
+                <target>Profil de %username%</target>
+            </trans-unit>
             <trans-unit id="profile.detail.picture">
                 <source>profile.detail.picture</source>
                 <target>Photo de profil</target>

@@ -15,9 +15,9 @@ final class DetailProfileControllerTest extends AbstractWebTestCase
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
-        $this->assertSame('Mathieu M.', $crawler->filter('h1')->text());
         $this->assertMetaTitle('Mon profil - Jeunot', $crawler);
-        $this->assertSame('Inscrit.e depuis Oct 2023 A propos de moi Je suis un développeur Saint Ouen 33 ans', $crawler->filter('[data-testid="profile"]')->text());
+        $this->assertSame('Mon profil', $crawler->filter('h1')->text());
+        $this->assertSame('Mathieu M. Je suis un développeur Saint Ouen 33 ans Inscrit.e depuis Oct 2023', $crawler->filter('[data-testid="profile"] *')->filter(':not(.j-desktop-only)')->text());
         $this->assertSame('http://localhost/app/profile/edit', $crawler->filter('[data-testid="edit-link"]')->link()->getUri());
     }
 
@@ -28,9 +28,9 @@ final class DetailProfileControllerTest extends AbstractWebTestCase
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
-        $this->assertSame('Gregory P.', $crawler->filter('h1')->text());
-        $this->assertMetaTitle('Gregory P. - Jeunot', $crawler);
-        $this->assertSame('Inscrit.e depuis Sep 2023 A propos de moi Je suis cycliste Paris', $crawler->filter('[data-testid="profile"]')->text());
+        $this->assertMetaTitle('Profil de Gregory P. - Jeunot', $crawler);
+        $this->assertSame('Profil de Gregory P.', $crawler->filter('h1')->text());
+        $this->assertSame('Gregory P. Je suis cycliste Paris Inscrit.e depuis Sep 2023', $crawler->filter('[data-testid="profile"] *')->filter(':not(.j-desktop-only)')->text());
         $this->assertSame(0, $crawler->filter('[data-testid="edit-link"]')->count()); // No edit link
     }
 
