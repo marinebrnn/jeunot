@@ -42,6 +42,10 @@
                 <source>nav.events</source>
                 <target>Événements</target>
             </trans-unit>
+            <trans-unit id="nav.posts">
+                <source>nav.posts</source>
+                <target>Articles</target>
+            </trans-unit>
             <trans-unit id="nav.login">
                 <source>nav.login</source>
                 <target>Se connecter</target>
@@ -494,6 +498,14 @@
             <trans-unit id="profile.delete">
                 <source>profile.delete</source>
                 <target>Supprimer mon compte</target>
+            </trans-unit>
+            <trans-unit id="posts.title">
+                <source>posts.title</source>
+                <target>Articles</target>
+            </trans-unit>
+            <trans-unit id="posts.jumbotron.line1">
+                <source>posts.jumbotron.line1</source>
+                <target>Retrouvez ici toute l'actualité Jeunot à travers une série d'articles.</target>
             </trans-unit>
         </body>
     </file>

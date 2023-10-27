@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ post.title }} - {{ parent() }}
+{% endblock %}
+
+{% block main_tag %}<main class="j-background-alt-yellow">{% endblock %}
+
+{% block main %}
+    {% include 'common/breadcrumb.html.twig' with {
+        items: [
+            app.user ? {
+                title: 'nav.dashboard'|trans,
+                path: path('app_dashboard'),
+            } : {
+                title: 'nav.home'|trans,
+                path: path('app_home'),
+            },
+            {
+                title: 'nav.posts'|trans,
+                path: path('app_posts_list'),
+            },
+            {
+                title: post.title,
+            }
+        ]
+    } only %}
+
+    <div data-testid="post" class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <figure>
+            <div class="j-frame" style="--frame-ratio: 16 / 9">
+                <img src="{{ asset('images/placeholder.webp') }}" alt="{{ post.title }}"/>
+            </div>
+        </figure>
+        <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(3 * var(--w))">
+            <h1>{{ post.title }}</h1>
+            <p class="j-text-bold">
+                {{ post.publicationDate|date('j F Y') }}
+            </p>
+            <div>
+                {{ post.description|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock main %}

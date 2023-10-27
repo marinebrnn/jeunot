@@ -11,6 +11,11 @@
                     {{ 'nav.events'|trans }}
                 </a>
             </li>
+            <li>
+                <a href="{{ path('app_posts_list') }}" {% if app.current_route starts with 'app_posts' %}aria-current="page"{% endif %}>
+                    {{ 'nav.posts'|trans }}
+                </a>
+            </li>
         </ul>
 
         <hr>

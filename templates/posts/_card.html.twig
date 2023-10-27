@@ -1,0 +1,20 @@
+<li class="j-card j-max-w" is="j-card-li" style="--max-w: 30rem">
+    <figure>
+        <div class="j-frame" style="--frame-ratio: 10 / 7">
+            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ post.title }}"/>
+        </div>
+    </figure>
+    <div class="j-box" style="--box-padding: calc(2 * var(--w))">
+        <p>
+            {{ post.publicationDate|date('d/m/Y') }}
+        </p>
+        <h3>
+            <a href="{{ path('app_posts_detail', { slug: post.slug } )}}" data-card-li-target="link">
+                {{ post.title }}
+            </a>
+        </h3>
+        <div class="j-cluster" style="--cluster-justify: end">
+            {% include 'common/icons/arrow-right-big.svg.twig' %}
+        </div>
+    </div>
+</li>
