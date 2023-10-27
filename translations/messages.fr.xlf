@@ -50,8 +50,8 @@
                 <source>nav.register</source>
                 <target>Créer un compte</target>
             </trans-unit>
-            <trans-unit id="nav.my_space">
-                <source>nav.my_space</source>
+            <trans-unit id="nav.dashboard">
+                <source>nav.dashboard</source>
                 <target>Mon espace</target>
             </trans-unit>
             <trans-unit id="nav.logout">
@@ -355,32 +355,32 @@
                 <source>events.registered</source>
                 <target>Inscrit·e !</target>
             </trans-unit>
-            <trans-unit id="my_space.title">
-                <source>my_space.title</source>
+            <trans-unit id="dashboard.title">
+                <source>dashboard.title</source>
                 <target>Mon espace</target>
             </trans-unit>
-            <trans-unit id="my_space.description">
-                <source>my_space.description</source>
+            <trans-unit id="dashboard.description">
+                <source>dashboard.description</source>
                 <target>A quels événements avez-vous envie de participer ?</target>
             </trans-unit>
-            <trans-unit id="my_space.welcome">
-                <source>my_space.welcome</source>
+            <trans-unit id="dashboard.welcome">
+                <source>dashboard.welcome</source>
                 <target>Bonjour %firstName% !</target>
             </trans-unit>
-            <trans-unit id="my_space.new_event">
-                <source>my_space.new_event</source>
+            <trans-unit id="dashboard.new_event">
+                <source>dashboard.new_event</source>
                 <target>Vous avez envie de créer un événement ?</target>
             </trans-unit>
-            <trans-unit id="my_space.new_event.description">
-                <source>my_space.new_event.description</source>
+            <trans-unit id="dashboard.new_event.description">
+                <source>dashboard.new_event.description</source>
                 <target>Vous avez des idées ? Discutons-en ! Ecrivez nous à : <![CDATA[<b>]]>contact@jeunot.fr<![CDATA[</b>]]></target>
             </trans-unit>
-            <trans-unit id="my_space.upcoming_events">
-                <source>my_space.upcoming_events</source>
+            <trans-unit id="dashboard.upcoming_events">
+                <source>dashboard.upcoming_events</source>
                 <target>Vos événements à venir</target>
             </trans-unit>
-            <trans-unit id="my_space.upcoming_events.see_more">
-                <source>my_space.upcoming_events.see_more</source>
+            <trans-unit id="dashboard.upcoming_events.see_more">
+                <source>dashboard.upcoming_events.see_more</source>
                 <target>Voir plus d'événements</target>
             </trans-unit>
             <trans-unit id="profile.edit.title">

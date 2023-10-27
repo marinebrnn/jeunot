@@ -9,6 +9,10 @@
 {% block main %}
     {% include 'common/breadcrumb.html.twig' with {
         items: [
+            {
+                title: 'nav.dashboard'|trans,
+                path: path('app_dashboard'),
+            },
             { title: pageTitle }
         ]
     } only %}
