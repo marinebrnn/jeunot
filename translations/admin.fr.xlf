@@ -54,6 +54,30 @@
                 <source>admin.tags.form.title</source>
                 <target>Nom du tag</target>
             </trans-unit>
+            <trans-unit id="admin.post">
+                <source>admin.post</source>
+                <target>Article</target>
+            </trans-unit>
+            <trans-unit id="admin.posts">
+                <source>admin.posts</source>
+                <target>Articles</target>
+            </trans-unit>
+            <trans-unit id="admin.posts.form.title">
+                <source>admin.posts.form.title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="admin.posts.form.description">
+                <source>admin.posts.form.description</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="admin.posts.form.publicationDate">
+                <source>admin.posts.form.publicationDate</source>
+                <target>Date de publication</target>
+            </trans-unit>
+            <trans-unit id="admin.posts.form.published">
+                <source>admin.posts.form.published</source>
+                <target>Publié</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
