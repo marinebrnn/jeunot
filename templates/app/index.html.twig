@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <div class="j-box j-background-flat-red" style="--box-padding: calc(6 * var(--w))">
+    <div class="j-box j-background-flat-red" style="--box-padding: calc(2 * var(--w)); --box-padding-desktop: calc(6 * var(--w))">
         <div class="j-container">
             <h1>{{ 'dashboard.welcome'|trans({'%firstName%': app.user.firstName }) }}</h1>
             <div class="j-text-display">
@@ -13,11 +13,11 @@
             </div>
         </div>
     </div>
-    <div class="j-container j-box" style="--box-padding: calc(6 * var(--w)) 0">
+    <div class="j-container j-box j-stack" style="--box-padding: calc(6 * var(--w)) 0; --stack-gap: calc(4 * var(--w))">
         <h2>{{ 'dashboard.upcoming_events'|trans }}</h2>
         {% include 'events/_event_grid.html.twig' with { events: paginatedEvents.items } only %}
         {% if paginatedEvents.items %}
-            <div class="j-box j-center" style="--box-margin: calc(3 * var(--w)) 0 0 0">
+            <div class="j-center">
                 <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
                     {{ 'dashboard.upcoming_events.see_more'|trans }}
                 </a>
@@ -26,7 +26,7 @@
     </div>
     <div class="j-box j-background-alt-blue" style="--box-padding: calc(6 * var(--w)) 0">
         <div class="j-container">
-            <h2>{{ 'dashboard.new_event'|trans }}</h1>
+            <h2 class="j-h1">{{ 'dashboard.new_event'|trans }}</h1>
             <div class="j-text-display">
                 <p>{{ 'dashboard.new_event.description'|trans|raw }}</p>
             </div>

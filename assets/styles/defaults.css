@@ -8,21 +8,6 @@ body {
   height: 100vh;
 }
 
-footer {
-  flex-grow: 1;
-  background-color: var(--background-flat-black);
-  color: var(--text-on-background-flat-black);
-}
-
-footer #footer-nav > ul li:not(:last-child)::after {
-  content: "|";
-  margin-inline: calc(1.5 * var(--v));
-}
-
-footer hr {
-  border-top: 2px dashed currentColor;
-}
-
 h1,
 h2,
 h3,
@@ -40,7 +25,8 @@ h6 {
   margin-bottom: 1em;
 }
 
-h1 {
+h1,
+.j-h1 {
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
 }
