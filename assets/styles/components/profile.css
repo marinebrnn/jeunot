@@ -1,0 +1,67 @@
+.j-profile-container {
+  --profile-gap: calc(2 * var(--w));
+}
+
+.j-profile-container > * + * {
+  margin-top: var(--profile-gap);
+}
+
+.j-profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--profile-gap);
+}
+
+.j-profile-banner {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2 * var(--w));
+}
+
+.j-profile-picture {
+  --profile-picture-size: calc(18 * var(--w));
+  align-self: center;
+  max-width: var(--profile-picture-size);
+  margin-block: auto;
+}
+
+.j-profile-picture > img {
+  border-radius: 50%;
+  border: 6px solid var(--border-flat-yellow);
+}
+
+.j-profile-details > * + * {
+  margin-top: calc(2 * var(--w));
+}
+
+.j-profile-name {
+  text-align: center;
+  margin-bottom: calc(2 * var(--w));
+}
+
+.j-profile-bio {
+  background-color: var(--background-alt-yellow);
+  padding: calc(3 * var(--v)) calc(4 * var(--v));
+  border-radius: var(--border-sm);
+}
+
+@media screen and (min-width: 900px) {
+  .j-profile-container {
+    --profile-gap: calc(4 * var(--w));
+  }
+
+  .j-profile-banner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc(6 * var(--w));
+    align-items: center;
+  }
+
+  .j-profile-picture {
+    --profile-picture-size: calc(25 * var(--w));
+  }
+
+  .j-profile-name {
+    text-align: start;
+  }
+}

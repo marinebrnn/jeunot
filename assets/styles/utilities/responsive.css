@@ -1,0 +1,13 @@
+.j-desktop-only {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .j-mobile-only {
+    display: none;
+  }
+
+  .j-desktop-only {
+    display: var(--desktop-display, block);
+  }
+}
