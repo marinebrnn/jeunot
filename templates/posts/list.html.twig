@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ 'posts.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    {% include 'common/breadcrumb.html.twig' with {
+        items: [
+            app.user ? {
+                title: 'nav.dashboard'|trans,
+                path: path('app_dashboard'),
+            } : {
+                title: 'nav.home'|trans,
+                path: path('app_home'),
+            },
+            { title: 'nav.posts'|trans }
+        ]
+    } only %}
+
+    <div class="j-box j-background-flat-yellow" style="--box-padding: calc(3 * var(--w)) 0">
+        <div class="j-container">
+            <h1>{{ 'posts.title'|trans }}</h1>
+            <div class="j-text-display">
+                <p>{{ 'posts.jumbotron.line1'|trans }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="j-container j-box" style="--box-padding: calc(6 * var(--w)) 0">
+        <ul class="j-raw-list j-grid" style="--grid-item-min: 340px; --grid-justify-items: center" data-testid="card-list">
+            {% for post in paginatedPosts.items %}
+                {% include 'posts/_card.html.twig' with { post } only %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock main %}
