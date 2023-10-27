@@ -6,6 +6,7 @@
 .j-nav hr {
   width: 100%;
   margin-block: calc(2 * var(--w));
+  border-color: var(--artisans-gold);
 }
 
 .j-nav ul {

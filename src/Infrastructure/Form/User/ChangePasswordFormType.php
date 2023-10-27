@@ -16,7 +16,7 @@ final class ChangePasswordFormType extends AbstractType
     {
         $builder
             ->add('oldPassword', PasswordType::class, [
-                'label' => 'profile.edit.password.old',
+                'label' => 'reset_password.password.old',
             ])
             ->add('newPassword', RepeatedType::class, [
                 'type' => PasswordType::class,

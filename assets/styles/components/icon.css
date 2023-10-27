@@ -1,0 +1,23 @@
+.j-icon {
+  --icon-size: 7;
+  width: calc(var(--icon-size) * var(--v));
+  height: calc(var(--icon-size) * var(--v));
+}
+
+.j-icon--sm {
+  --icon-size: 3.5;
+}
+
+.j-icon--left,
+.j-icon--right {
+  display: flex;
+  align-items: center;
+}
+
+.j-icon--left > .j-icon {
+  margin-right: calc(2 * var(--v));
+}
+
+.j-icon--right > .j-icon {
+  margin-left: calc(2 * var(--v));
+}

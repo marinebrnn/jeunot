@@ -250,6 +250,10 @@
                 <source>reset_password.succeeded</source>
                 <target>Votre mot de passe a bien été changé. Vous pouvez dès à présent vous connecter en utilisant votre nouveau mot de passe.</target>
             </trans-unit>
+            <trans-unit id="reset_password.password.old">
+                <source>reset_password.password.old</source>
+                <target>Mot de passe actuel</target>
+            </trans-unit>
             <trans-unit id="reset_password.password">
                 <source>reset_password.password</source>
                 <target>Nouveau mot de passe</target>
@@ -383,12 +387,16 @@
                 <source>profile.edit.title</source>
                 <target>Modifier mon profil</target>
             </trans-unit>
-            <trans-unit id="profile.edit.password.old">
-                <source>profile.edit.password.old</source>
-                <target>Ancien mot de passe</target>
-            </trans-unit>
             <trans-unit id="profile.edit.password">
                 <source>profile.edit.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="profile.edit.password.change">
+                <source>profile.edit.password.change</source>
+                <target>Modifier mon mot de passe</target>
+            </trans-unit>
+            <trans-unit id="profile.edit.password.title">
+                <source>profile.edit.password.title</source>
                 <target>Modifier mon mot de passe</target>
             </trans-unit>
             <trans-unit id="profile.detail.title">
@@ -421,15 +429,19 @@
             </trans-unit>
             <trans-unit id="profile.lastName">
                 <source>profile.lastName</source>
-                <target>Nom</target>
+                <target>Nom de famille</target>
             </trans-unit>
             <trans-unit id="profile.email">
                 <source>profile.email</source>
-                <target>Adresse email / courriel</target>
+                <target>Adresse e-mail / Courriel</target>
             </trans-unit>
             <trans-unit id="profile.gender">
                 <source>profile.gender</source>
                 <target>Mon genre</target>
+            </trans-unit>
+            <trans-unit id="profile.gender.placeholder">
+                <source>profile.gender.placeholder</source>
+                <target>Sélectionner mon genre</target>
             </trans-unit>
             <trans-unit id="profile.gender.male">
                 <source>profile.gender.male</source>
@@ -453,11 +465,15 @@
             </trans-unit>
             <trans-unit id="profile.birthday">
                 <source>profile.birthday</source>
-                <target>Ma date de naissance</target>
+                <target>Date de naissance</target>
             </trans-unit>
             <trans-unit id="profile.city">
                 <source>profile.city</source>
                 <target>Ma ville</target>
+            </trans-unit>
+            <trans-unit id="profile.myAge">
+                <source>profile.myAge</source>
+                <target>Mon âge</target>
             </trans-unit>
             <trans-unit id="profile.displayMyAge">
                 <source>profile.displayMyAge</source>

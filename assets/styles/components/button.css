@@ -12,6 +12,7 @@
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   cursor: pointer;
+  text-align: center;
 }
 
 .j-btn--lg {
@@ -19,13 +20,15 @@
   padding: var(--button-padding-lg);
 }
 
-button[type="submit"].j-btn {
+button[type="submit"].j-btn,
+.j-btn--action {
   width: 100%;
   font-size: var(--font-size-default);
 }
 
 @media screen and (min-width: 600px) {
-  button[type="submit"].j-btn {
+  button[type="submit"].j-btn,
+  .j-btn--action {
     width: initial;
     padding: var(--button-padding-lg);
   }
@@ -64,4 +67,11 @@ button[type="submit"].j-btn {
   background-color: transparent;
   color: var(--tint);
   border: 1px solid var(--tint);
+}
+
+.j-btn--tertiary {
+  --hover-tint: rgba(0, 0, 0, 0.05);
+  background-color: transparent;
+  color: var(--tint);
+  border: none;
 }
