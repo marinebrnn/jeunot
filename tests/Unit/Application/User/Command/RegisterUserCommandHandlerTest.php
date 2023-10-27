@@ -40,6 +40,7 @@ final class RegisterUserCommandHandlerTest extends TestCase
         $command->email = '  matHieu@fAirness.coop   ';
         $command->password = 'password';
         $command->birthday = new \DateTime('1989-09-17');
+        $command->howYouHeardAboutUs = 'Par les réseaux sociaux';
 
         $this->command = $command;
     }
@@ -79,6 +80,7 @@ final class RegisterUserCommandHandlerTest extends TestCase
             new \DateTime('1989-09-17'),
             $registration,
             false,
+            'Par les réseaux sociaux',
         );
 
         $this->userRepository

@@ -26,6 +26,7 @@ final class UserTest extends TestCase
             $birthday,
             $registration,
             false,
+            'Par les réseaux sociaux',
         );
 
         $this->assertSame('9cebe00d-04d8-48da-89b1-059f6b7bfe44', $user->getUuid());
@@ -33,6 +34,7 @@ final class UserTest extends TestCase
         $this->assertSame('Marchois', $user->getLastName());
         $this->assertSame('mathieu@fairness.coop', $user->getEmail());
         $this->assertSame('password', $user->getPassword());
+        $this->assertSame('Par les réseaux sociaux', $user->getHowYouHeardAboutUs());
         $this->assertSame(UserRoleEnum::ROLE_ADMIN->value, $user->getRole());
         $this->assertSame($birthday, $user->getBirthday());
         $this->assertSame($registration, $user->getRegistrationDate());

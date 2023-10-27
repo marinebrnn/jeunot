@@ -194,6 +194,10 @@
                 <source>register.birthday</source>
                 <target>Date de naissance</target>
             </trans-unit>
+            <trans-unit id="register.howYouHeardAboutUs">
+                <source>register.howYouHeardAboutUs</source>
+                <target>Comment vous nous avez connus ?</target>
+            </trans-unit>
             <trans-unit id="register.description">
                 <source>register.description</source>
                 <target>En créant un compte, vous aurez accès aux événements près de chez vous. C’est entièrement gratuit et sans engagement ! Vos données personnelles sont protégées et ne sont pas revendues.</target>

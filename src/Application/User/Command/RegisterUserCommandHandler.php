@@ -43,6 +43,7 @@ final readonly class RegisterUserCommandHandler
                 birthday: $command->birthday,
                 registrationDate: $this->dateUtils->getNow(),
                 isVerified: false,
+                howYouHeardAboutUs: $command->howYouHeardAboutUs,
             ),
         );
     }
