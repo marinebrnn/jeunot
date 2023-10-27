@@ -63,6 +63,7 @@ input.j-has-error {
 /* Credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/ */
 .j-select {
   --form-control-color: var(--early-spring-night);
+  max-width: var(--select-width, 30ch);
 }
 .j-select > select {
   /* Remove the default dropdown arrow */
