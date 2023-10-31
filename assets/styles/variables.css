@@ -16,14 +16,14 @@
 
   --font-size-sm: 0.875rem;
 
-  --font-size-display: 1.25rem;
-  --line-height-display: 1.625rem;
+  --font-size-display: 1.125rem;
+  --line-height-display: 1.875rem;
 
   --font-size-h3: 1.25rem;
-  --line-height-h3: 1.875rem;
+  --line-height-h3: 2rem;
 
-  --font-size-h2: 1.3175rem;
-  --line-height-h2: 1.625rem;
+  --font-size-h2: 1.5rem;
+  --line-height-h2: 1.875rem;
 
   --font-size-h1: 1.875rem;
   --line-height-h1: 2.125rem;
@@ -80,6 +80,7 @@
   --text-default: var(--nero);
   --text-action-blue: var(--blue-estate);
   --text-error: var(--saffron-desires);
+  --text-red: var(--mulberry);
   --text-on-background-action-blue: var(--white);
   --text-on-background-flat-black: var(--white-smoke);
   --text-on-background-flat-yellow: var(--nero);
@@ -113,7 +114,8 @@
     --font-size-display: 1.5rem;
     --line-height-display: 2rem;
 
-    /* -- h3 is unchanged -- */
+    --font-size-h3: 1.5rem;
+    --line-height-h3: 1.71rem;
 
     --font-size-h2: 2.25rem;
     --line-height-h2: 2.56rem;

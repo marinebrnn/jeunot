@@ -1,7 +1,14 @@
 {% extends 'layout.html.twig' %}
 
+{% block main_tag %}
+    <main style="
+        --container-width: calc(141 * var(--w));
+        --box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0
+    ">
+{% endblock %}
+
 {% block main %}
-    <div class="j-box j-background-flat-yellow" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0">
+    <div class="home-jumbotron j-box j-background-flat-yellow">
         <div class="j-container">
             <div class="j-stack" style="--stack-gap: calc(3 * var(--w))">
                 <img src="{{ asset('images/logo-orange.svg') }}" width="150px" height="auto" alt="">
@@ -23,6 +30,99 @@
                     {{ 'home.jumbotron.cta'|trans }}
                 </a>
             </div>
+        </div>
+    </div>
+
+    <div class="j-container j-box j-stack" style="--stack-gap: calc(4 * var(--w))">
+        <h2>{{ 'home.upcoming_events'|trans }}</h2>
+
+        {% include 'events/_event_grid.html.twig' with { events: paginatedEvents.items } only %}
+
+        <div class="j-center">
+            <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
+                {{ 'home.upcoming_events.see_more'|trans }}
+            </a>
+        </div>
+    </div>
+
+    <div class="j-background-alt-red j-box">
+        <div class="j-container j-stack" style="--stack-gap: calc(3 * var(--w))">
+            <h2>{{ 'home.why_register'|trans }}</h2>
+
+            <div class="j-grid" style="--grid-gap: calc(6 * var(--w)); --grid-item-min: 30ch; --why_register-stack-gap: calc(2 * var(--w))">
+                <div class="j-text-center j-stack" style="--stack-gap: var(--why_register-stack-gap)">
+                    <div class="j-frame" style="--frame-ratio: 1.4 / 1">
+                        <img src="{{ asset('images/home/find_events.svg') }}" alt="">
+                    </div>
+                    <h3>
+                        {{ 'home.why_register.find_events'|trans }}
+                    </h3>
+                    <p class="j-text-display">
+                        {{ 'home.why_register.find_events.description'|trans }}
+                    </p>
+                </div>
+
+                <div class="j-text-center j-stack" style="--stack-gap: var(--why_register-stack-gap)">
+                    <div class="j-frame" style="--frame-ratio: 1.4 / 1">
+                        <img src="{{ asset('images/home/meet_people.svg') }}" alt="">
+                    </div>
+                    <h3>
+                        {{ 'home.why_register.meet_people'|trans }}
+                    </h3>
+                    <p class="j-text-display">
+                        {{ 'home.why_register.meet_people.description'|trans }}
+                    </p>
+                </div>
+
+                <div class="j-text-center j-stack" style="--stack-gap: var(--why_register-stack-gap)">
+                    <div class="j-frame" style="--frame-ratio: 1.4 / 1">
+                        <img src="{{ asset('images/home/share_flat.svg') }}" alt="">
+                    </div>
+                    <h3>
+                        {{ 'home.why_register.share_flat'|trans }}
+                    </h3>
+                    <p class="j-text-display">
+                        {{ 'home.why_register.share_flat.description'|trans }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="j-center">
+                <a href="{{ path('app_register') }}" class="j-btn j-btn--lg">
+                    {{ 'home.why_register.register'|trans }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="j-container j-box j-stack" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0; --stack-gap: calc(3 * var(--w))">
+        <h2>{{ 'home.why_jeunot'|trans }}</h2>
+
+        <div class="j-grid" style="--grid-gap: calc(3 * var(--w)); --grid-item-min: 40ch">
+            <div class="j-stack" style="--stack-gap: 0">
+                <h3 class="j-text-red">{{ 'home.why_jeunot.mission'|trans }}</h3>
+                <div class="j-cluster">
+                    <div class="home-bubble" style="--bubble-translate: 20%">
+                        <img src="{{ asset('images/home/mission-bubble.svg') }}" alt="">
+                        <p class="j-text-display">{{ 'home.why_jeunot.mission.description'|trans }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="j-stack" style="--stack-gap: 0">
+                <h3 class="j-text-red">{{ 'home.why_jeunot.ambition'|trans }}</h3>
+                <div class="j-cluster">
+                    <div class="home-bubble">
+                        <img src="{{ asset('images/home/ambition-bubble.svg') }}" alt="">
+                        <p class="j-text-display">{{ 'home.why_jeunot.ambition.description'|trans }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="j-center">
+            <a href="{{ path('app_about') }}" class="j-btn j-btn--lg">
+                {{ 'home.why_jeunot.about'|trans }}
+            </a>
         </div>
     </div>
 {% endblock %}

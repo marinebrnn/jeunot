@@ -19,3 +19,7 @@
 .j-text-default {
   color: var(--text-default);
 }
+
+.j-text-red {
+  color: var(--text-red);
+}

@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+    <div class="j-box j-background-flat-yellow" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0">
+        <div class="j-container">
+            <div class="j-stack" style="--stack-gap: calc(3 * var(--w))">
+                <h1 class="j-max-w" style="--max-w: 25ch">
+                    {{ 'about.title'|trans }}
+                </h1>
+
+                <p>
+                    {{ 'about.description'|trans }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
