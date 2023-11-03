@@ -1,0 +1,55 @@
+.home-jumbotron {
+  position: relative;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.home-jumbotron::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/public/images/home/jumbotron-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 500px auto;
+  background-position: center top;
+}
+
+@media screen and (min-width: 600px) {
+  .home-jumbotron::before {
+    background-image: url("/public/images/home/jumbotron.svg");
+    background-size: 1850px auto;
+    background-position: 65% center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .home-jumbotron::before {
+    background-position: center;
+  }
+}
+
+.home-bubble {
+  position: relative;
+  display: flex;
+}
+
+.home-bubble > p {
+  position: absolute;
+  place-self: center;
+  text-align: center;
+  padding-inline: calc(6 * var(--w));
+  transform: translateY(var(--bubble-translate, 10%));
+  font-size: var(--font-size-default);
+  line-height: var(--line-height-default);
+}
+
+/* Roughly where text would overflow in display size */
+@media screen and (min-width: 450px) {
+  .home-bubble > p {
+    font-size: var(--font-size-display);
+    line-height: var(--line-height-display);
+  }
+}

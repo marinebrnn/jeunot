@@ -21,3 +21,7 @@
 .j-background-alt-blue {
   background-color: var(--background-alt-blue);
 }
+
+.j-background-alt-red {
+  background-color: var(--background-alt-pink);
+}

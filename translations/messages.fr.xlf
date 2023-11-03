@@ -118,6 +118,78 @@
                 <source>home.jumbotron.cta</source>
                 <target>Créer un compte</target>
             </trans-unit>
+            <trans-unit id="home.upcoming_events">
+                <source>home.upcoming_events</source>
+                <target>Événements à venir</target>
+            </trans-unit>
+            <trans-unit id="home.upcoming_events.see_more">
+                <source>home.upcoming_events.see_more</source>
+                <target>Voir plus d'événements</target>
+            </trans-unit>
+            <trans-unit id="home.why_register">
+                <source>home.why_register</source>
+                <target>Pourquoi s'inscrire ?</target>
+            </trans-unit>
+            <trans-unit id="home.why_register.find_events">
+                <source>home.why_register.find_events</source>
+                <target>Découvrir des événements gratuits près de chez soi</target>
+            </trans-unit>
+            <trans-unit id="home.why_register.find_events.description">
+                <source>home.why_register.find_events.description</source>
+                <target>Chaque membre de la communauté Jeunot peut proposer des activités, apéros ou sorties conviviales pour faire connaissance.</target>
+            </trans-unit>
+            <trans-unit id="home.why_register.meet_people">
+                <source>home.why_register.meet_people</source>
+                <target>Faire de nouvelles rencontres</target>
+            </trans-unit>
+            <trans-unit id="home.why_register.meet_people.description">
+                <source>home.why_register.meet_people.description</source>
+                <target>La communauté Jeunot rassemble les 60 ans et plus ouverts à de nouvelles amitiés. Venez les rencontrer ! 🙂</target>
+            </trans-unit>
+            <trans-unit id="home.why_register.share_flat">
+                <source>home.why_register.share_flat</source>
+                <target>Partager un logement entre ami·e·s</target>
+            </trans-unit>
+            <trans-unit id="home.why_register.share_flat.description">
+                <source>home.why_register.share_flat.description</source>
+                <target>A terme, Jeunot a vocation à faciliter la création de colocations entre 60 ans et plus dans toute la France. Partagez votre logement et vos loisirs entre ami·e·s au quotidien !</target>
+            </trans-unit>
+            <trans-unit id="home.why_register.register">
+                <source>home.why_register.register</source>
+                <target>Créer un compte</target>
+            </trans-unit>
+            <trans-unit id="home.why_jeunot">
+                <source>home.why_jeunot</source>
+                <target>Pourquoi Jeunot ?</target>
+            </trans-unit>
+            <trans-unit id="home.why_jeunot.mission">
+                <source>home.why_jeunot.mission</source>
+                <target>La mission Jeunot</target>
+            </trans-unit>
+            <trans-unit id="home.why_jeunot.mission.description">
+                <source>home.why_jeunot.mission.description</source>
+                <target>Proposer un nouvel accompagnement dans le "mieux vieillir" et réduire l'impact de l'âgisme que notre société nous impose.</target>
+            </trans-unit>
+            <trans-unit id="home.why_jeunot.ambition">
+                <source>home.why_jeunot.ambition</source>
+                <target>Notre ambition</target>
+            </trans-unit>
+            <trans-unit id="home.why_jeunot.ambition.description">
+                <source>home.why_jeunot.ambition.description</source>
+                <target>À terme, nous souhaitons permettre à des milliers de 60 ans et plus de sortir de l’isolement en vivant de grandes amitiés notamment via la colocation.</target>
+            </trans-unit>
+            <trans-unit id="home.why_jeunot.about">
+                <source>home.why_jeunot.about</source>
+                <target>En savoir plus sur Jeunot</target>
+            </trans-unit>
+            <trans-unit id="about.title">
+                <source>about.title</source>
+                <target>À propos</target>
+            </trans-unit>
+            <trans-unit id="about.description">
+                <source>about.description</source>
+                <target>Jeunot est un projet entrepreneurial à visée sociale, né en 2020 et qui continue à grandir grâce à sa communauté.</target>
+            </trans-unit>
             <trans-unit id="login.title">
                 <source>login.title</source>
                 <target>Se connecter</target>
