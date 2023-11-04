@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -26,6 +27,11 @@ final class ProfileFormType extends AbstractType
         }
 
         $builder
+            ->add('file', FileType::class, [
+                'required' => false,
+                'label' => 'profile.file',
+                'help' => 'profile.file.help',
+            ])
             ->add('firstName', TextType::class, [
                 'label' => 'profile.firstName',
             ])

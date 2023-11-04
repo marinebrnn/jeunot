@@ -31,6 +31,7 @@
                 <div>
                     <h2>{{ 'profile.edit.public'|trans }}</h2>
 
+                    {{ form_row(form.file, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.firstName, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.biography, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.city, { row_attr: { class: 'j-input-group' } }) }}

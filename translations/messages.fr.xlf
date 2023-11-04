@@ -559,6 +559,14 @@
                 <source>profile.myAge</source>
                 <target>Mon âge</target>
             </trans-unit>
+            <trans-unit id="profile.file">
+                <source>profile.file</source>
+                <target>Photo de profil</target>
+            </trans-unit>
+            <trans-unit id="profile.file.help">
+                <source>profile.file.help</source>
+                <target>Formats autorisés : .jpg, .jpeg, .png, .webp. Taille maximale : 1Mo</target>
+            </trans-unit>
             <trans-unit id="profile.displayMyAge">
                 <source>profile.displayMyAge</source>
                 <target>Afficher mon âge sur mon profil</target>
