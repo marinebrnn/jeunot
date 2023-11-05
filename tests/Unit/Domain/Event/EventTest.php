@@ -54,5 +54,9 @@ final class EventTest extends TestCase
         $event->removeTag($tag1);
 
         $this->assertEquals(new ArrayCollection([1 => $tag2]), $event->getTags());
+
+        // Hack linked to easy admin to avoid deleting an existing image when editing form
+        $event->setPicture(null);
+        $this->assertSame('/path/to/my/file', $event->getPicture());
     }
 }

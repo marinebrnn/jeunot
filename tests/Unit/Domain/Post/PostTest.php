@@ -34,5 +34,9 @@ final class PostTest extends TestCase
         $this->assertSame($user, $post->getOwner());
         $this->assertSame('/path/to/my/file', $post->getPicture());
         $this->assertTrue($post->isPublished());
+
+        // Hack linked to easy admin to avoid deleting an existing image when editing form
+        $post->setPicture(null);
+        $this->assertSame('/path/to/my/file', $post->getPicture());
     }
 }

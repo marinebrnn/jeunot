@@ -15,6 +15,7 @@ final class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInter
     private string $firstName;
     private string $lastName;
     private string $password;
+    private ?string $avatar;
     private bool $isVerified;
     private array $roles;
 
@@ -27,6 +28,7 @@ final class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInter
         $this->lastName = $user->getLastName();
         $this->password = $user->getPassword();
         $this->isVerified = $user->isVerified();
+        $this->avatar = $user->getAvatar();
         $this->roles = [$user->getRole()];
     }
 
@@ -48,6 +50,11 @@ final class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInter
     public function getLastName(): string
     {
         return $this->lastName;
+    }
+
+    public function getAvatar(): ?string
+    {
+        return $this->avatar;
     }
 
     public function isVerified(): bool

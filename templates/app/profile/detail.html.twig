@@ -33,7 +33,7 @@
             <div class="j-profile-banner">
                 <div class="j-profile-picture j-frame" style="--frame-ratio: 1 / 1">
                     {% if user.avatar %}
-                        <img src="{{ user.avatar }}" alt="{{ 'profile.detail.picture'|trans }}">
+                        <img src="{{ storageCdnUrl ~ '/' ~ user.avatar }}" alt="{{ 'profile.detail.picture'|trans }}">
                     {% else %}
                         <img src="{{ asset('images/placeholder.webp') }}" alt="{{ 'profile.detail.picture'|trans }}">
                     {% endif %}

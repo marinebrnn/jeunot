@@ -14,6 +14,10 @@
                 <source>admin.events.form.title</source>
                 <target>Nom de l'événement</target>
             </trans-unit>
+            <trans-unit id="admin.events.form.picture">
+                <source>admin.events.form.picture</source>
+                <target>Photo de l'événement</target>
+            </trans-unit>
             <trans-unit id="admin.events.form.description">
                 <source>admin.events.form.description</source>
                 <target>Description</target>
@@ -73,6 +77,14 @@
             <trans-unit id="admin.posts.form.title">
                 <source>admin.posts.form.title</source>
                 <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="admin.posts.form.picture">
+                <source>admin.posts.form.picture</source>
+                <target>Photo de l'article</target>
+            </trans-unit>
+            <trans-unit id="admin.images.format">
+                <source>admin.images.format</source>
+                <target>Image au format .png, .jpg ou jpeg</target>
             </trans-unit>
             <trans-unit id="admin.posts.form.description">
                 <source>admin.posts.form.description</source>
