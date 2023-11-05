@@ -31,6 +31,11 @@
                 <div>
                     <h2>{{ 'profile.edit.public'|trans }}</h2>
 
+                    {% if app.user.avatar %}
+                        <div class="j-profile-picture j-frame" style="--frame-ratio: 1 / 1">
+                            <img src="{{ storageCdnUrl ~ '/' ~ app.user.avatar }}" alt="{{ 'profile.detail.picture'|trans }}">
+                        </div>
+                    {% endif %}
                     {{ form_row(form.file, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.firstName, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.biography, { row_attr: { class: 'j-input-group' } }) }}

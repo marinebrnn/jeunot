@@ -14,13 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 final class GetUserProfileQueryHandlerTest extends TestCase
 {
-    private string $storageCdn;
-
-    public function setUp(): void
-    {
-        $this->storageCdn = 'https://jeunot.s3.fr-par.scw.cloud';
-    }
-
     public function testProfile(): void
     {
         $now = new \DateTimeImmutable('2023-10-23');
@@ -52,7 +45,7 @@ final class GetUserProfileQueryHandlerTest extends TestCase
             ->willReturn($now);
 
         $query = new GetUserProfileQuery('a8597889-a063-4da9-b536-2aef6988c993');
-        $handler = new GetUserProfileQueryHandler($userRepository, $dateUtils, $this->storageCdn);
+        $handler = new GetUserProfileQueryHandler($userRepository, $dateUtils);
 
         $this->assertEquals(
             new ProfileView(
@@ -61,7 +54,7 @@ final class GetUserProfileQueryHandlerTest extends TestCase
                 biography: 'Je suis un développeur',
                 registrationDate: $registrationDate,
                 age: 34,
-                avatar: 'https://jeunot.s3.fr-par.scw.cloud/a8597889-a063-4da9-b536-2aef6988c993.jpeg',
+                avatar: 'a8597889-a063-4da9-b536-2aef6988c993.jpeg',
             ),
             ($handler)($query),
         );
@@ -69,7 +62,6 @@ final class GetUserProfileQueryHandlerTest extends TestCase
 
     public function testProfileWithHiddenAge(): void
     {
-        $storageCdn = 'https://jeunot.s3.fr-par.scw.cloud';
         $birthday = new \DateTime('1989-09-17');
         $registrationDate = new \DateTime('2023-09-13 21:00:00');
         $dateUtils = $this->createMock(DateUtilsInterface::class);
@@ -97,7 +89,7 @@ final class GetUserProfileQueryHandlerTest extends TestCase
             ->method('getNow');
 
         $query = new GetUserProfileQuery('a8597889-a063-4da9-b536-2aef6988c993');
-        $handler = new GetUserProfileQueryHandler($userRepository, $dateUtils, $this->storageCdn);
+        $handler = new GetUserProfileQueryHandler($userRepository, $dateUtils);
 
         $this->assertEquals(
             new ProfileView(
@@ -130,7 +122,7 @@ final class GetUserProfileQueryHandlerTest extends TestCase
             ->method('getNow');
 
         $query = new GetUserProfileQuery('a8597889-a063-4da9-b536-2aef6988c993');
-        $handler = new GetUserProfileQueryHandler($userRepository, $dateUtils, $this->storageCdn);
+        $handler = new GetUserProfileQueryHandler($userRepository, $dateUtils);
         ($handler)($query);
     }
 }

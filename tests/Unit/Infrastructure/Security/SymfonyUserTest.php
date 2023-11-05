@@ -36,6 +36,10 @@ final class SymfonyUserTest extends TestCase
             ->willReturn('password');
         $user
             ->expects(self::once())
+            ->method('getAvatar')
+            ->willReturn('profil.jpeg');
+        $user
+            ->expects(self::once())
             ->method('isVerified')
             ->willReturn(false);
         $user
@@ -53,6 +57,7 @@ final class SymfonyUserTest extends TestCase
         $this->assertSame('mathieu@fairness.coop', $symfonyUser->getUsername());
         $this->assertSame('mathieu@fairness.coop', $symfonyUser->getUserIdentifier());
         $this->assertSame('password', $symfonyUser->getPassword());
+        $this->assertSame('profil.jpeg', $symfonyUser->getAvatar());
         $this->assertEmpty($symfonyUser->eraseCredentials());
         $this->assertFalse($symfonyUser->isVerified());
     }

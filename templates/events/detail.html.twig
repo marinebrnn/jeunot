@@ -29,7 +29,11 @@
     <div data-testid="event" class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
         <figure>
             <div class="j-frame" style="--frame-ratio: 16 / 9">
-                <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+                {% if event.picture %}
+                    <img src="{{ storageCdnUrl ~ '/' ~ event.picture }}" alt="{{ event.title }}"/>
+                {% else %}
+                    <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+                {% endif %}
             </div>
             <figcaption data-testid="event-location">{{ event.location }}</figcaption>
         </figure>

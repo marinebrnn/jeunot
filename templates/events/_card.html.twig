@@ -1,7 +1,11 @@
 <li class="j-card j-max-w" is="j-card-li" style="--max-w: 30rem">
     <figure>
         <div class="j-frame" style="--frame-ratio: 10 / 7">
-            <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+            {% if event.picture %}
+                <img src="{{ storageCdnUrl ~ '/' ~ event.picture }}" alt="{{ event.title }}"/>
+            {% else %}
+                <img src="{{ asset('images/placeholder.webp') }}" alt="{{ event.title }}"/>
+            {% endif %}
         </div>
         <figcaption data-testid="event-location">{{ event.location }}</figcaption>
     </figure>

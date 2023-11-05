@@ -71,9 +71,12 @@ class Post
         return $this->picture;
     }
 
-    public function setPicture(string $picture): void
+    public function setPicture(?string $picture): void
     {
-        $this->picture = $picture;
+        // Hack linked to easy admin to avoid deleting an existing image when editing form
+        if ($picture) {
+            $this->picture = $picture;
+        }
     }
 
     public function getOwner(): User
