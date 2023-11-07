@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ 'privacy.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <div class="j-box j-background-flat-yellow" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) ">
+        <div class="j-container">
+            <div class="j-stack" style="--stack-gap: calc(3 * var(--w))">
+                <h1 class="j-max-w" style="--max-w: 25ch">
+                    {{ 'privacy.title'|trans }}
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="j-container j-box j-stack" style="--stack-gap: calc(4 * var(--w))">
+        <div>Les internautes accédant au site <a href="https://www.jeunot.club">https://www.jeunot.club</a> peuvent être amenés à fournir des informations nominatives ou à caractère personnel dans le cadre des services proposés par JEUNOT.</div>
+        <div>JEUNOT est responsable de traitement au sens du Règlement (UE) 2016/679 dit Règlement Général pour la Protection des Données ou « RGPD », pour la collecte et le traitement des données à caractère personnel effectuées sur le site accessible à l’adresse URL : <a href="https://www.jeunot.club">https://www.jeunot.club</a></div>
+        <div>JEUNOT traite les données personnelles collectées via son site pour la finalité suivante : permettre au visiteur du site d’obtenir des informations sur les services proposés par JEUNOT et les conditions d’éligibilité en nous contactant via le formulaire de collecte en ligne.</div>
+
+        <div>Conformément au RGPD, le visiteur du site dispose sur ses données personnelles des droits suivants :</div>
+        - Un droit d’accès<br/>
+        - Un droit de rectification<br/>
+        - Un droit d’effacement<br/>
+        - Le cas échéant, d’un droit à la portabilité de ses données<br/>
+        - Un droit de demander la limitation du traitement de ses données et/ ou de s’y opposer<br/>
+        - Le cas échéant, un droit de retirer son consentement<br/>
+        - Un droit de définir des directives relatives au sort de ses données après sa mort<br/>
+        Le visiteur peut exercer ses droits en envoyant soit :<br/>
+        - Un courrier à l’attention du DPO de JEUNOT à l’adresse suivante :<br/>
+        SAS JEUNOT<br/>
+        40 rue Turbigo<br/>
+        75003 Paris<br/>
+
+        <div>Si le visiteur estime que JEUNOT n’a pas correctement répondu à ses sollicitations, il dispose d’un droit d’introduire une réclamation auprès de la CNIL.</div>
+        <div>JEUNOT limite la collecte des données personnelles au strict nécessaire au regard des finalités des traitements de données, elles sont destinées à JEUNOT mais sont susceptibles d’être transférées à des organismes publics afin de mieux répondre à la demande du visiteur.</div>
+        <div>Les données ne sont en aucun cas communiqués, ni vendues, ni cédées, louées et / ou commercialisées à des tiers au sens du RGPD.</div>
+        <div>Les données seront conservées tant que le visiteur souhaitera recevoir des informations, et le temps nécessaire à la gestion de sa demande.</div>
+        <div>JEUNOT veille à ce que toutes les mesures techniques et organisationnelles afin de protéger les données personnelles soient mises en œuvre, ces règles de confidentialités et de sécurité sont également imposées à l’ensemble du personnel de JEUNOT, ainsi qu’à tous les prestataires et sous-traitants travaillant pour JEUNOT.</div>
+    </div>
+{% endblock %}

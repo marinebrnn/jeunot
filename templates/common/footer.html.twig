@@ -5,7 +5,7 @@
                 <img src="{{ asset('images/logo-blanc.svg') }}" alt="{{ 'common.title'|trans }}" width="200px">
 
                 <div>
-                    {{ 'common.tagline'|trans }}    
+                    {{ 'common.tagline'|trans }}
                 </div>
             </div>
             <div class="j-cluster" style="--cluster-gap: calc(4 * var(--w))">
@@ -30,7 +30,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ path('app_posts_list') }}">
                                 {{ 'footer.articles'|trans }}
                             </a>
                         </li>
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <hr>
+        <hr/>
 
         <div class="j-cluster j-box" style="--cluster-justify: space-between; --cluster-align: center; --cluster-gap: calc(2 * var(--w)); --box-padding: calc(2 * var(--w)) 0">
             <small lang="en">{{ 'footer.freepik_disclaimer'|trans }}</small>
@@ -76,32 +76,22 @@
             <nav id="footer-nav" class="j-text-small" aria-label="Navigation de pied de page">
                 <ul class="j-raw-list">
                     <li>
-                        <a href="#">
-                            Plan du site
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Accessibilité
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
+                        <a href="{{ path('app_legals') }}">
                             Mentions légales
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ path('app_cgu') }}">
                             {{ 'nav.terms.short'|trans }}
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ path('app_privacy') }}">
                             {{ 'nav.privacy'|trans }}
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ path('app_cookies') }}">
                             Cookies
                         </a>
                     </li>
@@ -109,6 +99,4 @@
             </nav>
         </div>
     </div>
-
-
 </footer>
