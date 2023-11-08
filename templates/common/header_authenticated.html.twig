@@ -36,11 +36,6 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    {{ 'nav.help'|trans }}
-                </a>
-            </li>
-            <li>
                 <a href="{{ path('app_logout') }}">
                     {{ 'nav.logout'|trans }}
                 </a>
@@ -51,12 +46,12 @@
 
         <ul class="j-raw-list" data-mobile-only>
             <li>
-                <a href="#">
+                <a href="{{ path('app_privacy') }}">
                     {{ 'nav.privacy'|trans }}
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ path('app_cgu') }}">
                     {{ 'nav.terms'|trans }}
                 </a>
             </li>

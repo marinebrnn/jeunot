@@ -37,7 +37,6 @@ test.describe("authenticated", () => {
       ["Événements", "/events"],
       ["Articles", "/posts"],
       ["Mon profil", "/app/profile/0b507871-8b5e-4575-b297-a630310fc06e"],
-      ["Aide", "#"],
       ["Se déconnecter", "/logout"],
     ]);
   });
