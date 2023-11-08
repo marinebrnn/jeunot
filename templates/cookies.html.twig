@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ 'cookies.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <div class="j-box j-background-flat-yellow" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) ">
+        <div class="j-container">
+            <div class="j-stack" style="--stack-gap: calc(3 * var(--w))">
+                <h1 class="j-max-w" style="--max-w: 25ch">
+                    {{ 'cookies.title'|trans }}
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="j-container j-box j-stack" style="--stack-gap: calc(4 * var(--w))">
+        <h2>INFORMATIONS A PROPOS DES COOKIES</h2>
+
+        <div>Lors de la consultation de notre site internet, des cookies sont déposés sur le terminal (ordinateur, tablette, smartphone) avec lequel vous naviguez.</div>
+
+        <h2>QU’EST CE QU’UN COOKIE ?</h2>
+
+        <div>Le cookie est un petit fichier texte déposé dans un espace dédié du disque dur de votre terminal qui va stocker des informations relatives à votre navigation.</div>
+        <div>Il est téléchargé par votre navigateur lors de la visite d’un site internet. Lorsque vous revenez sur ce site en utilisant le même appareil, le cookie et les informations qui y sont stockés sont soit envoyés au site internet qui l’a créé (cookie propriétaire) soit envoyés à un autre site internet auquel il appartient (cookie tiers).</div>
+        <div>Certains cookies sont extrêmement utiles car ils peuvent améliorer l’expérience de l’utilisateur. Par exemple, lorsque vous consultez plusieurs fois un site internet avec un même navigateur, les cookies gardent en mémoire, vos préférences, la manière dont vous utilisez un site et adaptent le contenu affiché pour qu’il soit adapté à vos besoins et intérêts personnels.</div>
+        <div>Selon leur fonction et leur finalité, les cookies peuvent être divisés en quatre catégories : les cookies essentiels, les cookies de mesures d’audience et de statistique, les cookies fonctionnels et les cookies publicitaires.</div>
+
+        <h2>QUELLE EST LA DUREE DE CONSERVATION D’UN COOKIE ?</h2>
+
+        <div>Les cookies déposés par JEUNOT, nos sous-traitants et nos partenaires et les données de navigations recueillies sont conservées pour une durée maximale de 6 mois à compter du dépôt sur votre terminal.</div>
+        <div>A l’expiration de ce délai, votre consentement sera à nouveau nécessaire au dépôt du cookie.</div>
+
+        <h2>LES CATEGORIES DE COOKIES :</h2>
+
+        <h2>LES COOKIES ESSENTIELS :</h2>
+
+        <div>Les cookies essentiels, également appelés cookies « strictement nécessaires », assurent des fonctions sans lesquelles le site ne peut pas fonctionner correctement.</div>
+        <div>Ils sont stockés sur votre appareil uniquement pendant la durée de la session d’utilisation du navigateur, et votre consentement n’est pas requis pour ce type de cookie.</div>
+
+        <h2>LES COOKIES DE MESURES D’AUDIENCE ET DE STATISTIQUES :</h2>
+
+        <div>Les cookies de mesures d’audience et de statistique permettent de produire des statistiques anonymes quant à la fréquentation du site (ex : nombre de visites, les pages consultées, le temps passé…).</div>
+        <div>Ces cookies permettent d’adapter le site aux demandes des visiteurs et d’améliorer sa performance et ses fonctionnalités.</div>
+
+        <h2>LES COOKIES DE FONCTIONNELS :</h2>
+
+        <div>Les cookies fonctionnels permettent à un site internet d’enregistrer des informations qui ont déjà été fournies (ex : le nom de l’utilisateur, la localisation) et d’offrir à l’utilisateur des fonctions améliorées et personnalisées.</div>
+
+        <h2>LES COOKIES PUBLICITAIRES :</h2>
+
+        <div>Les cookies publicitaires sont utilisés pour diffuser des publicités qui sont pertinentes pour certains utilisateurs spécifiques et adaptées à leurs intérêts.</div>
+
+        <h2>COMMENT GÉRER ET SUPPRIMER LES COOKIES ?</h2>
+
+        <div>Lors de votre première visite sur le site, un bandeau vous informe de la présence de ces cookies et vous invite à les accepter ou les refuser. Les cookies, qui nécessitent votre consentement, seront déposés uniquement si vous y consentez.</div>
+        <div>Vous pouvez à tout moment vous informer et refuser les cookies en vous rendant sur l’Annexe 1 de la présente politique de confidentialité.</div>
+        <div>Par ailleurs, pour gérer les cookies, la plupart des navigateurs vous permettent de refuser ou d’accepter tous les cookies ou de n’en accepter que de certains. Vous trouverez la procédure de gestion et de suppression des cookies à la rubrique aide de votre navigateur, ou directement en cliquant sur les liens suivants :</div>
+
+        <ul>
+            <li><a href="https://windows.microsoft.com/fr-FR/windows-vista/Block-or-allow-cookies">Pour Internet Explorer http://windows.microsoft.com/fr-FR/windows-vista/Block-or-allow-cookies</a></li>
+            <li><a href="https://support.google.com/chrome/bin/answer.py?hl=fr&hlrm=en&answer=95647">Pour Chrome http://support.google.com/chrome/bin/answer.py?hl=fr&hlrm=en&answer=95647</a></li>
+            <li><a href="https://support.apple.com/kb/HT1677?viewlocale=fr_FR">Pour Safari http://support.apple.com/kb/HT1677?viewlocale=fr_FR</a></li>
+            <li><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies?redirectlocale=fr&redirectslug=Activer+et+d%C3%A9sactiver+les+cookies">Pour Firefox: http://support.mozilla.org/fr/kb/activer-desactiver-cookies?redirectlocale=fr&redirectslug=Activer+et+d%C3%A9sactiver+les+cookies</a></li>
+            <li><a href="https://help.opera.com/Windows/10.20/fr/cookies.html">Pour Opera http://help.opera.com/Windows/10.20/fr/cookies.html</a></li>
+        </ul>
+
+        <h2>MISES A JOUR DE LA POLITIQUE DE GESTION DES COOKIES :</h2>
+        <div>JEUNOT se réserve le droit de modifier ou de mettre à jour cette politique lorsque cela devient nécessaire (dernière mise à jour le 07.11.2023), afin de s’adapter aux retours clients, aux changements liés à nos produits et services, ou pour être conforme à de nouvelles exigences légales.</div>
+        <div>Nous vous prions de bien vouloir la consulter régulièrement</div>
+        <div>Lorsque nous mettons à jour cette politique, nous révisons la date de « dernière mise à jour » en haut de ce document.</div>
+    </div>
+{% endblock %}

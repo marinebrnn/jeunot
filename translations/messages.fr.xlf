@@ -182,6 +182,22 @@
                 <source>home.why_jeunot.about</source>
                 <target>En savoir plus sur Jeunot</target>
             </trans-unit>
+            <trans-unit id="privacy.title">
+                <source>privacy.title</source>
+                <target>Politique de confidentialité</target>
+            </trans-unit>
+            <trans-unit id="cookies.title">
+                <source>cookies.title</source>
+                <target>Politique de gestion des cookies</target>
+            </trans-unit>
+            <trans-unit id="legals.title">
+                <source>legals.title</source>
+                <target>Mentions légales</target>
+            </trans-unit>
+            <trans-unit id="cgu.title">
+                <source>cgu.title</source>
+                <target>Conditions Générales d'utilisation</target>
+            </trans-unit>
             <trans-unit id="about.title">
                 <source>about.title</source>
                 <target>À propos</target>

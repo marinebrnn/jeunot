@@ -6,7 +6,7 @@ namespace App\Tests\Integration\Infrastructure\Controller;
 
 final class AboutControllerTest extends AbstractWebTestCase
 {
-    public function testHome(): void
+    public function testAbout(): void
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/about');
@@ -14,5 +14,6 @@ final class AboutControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
         $this->assertSame('À propos', $crawler->filter('h1')->text());
+        $this->assertMetaTitle('À propos - Jeunot', $crawler);
     }
 }

@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}
+    {{ 'about.title'|trans }} - {{ parent() }}
+{% endblock %}
+
 {% block main %}
     <div class="j-box j-background-flat-yellow" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0">
         <div class="j-container">
