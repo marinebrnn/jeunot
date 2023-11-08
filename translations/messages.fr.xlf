@@ -455,6 +455,14 @@
                 <source>dashboard.title</source>
                 <target>Mon espace</target>
             </trans-unit>
+            <trans-unit id="dashboard.complete_profile.cta">
+                <source>dashboard.complete_profile.cta</source>
+                <target>Compléter mon profil</target>
+            </trans-unit>
+            <trans-unit id="dashboard.complete_profile">
+                <source>dashboard.complete_profile</source>
+                <target>Vous êtes quasiment prêt·e à partir à la rencontre d’autres jeunots.<![CDATA[<br/>]]>Votre compte a été confirmé. Vous pouvez désormais compléter votre profil !</target>
+            </trans-unit>
             <trans-unit id="dashboard.description">
                 <source>dashboard.description</source>
                 <target>A quels événements avez-vous envie de participer ?</target>

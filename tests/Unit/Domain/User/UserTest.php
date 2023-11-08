@@ -44,6 +44,7 @@ final class UserTest extends TestCase
         $this->assertFalse($user->shouldDisplayMyAge());
         $this->assertFalse($user->isVerified());
         $this->assertEmpty($user->getAvatar());
+        $this->assertFalse($user->isComplete());
 
         $user->verified();
         $this->assertTrue($user->isVerified());
@@ -71,5 +72,6 @@ final class UserTest extends TestCase
         $this->assertSame(GenderEnum::FEMALE->value, $user->getGender());
         $this->assertSame('Je suis gérante de la coopérative', $user->getBiography());
         $this->assertTrue($user->shouldDisplayMyAge());
+        $this->assertTrue($user->isComplete());
     }
 }

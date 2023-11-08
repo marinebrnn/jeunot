@@ -3,3 +3,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.j-float--right {
+    float: right;
+}
