@@ -13,7 +13,25 @@
             </div>
         </div>
     </div>
-    <div class="j-container j-box j-stack" style="--box-padding: calc(6 * var(--w)) 0; --stack-gap: calc(4 * var(--w))">
+
+    <div class="j-container j-box j-stack" style="--box-padding: calc(3 * var(--w)) 0; --stack-gap: calc(6 * var(--w))">
+        {% if not app.user.isComplete %}
+            <div
+                data-controller="remove"
+                data-remove-target="this"
+                class="j-box j-background-flat-yellow"
+                style="--box-padding: calc(3 * var(--w))"
+            >
+                <div class="j-float--right j-box" style="--box-padding: 0 0 var(--w) var(--w)">
+                    <button data-action="remove#removeElement" class="j-btn j-btn--icon" aria-label="{{ 'nav.mobile.close'|trans }}">
+                        {% include 'common/icons/close.svg.twig' %}
+                    </button>
+                </div>
+                <p>{{ 'dashboard.complete_profile'|trans|raw }}</p>
+                <a href="{{ path('app_profile_edit') }}" class="j-btn j-btn--lg">{{ 'dashboard.complete_profile.cta'|trans }}</a>
+            </div>
+        {% endif %}
+
         <h2>{{ 'dashboard.upcoming_events'|trans }}</h2>
         {% include 'events/_event_grid.html.twig' with { events: paginatedEvents.items } only %}
         {% if paginatedEvents.items %}
@@ -32,4 +50,20 @@
             </div>
         </div>
     </div>
+
+    {% if paginatedPosts.items %}
+        <div class="j-container j-box j-stack" style="--box-padding: calc(3 * var(--w)) 0; --stack-gap: calc(6 * var(--w))">
+            <h2>{{ 'dashboard.latest_posts'|trans }}</h2>
+            <ul class="j-raw-list j-grid" style="--grid-item-min: 340px; --grid-justify-items: center" data-testid="card-list">
+                {% for post in paginatedPosts.items %}
+                    {% include 'posts/_card.html.twig' with { post } only %}
+                {% endfor %}
+            </ul>
+            <div class="j-center">
+                <a href="{{ path('app_posts_list') }}" class="j-btn j-btn--lg">
+                    {{ 'dashboard.sell_all_posts'|trans }}
+                </a>
+            </div>
+        </div>
+    {% endif %}
 {% endblock main %}

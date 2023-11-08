@@ -48,10 +48,12 @@
                         </p>
                     {% endif %}
                     <div class="j-profile-info j-stack" style="--stack-gap: var(--v)">
-                        <div class="j-icon--left">
-                            {% include 'common/icons/house.svg.twig' with { attr: { class: 'j-icon j-icon--sm' } } only %}
-                            {{ user.city }}
-                        </div>
+                        {% if user.city %}
+                            <div class="j-icon--left">
+                                {% include 'common/icons/house.svg.twig' with { attr: { class: 'j-icon j-icon--sm' } } only %}
+                                {{ user.city }}
+                            </div>
+                        {% endif %}
 
                         {% if user.age %}
                             <div class="j-icon--left">

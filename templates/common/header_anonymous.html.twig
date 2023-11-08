@@ -37,18 +37,13 @@
 
         <ul class="j-raw-list" data-mobile-only>
             <li>
-                <a href="#">
-                    Aide
+                <a href="{{ path('app_privacy') }}">
+                    {{ 'nav.privacy'|trans }}
                 </a>
             </li>
             <li>
-                <a href="#">
-                    Politique de confidentialité
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Conditions générales d'utilisation
+                <a href="{{ path('app_cgu') }}">
+                    {{ 'nav.terms'|trans }}
                 </a>
             </li>
         </ul>

@@ -16,6 +16,12 @@
   </head>
 
   <body>
+    {% if app.user and app.current_route != 'app_home' %}
+        {% include 'common/header_authenticated.html.twig' %}
+    {% else %}
+        {% include 'common/header_anonymous.html.twig' %}
+    {% endif %}
+
     {% for label, messages in app.flashes %}
         {% if loop.first %}<div class="fr-container">{% endif %}
         {% for message in messages %}
@@ -25,12 +31,6 @@
         {% endfor %}
         {% if loop.last %}</div>{% endif %}
     {% endfor %}
-
-    {% if app.user and app.current_route != 'app_home' %}
-        {% include 'common/header_authenticated.html.twig' %}
-    {% else %}
-        {% include 'common/header_anonymous.html.twig' %}
-    {% endif %}
 
     {% block main_tag %}<main>{% endblock %}
         {% block main %}{% endblock %}

@@ -7,6 +7,7 @@
             <constraint name="File">
                 <option name="maxSize">1024k</option>
                 <option name="extensions">
+                    <value>jpg</value>
                     <value>jpeg</value>
                     <value>webp</value>
                     <value>png</value>

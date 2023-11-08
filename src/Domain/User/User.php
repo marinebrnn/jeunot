@@ -61,7 +61,7 @@ class User
         return $this->role;
     }
 
-    public function getAvatar(): string
+    public function getAvatar(): ?string
     {
         return $this->avatar;
     }
@@ -134,5 +134,10 @@ class User
         $this->city = $city;
         $this->displayMyAge = $displayMyAge;
         $this->birthday = $birthday;
+    }
+
+    public function isComplete(): bool
+    {
+        return $this->gender && $this->biography && $this->city && $this->email;
     }
 }

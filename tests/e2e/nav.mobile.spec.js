@@ -23,9 +23,8 @@ test("Mobile home nav", async ({ page }) => {
     ["Articles", "/posts"],
     ["Se connecter", "/login"],
     ["Créer un compte", "/register"],
-    ["Aide", "#"],
-    ["Politique de confidentialité", "#"],
-    ["Conditions générales d'utilisation", "#"],
+    ["Politique de confidentialité", "/privacy"],
+    ["Conditions générales d'utilisation", "/cgu"],
   ]);
 
   await closeNavBtn.click();
@@ -57,10 +56,9 @@ test.describe("authenticated", () => {
       ["Événements", "/events"],
       ["Articles", "/posts"],
       ["Mon profil", "/app/profile/0b507871-8b5e-4575-b297-a630310fc06e"],
-      ["Aide", "#"],
       ["Se déconnecter", "/logout"],
-      ["Politique de confidentialité", "#"],
-      ["Conditions générales d'utilisation", "#"],
+      ["Politique de confidentialité", "/privacy"],
+      ["Conditions générales d'utilisation", "/cgu"],
     ]);
 
     await closeNavBtn.click();
