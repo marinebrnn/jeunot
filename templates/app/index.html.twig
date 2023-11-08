@@ -50,4 +50,20 @@
             </div>
         </div>
     </div>
+
+    {% if paginatedPosts.items %}
+        <div class="j-container j-box j-stack" style="--box-padding: calc(3 * var(--w)) 0; --stack-gap: calc(6 * var(--w))">
+            <h2>{{ 'dashboard.latest_posts'|trans }}</h2>
+            <ul class="j-raw-list j-grid" style="--grid-item-min: 340px; --grid-justify-items: center" data-testid="card-list">
+                {% for post in paginatedPosts.items %}
+                    {% include 'posts/_card.html.twig' with { post } only %}
+                {% endfor %}
+            </ul>
+            <div class="j-center">
+                <a href="{{ path('app_posts_list') }}" class="j-btn j-btn--lg">
+                    {{ 'dashboard.sell_all_posts'|trans }}
+                </a>
+            </div>
+        </div>
+    {% endif %}
 {% endblock main %}

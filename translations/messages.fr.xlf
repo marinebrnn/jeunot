@@ -459,6 +459,14 @@
                 <source>dashboard.complete_profile.cta</source>
                 <target>Compléter mon profil</target>
             </trans-unit>
+            <trans-unit id="dashboard.latest_posts">
+                <source>dashboard.latest_posts</source>
+                <target>Nos derniers articles</target>
+            </trans-unit>
+            <trans-unit id="dashboard.sell_all_posts">
+                <source>dashboard.sell_all_posts</source>
+                <target>Voir tous les articles</target>
+            </trans-unit>
             <trans-unit id="dashboard.complete_profile">
                 <source>dashboard.complete_profile</source>
                 <target>Vous êtes quasiment prêt·e à partir à la rencontre d’autres jeunots.<![CDATA[<br/>]]>Votre compte a été confirmé. Vous pouvez désormais compléter votre profil !</target>
