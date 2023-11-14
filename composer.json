@@ -108,6 +108,9 @@
             "require": "6.3.*"
         },
         "paas": {
+            "compile": [
+                "npm run build"
+            ],
             "php-config": [
                 "session.gc_maxlifetime = 86400"
             ],
