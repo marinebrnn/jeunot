@@ -64,7 +64,7 @@
             </trans-unit>
             <trans-unit id="events.user_registration.information.when">
                 <source>events.user_registration.information.when</source>
-                <target>Quand : de %startDate% à %endDate%</target>
+                <target>Quand : </target>
             </trans-unit>
             <trans-unit id="events.user_registration.information.owner">
                 <source>events.user_registration.information.owner</source>

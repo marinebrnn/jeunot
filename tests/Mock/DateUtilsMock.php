@@ -17,4 +17,9 @@ final class DateUtilsMock implements DateUtilsInterface
     {
         return new \DateTimeImmutable('2023-08-25');
     }
+
+    public function getDaysInterval(\DateTimeInterface $date1, \DateTimeInterface $date2): int
+    {
+        return 0;
+    }
 }

@@ -15,6 +15,7 @@ final readonly class DetailedEventView
         public int $nbAvailablePlaces,
         public \DateTimeInterface $startDate,
         public \DateTimeInterface $endDate,
+        public bool $isOverSeveralDays,
         public OwnerView $owner,
         public bool $isLoggedUserRegisteredForEvent,
         public ?string $picture,

@@ -120,6 +120,11 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
             ->method('getNow')
             ->willReturn(\DateTimeImmutable::createFromFormat('Y-m-d', '2023-01-12'));
 
+        $dateUtils->expects(self::once())
+            ->method('getDaysInterval')
+            ->with($event[7], $event[8])
+            ->willReturn(0);
+
         $query = new GetDetailedEventQuery('a8597889-a063-4da9-b536-2aef6988c993');
         $handler = new GetDetailedEventQueryHandler($eventRepository, $dateUtils);
 
@@ -142,6 +147,7 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
                     avatar: null,
                 ),
                 isLoggedUserRegisteredForEvent: end($event),
+                isOverSeveralDays: false,
             ),
             ($handler)($query),
         );
