@@ -6,7 +6,7 @@ namespace App\Domain\Event;
 
 use App\Domain\User\User;
 
-final class Attendee
+class Attendee
 {
     public function __construct(
         private string $uuid,

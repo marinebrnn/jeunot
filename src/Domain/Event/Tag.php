@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Event;
 
-final class Tag
+class Tag
 {
     private string $title;
 
