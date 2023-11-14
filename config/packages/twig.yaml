@@ -3,6 +3,7 @@ twig:
     form_themes: ['common/form/theme.html.twig']
     globals:
         storageCdnUrl: '%env(STORAGE_CDN)%'
+        baseUrl: '%env(BASE_URL)%'
 when@test:
     twig:
         strict_variables: true

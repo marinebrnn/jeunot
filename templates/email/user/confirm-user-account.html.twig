@@ -6,7 +6,7 @@
     <p>
         {{ 'confirm_user_account.thanks'|trans }}<br/>
         {{ 'confirm_user_account.confirm_email'|trans }}<br/><br/>
-        <a href="{{ url('app_register_confirm_account', { token }) }}">
+        <a href="{{ baseUrl ~ path('app_register_confirm_account', { token }) }}">
             {{ 'confirm_user_account.confirm_email_button'|trans }}
         </a>
     </p>
