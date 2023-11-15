@@ -22,6 +22,9 @@
         "webpack-notifier": "^1.15.0"
     },
     "private": true,
+    "engines": {
+        "node": "21.1.0"
+    },
     "scripts": {
         "dev-server": "encore dev-server",
         "dev": "encore dev",
