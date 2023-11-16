@@ -25,6 +25,18 @@ nelmio_security:
             - 'no-referrer'
             - 'strict-origin-when-cross-origin'
 
+    # Set a Content-Security-Policy
+    csp:
+        enabled: true
+        enforce:
+            default-src: ['self']
+            script-src: ['self']
+            style-src: ['self', 'unsafe-inline']
+            connect-src: ['self']
+            font-src: ['self']
+            img-src: ['self', 'data:']
+            block-all-mixed-content: true
+
 when@dev:
     nelmio_security:
         csp:
