@@ -20,7 +20,12 @@ final class DetailEventControllerTest extends AbstractWebTestCase
         $this->assertSame('Saint Remy les Chevreuses Balade et pique-nique en forêt de Chevreuse 13 September 2023 09h00 - 18h00 Saint Remy les Chevreuses Lorem ipsum Cet événement est organisé par Mathieu 33 ans, Saint Ouen 0 inscrits - 10 places disponibles S\'inscrire à cet événement', $crawler->filter('[data-testid="event"]')->text());
         $this->assertSame('http://localhost/events/f1f992d3-3cf5-4eb2-9b83-f112b7234613/register', $crawler->filter('[data-testid="register-link"]')->link()->getUri());
         $this->assertSame('Cet événement est organisé par', $crawler->filter('h2')->eq(0)->text());
-        $this->assertSame('Pourquoi Jeunot ?', $crawler->filter('h2')->eq(1)->text()); // Check section is present
+
+        $this->assertSame('Autres événements à venir', $crawler->filter('h2')->eq(1)->text());
+        $otherEvents = $crawler->filter('[data-testid=event-list] [role=listitem]');
+        $this->assertSame(2, $otherEvents->count());
+
+        $this->assertSame('Pourquoi Jeunot ?', $crawler->filter('h2')->eq(2)->text());
     }
 
     public function testFullyBookedEvent(): void

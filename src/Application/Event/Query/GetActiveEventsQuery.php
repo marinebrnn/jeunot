@@ -13,6 +13,7 @@ final readonly class GetActiveEventsQuery implements QueryInterface
         public int $pageSize,
         public ?string $loggedUserUuid = null,
         public bool $displayOnlyLoggedUserEvents = false,
+        public ?string $excludeUuid = null,
     ) {
     }
 }

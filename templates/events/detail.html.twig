@@ -77,6 +77,20 @@
         </div>
     </div>
 
+    <div class="j-container j-background-alt-blue" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(4 * var(--w))">
+            <h2>{{ 'events.detail.upcoming_events'|trans }}</h2>
+
+            {% include 'events/_event_grid.html.twig' with { events: otherEvents } only %}
+
+            <div class="j-center">
+                <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
+                    {{ 'events.detail.upcoming_events.back_to_event_list'|trans }}
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
         <div class="j-box" style="--box-padding: min(6%, calc(6 * var(--w)))">
             {% include '_why_jeunot.html.twig' with { detail: true } only %}

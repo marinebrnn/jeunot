@@ -22,6 +22,7 @@ final class GetActiveEventsQueryHandler
             $query->page,
             $query->loggedUserUuid,
             $query->displayOnlyLoggedUserEvents,
+            $query->excludeUuid,
         );
 
         $views = [];

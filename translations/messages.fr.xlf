@@ -459,6 +459,18 @@
                 <source>events.detail.registered</source>
                 <target>Vous êtes inscrit·e à cet événement.</target>
             </trans-unit>
+            <trans-unit id="events.detail.upcoming_events">
+                <source>events.detail.upcoming_events</source>
+                <target>Autres événements à venir</target>
+            </trans-unit>
+            <trans-unit id="events.detail.upcoming_events.back_to_event_list">
+                <source>events.detail.upcoming_events.back_to_event_list</source>
+                <target>Revenir au calendrier</target>
+            </trans-unit>
+            <trans-unit id="events.grid.empty">
+                <source>events.grid.empty</source>
+                <target>Aucun événement</target>
+            </trans-unit>
             <trans-unit id="events.registered">
                 <source>events.registered</source>
                 <target>Inscrit·e !</target>
