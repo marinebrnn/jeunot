@@ -46,9 +46,9 @@
             {{ event.description|raw }}
 
             <div>
-                <h3 class="j-label">
+                <h2 class="j-label">
                     {{ 'events.detail.owner.title'|trans }}
-                </h3>
+                </h2>
 
                 {% include 'events/_owner.html.twig' with { owner: event.owner } %}
             </div>
@@ -74,6 +74,12 @@
                     {{ 'events.detail.register'|trans }}
                 </a>
             {% endif %}
+        </div>
+    </div>
+
+    <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <div class="j-box" style="--box-padding: min(6%, calc(6 * var(--w)))">
+            {% include '_why_jeunot.html.twig' with { detail: true } only %}
         </div>
     </div>
 {% endblock main %}

@@ -1,0 +1,22 @@
+.why_jeunot-bubble {
+  position: relative;
+  display: flex;
+}
+
+.why_jeunot-bubble > p {
+  position: absolute;
+  place-self: center;
+  text-align: center;
+  padding-inline: calc(6 * var(--w));
+  transform: translateY(var(--bubble-translate, 10%));
+  font-size: var(--font-size-default);
+  line-height: var(--line-height-default);
+}
+
+/* Roughly where text would overflow in display size */
+@media screen and (min-width: 450px) {
+  .why_jeunot-bubble > p.j-text-display {
+    font-size: var(--font-size-display);
+    line-height: var(--line-height-display);
+  }
+}

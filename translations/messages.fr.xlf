@@ -158,28 +158,28 @@
                 <source>home.why_register.register</source>
                 <target>Créer un compte</target>
             </trans-unit>
-            <trans-unit id="home.why_jeunot">
-                <source>home.why_jeunot</source>
+            <trans-unit id="why_jeunot.title">
+                <source>why_jeunot.title</source>
                 <target>Pourquoi Jeunot ?</target>
             </trans-unit>
-            <trans-unit id="home.why_jeunot.mission">
-                <source>home.why_jeunot.mission</source>
+            <trans-unit id="why_jeunot.mission">
+                <source>why_jeunot.mission</source>
                 <target>La mission Jeunot</target>
             </trans-unit>
-            <trans-unit id="home.why_jeunot.mission.description">
-                <source>home.why_jeunot.mission.description</source>
+            <trans-unit id="why_jeunot.mission.description">
+                <source>why_jeunot.mission.description</source>
                 <target>Proposer un nouvel accompagnement dans le "mieux vieillir" et réduire l'impact de l'âgisme que notre société nous impose.</target>
             </trans-unit>
-            <trans-unit id="home.why_jeunot.ambition">
-                <source>home.why_jeunot.ambition</source>
+            <trans-unit id="why_jeunot.ambition">
+                <source>why_jeunot.ambition</source>
                 <target>Notre ambition</target>
             </trans-unit>
-            <trans-unit id="home.why_jeunot.ambition.description">
-                <source>home.why_jeunot.ambition.description</source>
+            <trans-unit id="why_jeunot.ambition.description">
+                <source>why_jeunot.ambition.description</source>
                 <target>À terme, nous souhaitons permettre à des milliers de 60 ans et plus de sortir de l’isolement en vivant de grandes amitiés notamment via la colocation.</target>
             </trans-unit>
-            <trans-unit id="home.why_jeunot.about">
-                <source>home.why_jeunot.about</source>
+            <trans-unit id="why_jeunot.about">
+                <source>why_jeunot.about</source>
                 <target>En savoir plus sur Jeunot</target>
             </trans-unit>
             <trans-unit id="privacy.title">
