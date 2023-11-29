@@ -117,11 +117,13 @@ fieldset > * + * {
   margin-top: var(--w);
 }
 
+.j-label,
 :where(.j-input-group, .j-select-group) > label,
 fieldset > legend {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-label);
   line-height: var(--line-height-label);
+  color: var(--text-default);
 }
 
 :where(.j-input-group, .j-select-group) > label > .j-help-text {

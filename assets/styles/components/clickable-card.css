@@ -1,0 +1,10 @@
+j-clickable-card {
+  display: block;
+  cursor: pointer;
+}
+
+/* Elevate card on hover or if its link is focused (keyboard usage). */
+j-clickable-card:hover,
+j-clickable-card:focus-within {
+  box-shadow: var(--clickable-card-hover-shadow, var(--shadow-default));
+}

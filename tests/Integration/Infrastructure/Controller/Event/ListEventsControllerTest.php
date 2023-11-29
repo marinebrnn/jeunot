@@ -12,7 +12,7 @@ final class ListEventsControllerTest extends AbstractWebTestCase
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/events?pageSize=20');
-        $li = $crawler->filter('[data-testid="event-list"] li');
+        $li = $crawler->filter('[data-testid="event-list"] [role="listitem"]');
         $eventTitle = $li->filter('h3');
         $attendees = $li->filter('[data-testid="event-attendees"]');
         $location = $li->filter('[data-testid="event-location"]');
@@ -43,7 +43,7 @@ final class ListEventsControllerTest extends AbstractWebTestCase
     {
         $client = $this->login();
         $crawler = $client->request('GET', '/events?pageSize=20');
-        $li = $crawler->filter('[data-testid="event-list"] li');
+        $li = $crawler->filter('[data-testid="event-list"] [role="listitem"]');
         $eventTitle = $li->filter('h3');
         $attendees = $li->filter('[data-testid="event-attendees"]');
 
@@ -51,7 +51,7 @@ final class ListEventsControllerTest extends AbstractWebTestCase
         $this->assertSecurityHeaders();
         $this->assertSame('Événements', $crawler->filter('h1')->text());
         $this->assertMetaTitle('Événements - Jeunot', $crawler);
-        $this->assertSame(3, $crawler->filter('[data-testid="event-list"] li')->count());
+        $this->assertSame(3, $li->count());
 
         $this->assertSame('1 participant - Inscrit·e !', $attendees->eq(0)->text());
         $this->assertSame('Dîner au restaurant', $eventTitle->eq(0)->text());

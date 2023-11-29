@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Event\Query;
 
+use App\Application\DateUtilsInterface;
 use App\Application\Event\View\DetailedEventView;
 use App\Application\Event\View\OwnerView;
 use App\Domain\Event\Exception\EventNotFoundException;
@@ -13,6 +14,7 @@ final class GetDetailedEventQueryHandler
 {
     public function __construct(
         private EventRepositoryInterface $eventRepository,
+        private DateUtilsInterface $dateUtils,
     ) {
     }
 
@@ -25,6 +27,12 @@ final class GetDetailedEventQueryHandler
 
         $event = current($event);
 
+        $ownerAge = null;
+
+        if ($event['ownerDisplayMyAge']) {
+            $ownerAge = \DateTime::createFromInterface($event['ownerBirthday'])->diff($this->dateUtils->getNow())->y;
+        }
+
         return new DetailedEventView(
             uuid: $event['uuid'],
             title: $event['title'],
@@ -34,7 +42,13 @@ final class GetDetailedEventQueryHandler
             nbAvailablePlaces: $event['initialAvailablePlaces'] - $event['nbAttendees'],
             startDate: $event['startDate'],
             endDate: $event['endDate'],
-            owner: new OwnerView($event['ownerFirstName']),
+            owner: new OwnerView(
+                uuid: $event['ownerUuid'],
+                firstName: $event['ownerFirstName'],
+                age: $ownerAge,
+                city: $event['ownerCity'],
+                avatar: $event['ownerAvatar'],
+            ),
             isLoggedUserRegisteredForEvent: !empty($event['isLoggedUserRegisteredForEvent']) ? true : false,
             picture: $event['picture'],
         );

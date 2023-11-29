@@ -434,6 +434,14 @@
                 <source>events.detail.owner.title</source>
                 <target>Cet événement est organisé par</target>
             </trans-unit>
+            <trans-unit id="events.detail.owner.age">
+                <source>events.detail.owner.age</source>
+                <target>%age% ans</target>
+            </trans-unit>
+            <trans-unit id="events.detail.owner.view">
+                <source>events.detail.owner.view</source>
+                <target>Voir le profil de %firstName%</target>
+            </trans-unit>
             <trans-unit id="events.detail.registrations">
                 <source>events.detail.registrations</source>
                 <!-- TODO: pluralize -->
@@ -446,6 +454,10 @@
             <trans-unit id="events.detail.register">
                 <source>events.detail.register</source>
                 <target>S'inscrire à cet événement</target>
+            </trans-unit>
+            <trans-unit id="events.detail.registered">
+                <source>events.detail.registered</source>
+                <target>Vous êtes inscrit·e à cet événement.</target>
             </trans-unit>
             <trans-unit id="events.registered">
                 <source>events.registered</source>

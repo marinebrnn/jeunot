@@ -1,0 +1,11 @@
+<div class="j-cluster" style="--cluster-gap: calc(3 * var(--v))">
+  {% include 'common/icons/date.svg.twig' with { attr: { class: 'j-icon' } } only %}
+  <div>
+    <div class="j-text-bold">
+      <time datetime="{{ startDate|date('Y-m-d') }}">{{ startDate|date('j F Y') }}</time>
+    </div>
+    <div>
+      <time datetime="{{ startDate|date('H:i') }}">{{ startDate|date('H\\hi') }}</time> - <time datetime="{{ endDate|date('H:i') }}">{{ endDate|date('H\\hi') }}</time>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.j-alert {
+  padding: var(--w);
+  border-radius: var(--border-sm);
+}
+
+.j-alert--success {
+  background-color: var(--background-alt-success);
+}
