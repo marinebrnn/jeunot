@@ -36,6 +36,7 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
         int $page,
         ?string $loggedUserUuid,
         bool $displayOnlyLoggedUserEvents = false,
+        string $excludeUuid = null,
     ): array {
         $qb = $this->createQueryBuilder('e')
             ->select('e.uuid, e.title, e.location, e.picture, e.startDate')
@@ -55,6 +56,10 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
             }
 
             $qb->setParameter('userUuid', $loggedUserUuid);
+        }
+
+        if ($excludeUuid) {
+            $qb->andWhere('e.uuid <> :eventUuid')->setParameter('eventUuid', $excludeUuid);
         }
 
         $query = $qb->getQuery();
@@ -85,7 +90,12 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
                 e.endDate,
                 e.description,
                 e.initialAvailablePlaces,
-                o.firstName as ownerFirstName
+                o.uuid as ownerUuid,
+                o.firstName as ownerFirstName,
+                o.birthday as ownerBirthday,
+                o.displayMyAge as ownerDisplayMyAge,
+                o.city as ownerCity,
+                o.avatar as ownerAvatar
             ')
             ->addSelect(sprintf('(%s) as nbAttendees', self::NB_ATTENDEE_QUERY))
             ->innerJoin('e.owner', 'o')

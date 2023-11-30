@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\Application\Event\Query;
 
+use App\Application\DateUtilsInterface;
 use App\Application\Event\Query\GetDetailedEventQuery;
 use App\Application\Event\Query\GetDetailedEventQueryHandler;
 use App\Application\Event\View\DetailedEventView;
@@ -30,7 +31,12 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
                 'initialAvailablePlaces' => 100,
                 'startDate' => $startDate,
                 'endDate' => $endDate,
+                'ownerUuid' => '0656759e-2f59-7a6b-8000-6877905a5dad',
                 'ownerFirstName' => 'Mathieu',
+                'ownerBirthday' => \DateTimeImmutable::createFromFormat('Y-m-d', '1958-01-01'),
+                'ownerDisplayMyAge' => true,
+                'ownerCity' => 'Saint-Ouen',
+                'ownerAvatar' => null,
                 'isLoggedUserRegisteredForEvent' => 0,
                 'isLoggedUserRegisteredForEventShouldBe' => false,
             ],
@@ -44,7 +50,12 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
                 'initialAvailablePlaces' => 100,
                 'startDate' => $startDate,
                 'endDate' => $endDate,
+                'ownerUuid' => '0656759e-2f59-7a6b-8000-6877905a5dad',
                 'ownerFirstName' => 'Mathieu',
+                'ownerBirthday' => \DateTimeImmutable::createFromFormat('Y-m-d', '1958-01-01'),
+                'ownerDisplayMyAge' => true,
+                'ownerCity' => 'Saint-Ouen',
+                'ownerAvatar' => null,
                 'isLoggedUserRegisteredForEvent' => 1,
                 'isLoggedUserRegisteredForEventShouldBe' => true,
             ],
@@ -58,7 +69,12 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
                 'initialAvailablePlaces' => 100,
                 'startDate' => $startDate,
                 'endDate' => $endDate,
+                'ownerUuid' => '0656759e-2f59-7a6b-8000-6877905a5dad',
                 'ownerFirstName' => 'Mathieu',
+                'ownerBirthday' => \DateTimeImmutable::createFromFormat('Y-m-d', '1958-01-01'),
+                'ownerDisplayMyAge' => true,
+                'ownerCity' => 'Saint-Ouen',
+                'ownerAvatar' => null,
                 'isLoggedUserRegisteredForEventShouldBe' => false,
             ],
         ];
@@ -88,13 +104,24 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
                     'initialAvailablePlaces' => $event[6],
                     'startDate' => $event[7],
                     'endDate' => $event[8],
-                    'ownerFirstName' => $event[9],
-                    'isLoggedUserRegisteredForEvent' => $event[10],
+                    'ownerUuid' => $event[9],
+                    'ownerFirstName' => $event[10],
+                    'ownerBirthday' => $event[11],
+                    'ownerDisplayMyAge' => $event[12],
+                    'ownerCity' => $event[13],
+                    'ownerAvatar' => $event[14],
+                    'isLoggedUserRegisteredForEvent' => $event[15],
                 ],
             ]);
 
+        $dateUtils = $this->createMock(DateUtilsInterface::class);
+
+        $dateUtils->expects(self::once())
+            ->method('getNow')
+            ->willReturn(\DateTimeImmutable::createFromFormat('Y-m-d', '2023-01-12'));
+
         $query = new GetDetailedEventQuery('a8597889-a063-4da9-b536-2aef6988c993');
-        $handler = new GetDetailedEventQueryHandler($eventRepository);
+        $handler = new GetDetailedEventQueryHandler($eventRepository, $dateUtils);
 
         $this->assertEquals(
             new DetailedEventView(
@@ -107,7 +134,13 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
                 nbAvailablePlaces: 45,
                 startDate: $startDate,
                 endDate: $endDate,
-                owner: new OwnerView('Mathieu'),
+                owner: new OwnerView(
+                    uuid: '0656759e-2f59-7a6b-8000-6877905a5dad',
+                    firstName: 'Mathieu',
+                    age: 65,
+                    city: 'Saint-Ouen',
+                    avatar: null,
+                ),
                 isLoggedUserRegisteredForEvent: end($event),
             ),
             ($handler)($query),
@@ -125,8 +158,10 @@ final class GetDetailedEventQueryHandlerTest extends TestCase
             ->with('a8597889-a063-4da9-b536-2aef6988c993')
             ->willReturn([]);
 
+        $dateUtils = $this->createMock(DateUtilsInterface::class);
+
         $query = new GetDetailedEventQuery('a8597889-a063-4da9-b536-2aef6988c993');
-        $handler = new GetDetailedEventQueryHandler($eventRepository);
+        $handler = new GetDetailedEventQueryHandler($eventRepository, $dateUtils);
         ($handler)($query);
     }
 }

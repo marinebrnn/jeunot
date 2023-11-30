@@ -1,11 +1,10 @@
 .j-icon {
-  --icon-size: 7;
-  width: calc(var(--icon-size) * var(--v));
-  height: calc(var(--icon-size) * var(--v));
+  width: var(--icon-size);
+  height: auto;
 }
 
 .j-icon--sm {
-  --icon-size: 3.5;
+  width: var(--icon-size-sm);
 }
 
 .j-icon--left,

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Controller\Event;
 
+use App\Application\Event\Query\GetActiveEventsQuery;
 use App\Application\Event\Query\GetDetailedEventQuery;
 use App\Application\QueryBusInterface;
 use App\Domain\Event\Exception\EventNotFoundException;
@@ -37,11 +38,21 @@ final readonly class DetailEventController
             throw new NotFoundHttpException();
         }
 
+        $otherEvents = $this->queryBus->handle(
+            new GetActiveEventsQuery(
+                page: 1,
+                pageSize: 2,
+                loggedUserUuid: $loggedUserUuid,
+                excludeUuid: $uuid,
+            ),
+        );
+
         return new Response(
             content: $this->twig->render(
                 name: 'events/detail.html.twig',
-                context : [
+                context: [
                     'event' => $event,
+                    'otherEvents' => $otherEvents->items,
                 ],
             ),
         );

@@ -1,0 +1,37 @@
+<j-clickable-card
+  class="j-event-owner j-cluster"
+  style="
+    --cluster-align: center;
+    --cluster-gap: calc(4 * var(--v));
+  ">
+  <div class="j-event-owner-picture j-frame" style="--frame-ratio: 1 / 1">
+    {% if owner.avatar %}
+      <img src="{{ owner.avatar ? (storageCdnUrl ~ '/' ~ owner.avatar) : '' }}" alt="">
+    {% else %}
+      <img src="{{ asset('images/placeholder.webp') }}" alt="">
+    {% endif %}
+  </div>
+
+  <div class="j-event-owner-info">
+    <div class="j-event-owner-name">
+      {{ owner.firstName }}
+    </div>
+
+    <div>
+      {% if owner.age %}
+        {{ 'events.detail.owner.age'|trans({ '%age%': owner.age }) }},
+      {% endif %}
+
+      {{ owner.city }}
+    </div>
+  </div>
+
+  <a
+    data-clickable-card-target="link"
+    href="{{ path('app_profile_detail', {uuid: owner.uuid}) }}"
+    class="j-center"
+    aria-label="{{ 'events.detail.owner.view'|trans({ '%firstName%': owner.firstName }) }}"
+  >
+    {% include 'common/icons/arrow-right-big.svg.twig' %}
+  </a>
+</j-clickable-card>

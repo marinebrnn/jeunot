@@ -93,6 +93,7 @@
   --border-error: var(--saffron-desires);
   --border-sm: var(--v);
   --border-xs: calc(var(--v) / 2);
+  --border-lg: calc(3 * var(--v));
 
   /* Shadows */
   --shadow-default: 0px 0px 20px 0px #49495a26;
@@ -102,6 +103,10 @@
   --form-control-border-color: var(--border-alt-blue);
   --form-control-color: var(--text-default);
   --form-control-disabled: #adadad;
+
+  /* Icons */
+  --icon-size: calc(4 * var(--v));
+  --icon-size-sm: calc(4 * var(--v));
 }
 
 @media screen and (min-width: 900px) {
@@ -125,5 +130,7 @@
 
     --font-size-help: 1.25rem;
     --line-height-help: 1.625rem;
+
+    --icon-size: calc(5 * var(--v));
   }
 }

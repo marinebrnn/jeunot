@@ -1,5 +1,9 @@
-<ul class="j-raw-list j-grid" style="--grid-item-min: 340px; --grid-justify-items: center" data-testid="event-list">
-    {% for event in events %}
-        {% include 'events/_card.html.twig' with { event } only %}
-    {% endfor %}
-</ul>
+{% if events|length > 0 %}
+    <ul class="j-raw-list j-grid" style="--grid-item-min: 340px; --grid-justify-items: center" data-testid="event-list">
+        {% for event in events %}
+            {% include 'events/_card.html.twig' with { event } only %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{ 'events.grid.empty'|trans }}</p>
+{% endif %}

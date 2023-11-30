@@ -1,8 +1,11 @@
-export default class extends HTMLLIElement {
+export default class extends HTMLElement {
   connectedCallback() {
-    const link = this.querySelector('[data-card-li-target="link"]');
+    const linkSelector = '[data-clickable-card-target="link"]';
+
+    const link = this.querySelector(linkSelector);
 
     if (!link) {
+      console.warn(`no ${linkSelector} found`, this);
       return;
     }
 
@@ -25,8 +28,5 @@ export default class extends HTMLLIElement {
         link.click();
       }
     };
-
-    // Show the card as clickable.
-    this.style.cursor = "pointer";
   }
 }

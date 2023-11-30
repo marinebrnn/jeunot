@@ -37,29 +37,20 @@
             </div>
             <figcaption data-testid="event-location">{{ event.location }}</figcaption>
         </figure>
-        <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(3 * var(--w))">
+        <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(2 * var(--w))">
             <h1>{{ event.title }}</h1>
-            <div>
-                <p class="j-text-bold">
-                    {{ event.startDate|date('j F Y à H\\hi') }} - {{ event.endDate|date('j F Y à H\\hi') }}
-                </p>
-                <p class="j-text-bold">
-                    {{ event.location }}
-                </p>
-            </div>
+            {% include 'events/_dates.html.twig' with { startDate: event.startDate, endDate: event.endDate } only %}
+
+            {% include 'events/_location.html.twig' with { location: event.location } only %}
+
+            {{ event.description|raw }}
 
             <div>
-                {{ event.description|raw }}
-            </div>
-
-            <div>
-                <h3>
+                <h2 class="j-label">
                     {{ 'events.detail.owner.title'|trans }}
-                </h3>
+                </h2>
 
-                <p>
-                    {{ event.owner.firstName }}
-                </p>
+                {% include 'events/_owner.html.twig' with { owner: event.owner } %}
             </div>
 
             <p>
@@ -73,15 +64,36 @@
             {% endif %}
 
             {% if event.isLoggedUserRegisteredForEvent %}
-                <p>
-                    {{ 'events.registered'|trans }}
+                <p class="j-alert j-alert--success j-icon--left j-text-bold">
+                    {% include 'common/icons/check.svg.twig' with { attr: {class: 'j-icon j-icon--sm'} } only %}
+                    {{ 'events.detail.registered'|trans }}
                 </p>
                 {% include 'events/_unregistration_form.html.twig' with { event } only %}
             {% elseif is_granted('ROLE_USER') and event.nbAvailablePlaces > 0  %}
-                <a data-testid="register-link" class="j-btn" href="{{ path('app_event_register', { uuid: event.uuid }) }}">
+                <a data-testid="register-link" class="j-btn j-btn--action" href="{{ path('app_event_register', { uuid: event.uuid }) }}">
                     {{ 'events.detail.register'|trans }}
                 </a>
             {% endif %}
+        </div>
+    </div>
+
+    <div class="j-container j-background-alt-blue" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <div class="j-box j-stack" style="--box-padding: min(6%, calc(6 * var(--w))); --stack-gap: calc(4 * var(--w))">
+            <h2>{{ 'events.detail.upcoming_events'|trans }}</h2>
+
+            {% include 'events/_event_grid.html.twig' with { events: otherEvents } only %}
+
+            <div class="j-center">
+                <a href="{{ path('app_events_list') }}" class="j-btn j-btn--lg">
+                    {{ 'events.detail.upcoming_events.back_to_event_list'|trans }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w)); --container-padding: 0">
+        <div class="j-box" style="--box-padding: min(6%, calc(6 * var(--w)))">
+            {% include '_why_jeunot.html.twig' with { detail: true } only %}
         </div>
     </div>
 {% endblock main %}

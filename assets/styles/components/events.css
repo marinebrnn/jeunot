@@ -1,0 +1,38 @@
+.j-event-owner {
+  display: inline-flex;
+  background-color: var(--background-alt-blue);
+  border-radius: var(--border-lg);
+  padding: calc(3 * var(--v));
+}
+
+@media screen and (min-width: 900px) {
+  .j-event-owner {
+    padding: calc(2 * var(--w));
+  }
+}
+
+.j-event-owner-picture {
+  align-self: center;
+  max-width: calc(6 * var(--w));
+  margin-block: auto;
+}
+
+.j-event-owner-picture > img {
+  border-radius: 50%;
+}
+
+.j-event-owner-info {
+  margin-block: auto;
+  /* Fill available space, wrapping on smaller container sizes */
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.j-event-owner-name {
+  color: var(--text-action-blue);
+  font-weight: var(--font-weight-bold);
+}
+
+.j-event-owner > a {
+  margin-left: calc(2 * var(--w));
+}

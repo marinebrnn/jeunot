@@ -8,7 +8,7 @@ use App\Domain\Event\Event;
 
 interface EventRepositoryInterface
 {
-    public function findActiveEvents(int $pageSize, int $page, ?string $loggedUserUuid, bool $displayOnlyLoggedUserEvents = false): array;
+    public function findActiveEvents(int $pageSize, int $page, ?string $loggedUserUuid, bool $displayOnlyLoggedUserEvents = false, string $excludeUuid = null): array;
 
     public function findDetailedEvent(string $uuid, ?string $loggedUserUuid): array;
 

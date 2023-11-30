@@ -1,0 +1,32 @@
+{% set detail = detail|default(false) %}
+
+<div class="j-stack" style="--stack-gap: calc(3 * var(--w))">
+    <h2>{{ 'why_jeunot.title'|trans }}</h2>
+
+    <div class="j-grid" style="--grid-gap: calc({{ detail ? 6 : 3 }} * var(--w)); --grid-item-min: {{ detail ? '25ch' : '40ch' }}">
+        <div class="j-stack" style="--stack-gap: 0">
+            <h3 class="j-text-red">{{ 'why_jeunot.mission'|trans }}</h3>
+            <div class="j-cluster">
+                <div class="why_jeunot-bubble" style="--bubble-translate: 20%">
+                    <img src="{{ asset('images/why_jeunot/mission-bubble.svg') }}" alt="">
+                    <p {% if not detail %}class="j-text-display"{% endif %}>{{ 'why_jeunot.mission.description'|trans }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="j-stack" style="--stack-gap: 0">
+            <h3 class="j-text-red">{{ 'why_jeunot.ambition'|trans }}</h3>
+            <div class="j-cluster">
+                <div class="why_jeunot-bubble">
+                    <img src="{{ asset('images/why_jeunot/ambition-bubble.svg') }}" alt="">
+                    <p {% if not detail %}class="j-text-display"{% endif %}>{{ 'why_jeunot.ambition.description'|trans }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="j-center">
+        <a href="{{ path('app_about') }}" class="j-btn j-btn--lg">
+            {{ 'why_jeunot.about'|trans }}
+        </a>
+    </div>
+</div>

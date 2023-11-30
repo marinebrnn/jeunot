@@ -1,4 +1,4 @@
-<li class="j-card j-max-w" is="j-card-li" style="--max-w: 30rem">
+<j-clickable-card role="listitem" class="j-card j-max-w" style="--max-w: 30rem">
     <figure>
         <div class="j-frame" style="--frame-ratio: 10 / 7">
             {% if event.picture %}
@@ -14,7 +14,7 @@
             {{ event.startDate|date('d/m/Y') }}
         </p>
         <h3>
-            <a href="{{ path('app_events_detail', { uuid: event.uuid } )}}" data-card-li-target="link">
+            <a href="{{ path('app_events_detail', { uuid: event.uuid } )}}" data-clickable-card-target="link">
                 {{ event.title }}
             </a>
         </h3>
@@ -26,4 +26,4 @@
             {% include 'common/icons/arrow-right-big.svg.twig' %}
         </div>
     </div>
-</li>
+</j-clickable-card>

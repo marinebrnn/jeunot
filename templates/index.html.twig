@@ -95,34 +95,7 @@
         </div>
     </div>
 
-    <div class="j-container j-box j-stack" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0; --stack-gap: calc(3 * var(--w))">
-        <h2>{{ 'home.why_jeunot'|trans }}</h2>
-
-        <div class="j-grid" style="--grid-gap: calc(3 * var(--w)); --grid-item-min: 40ch">
-            <div class="j-stack" style="--stack-gap: 0">
-                <h3 class="j-text-red">{{ 'home.why_jeunot.mission'|trans }}</h3>
-                <div class="j-cluster">
-                    <div class="home-bubble" style="--bubble-translate: 20%">
-                        <img src="{{ asset('images/home/mission-bubble.svg') }}" alt="">
-                        <p class="j-text-display">{{ 'home.why_jeunot.mission.description'|trans }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="j-stack" style="--stack-gap: 0">
-                <h3 class="j-text-red">{{ 'home.why_jeunot.ambition'|trans }}</h3>
-                <div class="j-cluster">
-                    <div class="home-bubble">
-                        <img src="{{ asset('images/home/ambition-bubble.svg') }}" alt="">
-                        <p class="j-text-display">{{ 'home.why_jeunot.ambition.description'|trans }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="j-center">
-            <a href="{{ path('app_about') }}" class="j-btn j-btn--lg">
-                {{ 'home.why_jeunot.about'|trans }}
-            </a>
-        </div>
+    <div class="j-container j-box" style="--box-padding: min(calc(6 * var(--w)), calc(2 * var(--w) + 3vw)) 0">
+        {% include '_why_jeunot.html.twig' %}
     </div>
 {% endblock %}

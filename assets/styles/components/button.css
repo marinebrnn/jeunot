@@ -2,8 +2,9 @@
   --tint: var(--background-action-blue);
   --hover-tint: var(--background-action-blue-hover);
   display: inline-block;
-  padding: 0.4375rem 1rem;
+  --button-padding: 0.4375rem 1rem;
   --button-padding-lg: 1rem 1.625rem;
+  padding: var(--button-padding);
   background-color: var(--tint);
   color: var(--text-on-background-action-blue);
   border: none;
@@ -24,6 +25,11 @@ button[type="submit"].j-btn,
 .j-btn--action {
   width: 100%;
   font-size: var(--font-size-default);
+}
+
+button[type="submit"].j-btn[class*="j-icon--"] {
+  width: initial;
+  --button-padding-lg: var(--button-padding);
 }
 
 @media screen and (min-width: 600px) {
