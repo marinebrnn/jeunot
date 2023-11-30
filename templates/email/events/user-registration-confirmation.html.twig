@@ -5,7 +5,11 @@
     <p>{{ 'events.user_registration.confirmed'|trans({ '%title%': event.title }) }}</p>
     <p>{{ 'events.user_registration.information'|trans }}</p>
     <ul>
-        <li>{{ 'events.user_registration.information.when'|trans({ '%startDate%': event.startDate|date('d/m/Y H:i'), '%endDate%': event.endDate|date('d/m/Y H:i') }) }}</li>
+        <li>
+            {{ 'events.user_registration.information.when'|trans }}
+            {{ event.startDate|format_datetime('full', 'none', locale='fr') }}{% if isOverSeveralDays %} - {{ event.endDate|format_datetime('full', 'none', locale='fr') }}{% endif %}
+            de {{ event.startDate|format_datetime('none', 'short', locale='fr') }} à {{ event.endDate|format_datetime('none', 'short', locale='fr') }}
+        </li>
         <li>{{ 'events.user_registration.information.location'|trans({ '%location%': event.location }) }}</li>
         <li>{{ 'events.user_registration.information.owner'|trans({ '%firstName%': event.owner.firstName }) }}</li>
     </ul>

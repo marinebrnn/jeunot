@@ -17,4 +17,9 @@ final class DateUtils implements DateUtilsInterface
     {
         return (new \DateTimeImmutable('now'))->format('Y');
     }
+
+    public function getDaysInterval(\DateTimeInterface $date1, \DateTimeInterface $date2): int
+    {
+        return $date1->diff($date2)->d;
+    }
 }

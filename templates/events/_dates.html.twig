@@ -1,11 +1,16 @@
 <div class="j-cluster" style="--cluster-gap: calc(3 * var(--v))">
-  {% include 'common/icons/date.svg.twig' with { attr: { class: 'j-icon' } } only %}
-  <div>
-    <div class="j-text-bold">
-      <time datetime="{{ startDate|date('Y-m-d') }}">{{ startDate|date('j F Y') }}</time>
-    </div>
+    {% include 'common/icons/date.svg.twig' with { attr: { class: 'j-icon' } } only %}
     <div>
-      <time datetime="{{ startDate|date('H:i') }}">{{ startDate|date('H\\hi') }}</time> - <time datetime="{{ endDate|date('H:i') }}">{{ endDate|date('H\\hi') }}</time>
+        <div class="j-text-bold">
+            <time datetime="{{ event.startDate|date('Y-m-d') }}">{{ event.startDate|format_datetime('full', 'none', locale='fr') }}</time>
+            {% if event.isOverSeveralDays %}
+                - <time datetime="{{ event.endDate|date('Y-m-d') }}">{{ event.endDate|format_datetime('full', 'none', locale='fr') }}</time>
+            {% endif %}
+        </div>
+        <div>
+            <time datetime="{{ event.startDate|date('H:i') }}">{{ event.startDate|format_datetime('none', 'short', locale='fr') }}</time>
+            -
+            <time datetime="{{ event.endDate|date('H:i') }}">{{ event.endDate|format_datetime('none', 'short', locale='fr') }}</time>
+        </div>
     </div>
-  </div>
 </div>

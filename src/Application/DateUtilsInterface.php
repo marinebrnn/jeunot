@@ -9,4 +9,6 @@ interface DateUtilsInterface
     public function getNow(): \DateTimeImmutable;
 
     public function getCurrentYear(): string;
+
+    public function getDaysInterval(\DateTimeInterface $date1, \DateTimeInterface $date2): int;
 }

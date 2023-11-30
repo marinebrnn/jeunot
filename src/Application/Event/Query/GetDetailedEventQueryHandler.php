@@ -26,12 +26,10 @@ final class GetDetailedEventQueryHandler
         }
 
         $event = current($event);
-
-        $ownerAge = null;
-
-        if ($event['ownerDisplayMyAge']) {
-            $ownerAge = \DateTime::createFromInterface($event['ownerBirthday'])->diff($this->dateUtils->getNow())->y;
-        }
+        $ownerAge = $event['ownerDisplayMyAge'] ? \DateTime::createFromInterface($event['ownerBirthday'])->diff($this->dateUtils->getNow())->y : null;
+        $startDate = \DateTime::createFromInterface($event['startDate']);
+        $endDate = \DateTime::createFromInterface($event['endDate']);
+        $isOverSeveralDays = $this->dateUtils->getDaysInterval($startDate, $endDate) > 0;
 
         return new DetailedEventView(
             uuid: $event['uuid'],
@@ -40,8 +38,8 @@ final class GetDetailedEventQueryHandler
             location: $event['location'],
             nbAttendees: $event['nbAttendees'],
             nbAvailablePlaces: $event['initialAvailablePlaces'] - $event['nbAttendees'],
-            startDate: $event['startDate'],
-            endDate: $event['endDate'],
+            startDate: $startDate,
+            endDate: $endDate,
             owner: new OwnerView(
                 uuid: $event['ownerUuid'],
                 firstName: $event['ownerFirstName'],
@@ -51,6 +49,7 @@ final class GetDetailedEventQueryHandler
             ),
             isLoggedUserRegisteredForEvent: !empty($event['isLoggedUserRegisteredForEvent']) ? true : false,
             picture: $event['picture'],
+            isOverSeveralDays: $isOverSeveralDays,
         );
     }
 }
