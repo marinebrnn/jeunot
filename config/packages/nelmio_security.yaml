@@ -41,3 +41,8 @@ when@dev:
     nelmio_security:
         csp:
             hosts: ['example.org'] # Use any value so we don't enforce on localhost.
+
+when@prod:
+    nelmio_security:
+        # Require HTTPS
+        forced_ssl: ~
