@@ -12,5 +12,7 @@ interface EventRepositoryInterface
 
     public function findDetailedEvent(string $uuid, ?string $loggedUserUuid): array;
 
+    public function findRegisterSucceededEvent(string $uuid): ?array;
+
     public function findOneByUuid(string $uuid): ?Event;
 }

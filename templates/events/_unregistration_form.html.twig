@@ -1,5 +1,5 @@
 <form method="post" action="{{ path('app_events_unregister', { uuid: event.uuid }) }}">
-    <button type="submit" class="j-btn j-btn--red j-btn--tertiary j-icon--left">
+    <button type="submit" class="j-btn j-btn--md j-btn--red j-btn--tertiary j-icon--left">
         {% include 'common/icons/close.svg.twig' with { attr: {class: 'j-icon j-icon--sm' } } only %}
         {{ 'events.cancel_registration'|trans }}
     </button>

@@ -75,7 +75,7 @@
                     <a href="{{ path('app_profile_detail', {'uuid': app.user.uuid }) }}" class="j-btn j-btn--action j-btn--secondary">
                         {{ 'profile.cancel'|trans }}
                     </a>
-                    {{ form_widget(form.save, { attr: { class: 'j-btn' } }) }}
+                    {{ form_widget(form.save, { attr: { class: 'j-btn j-btn--action' } }) }}
                 </div>
             {{ form_end(form) }}
 

@@ -1,3 +1,9 @@
+.j-event-dates {
+  /* Fill available space, wrapping on smaller container sizes */
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
 .j-event-owner {
   display: inline-flex;
   background-color: var(--background-alt-blue);
@@ -35,4 +41,11 @@
 
 .j-event-owner > a {
   margin-left: calc(2 * var(--w));
+}
+
+.j-event-register-succeeded-alert {
+  background-color: var(--background-alt-yellow);
+  padding: calc(2 * var(--w));
+  border-radius: var(--border-lg);
+  text-align: center;
 }

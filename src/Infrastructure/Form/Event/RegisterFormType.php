@@ -18,12 +18,12 @@ final class RegisterFormType extends AbstractType
                 'required' => false,
                 'label' => 'events.register.comment',
                 'help' => 'events.register.comment.help',
+                'attr' => [
+                    'placeholder' => 'events.register.comment.placeholder',
+                ],
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'events.register.submit',
-                'attr' => [
-                    'class' => 'j-btn',
-                ],
             ])
         ;
     }

@@ -107,6 +107,7 @@
   /* Icons */
   --icon-size: calc(4 * var(--v));
   --icon-size-sm: calc(4 * var(--v));
+  --icon-size-lg: calc(6 * var(--v));
 }
 
 @media screen and (min-width: 900px) {

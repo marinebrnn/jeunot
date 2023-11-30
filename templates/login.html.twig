@@ -37,7 +37,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="j-btn">{{ 'login.submit'|trans }}</button>
+            <button type="submit" class="j-btn j-btn--action">{{ 'login.submit'|trans }}</button>
 
             <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

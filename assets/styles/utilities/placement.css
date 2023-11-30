@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.j-center-decorative {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
 .j-float--right {
   float: right;
 }

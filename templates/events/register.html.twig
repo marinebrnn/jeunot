@@ -4,18 +4,70 @@
     {{ 'events.register.title'|trans }} - {{ parent() }}
 {% endblock %}
 
+{% block main_tag %}<main class="j-background-alt-yellow">{% endblock %}
+
 {% block main %}
-    <div class="j-container">
-        <h1>{{ 'events.register.title'|trans }}</h1>
-        <h2>{{ event.title }}</h2>
-        <div>
-            {{ event.startDate|date('d/m/Y H:i') }} {{ event.endDate|date('d/m/Y H:i') }}<br/>
-            {{ event.location }}<br/>
+    {% include 'common/breadcrumb.html.twig' with {
+        items: [
+            app.user ? {
+                title: 'nav.dashboard'|trans,
+                path: path('app_dashboard'),
+            } : {
+                title: 'nav.home'|trans,
+                path: path('app_home'),
+            },
+            {
+                title: 'nav.events'|trans,
+                path: path('app_events_list'),
+            },
+            {
+                title: event.title,
+                path: path('app_events_detail', {uuid: event.uuid})
+            },
+            {
+                title: 'events.register.title'|trans,
+            }
+        ]
+    } only %}
+
+    <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w))">
+        <div class="j-box j-stack" style="--box-padding: calc(3 * var(--w)) 0">
+            <div class="j-center-decorative">
+                <a href="{{ path('app_events_detail', {uuid: event.uuid}) }}" class="j-mobile-only" aria-label="{{ 'events.register.back'|trans }}">
+                    {% include 'common/icons/arrow-left-big.svg.twig' with { attr: {class: 'j-icon j-icon--lg' } } only %}
+                </a>
+                <h1 class="j-as-p j-mb-0">
+                    {{ 'events.register.title'|trans }}
+                </h1>
+            </div>
+    
+            <h2>
+                {{ event.title }}
+            </h2>
+    
+            <div class="j-stack">
+                <p class="j-label">
+                    {{ 'events.register.infos'|trans }}
+                </p>
+        
+                {% include 'events/_dates.html.twig' with { event } only  %}
+        
+                {% include 'events/_location.html.twig' with { location: event.location } only %}
+            </div>
+    
+            {% if event.nbAvailablePlaces > 0 %}
+                {{ form_start(form, { attr: { 'data-testid': 'registration-form' } }) }}
+                    {{ form_row(form.comment, { row_attr: { class: 'j-input-group' } }) }}
+                    <div class="j-cluster" style="--cluster-gap: calc(2 * var(--w))">
+                        {{ form_widget(form.save, { attr: { class: 'j-btn j-btn--action' } }) }}
+                        <a href="{{ path('app_events_detail', {uuid: event.uuid}) }}" class="j-btn j-btn--tertiary j-btn--action">
+                            {{ 'events.register.cancel'|trans }}
+                        </a>
+                    </div>
+                {{ form_end(form) }}
+            {% else %}
+                <div data-testid="event-full">{{ 'events.register.full'|trans }}</div>
+            {% endif %}
         </div>
-        {% if event.nbAvailablePlaces > 0 %}
-            {{ form(form, { attr: { 'data-testid': 'registration-form' } }) }}
-        {% else %}
-            <div data-testid="event-full">{{ 'events.register.full'|trans }}</div>
-        {% endif %}
     </div>
 {% endblock main %}

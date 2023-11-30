@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Controller\Event;
 
-use App\Application\Event\Query\GetDetailedEventQuery;
+use App\Application\Event\Query\GetRegisterSucceededEventQuery;
 use App\Application\QueryBusInterface;
 use App\Domain\Event\Exception\EventNotFoundException;
-use App\Infrastructure\Security\AuthenticatedUser;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +17,6 @@ final readonly class RegisterUserForAnEventSucceededController
     public function __construct(
         private \Twig\Environment $twig,
         private QueryBusInterface $queryBus,
-        private AuthenticatedUser $authenticatedUser,
     ) {
     }
 
@@ -31,8 +29,7 @@ final readonly class RegisterUserForAnEventSucceededController
     public function __invoke(string $uuid): Response
     {
         try {
-            $loggedUserUuid = $this->authenticatedUser->getUser()?->getUuid();
-            $event = $this->queryBus->handle(new GetDetailedEventQuery($uuid, $loggedUserUuid));
+            $event = $this->queryBus->handle(new GetRegisterSucceededEventQuery($uuid));
         } catch (EventNotFoundException) {
             throw new NotFoundHttpException();
         }
