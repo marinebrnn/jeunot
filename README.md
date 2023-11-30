@@ -1,7 +1,7 @@
 # Jeunot
 
-[![CI](https://github.com/fairnesscoop/jeunot/actions/workflows/ci.yml/badge.svg)](https://github.com/fairnesscoop/jeunot/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/fairnesscoop/jeunot/branch/main/graph/badge.svg?token=QNKMUJHQDK)](https://codecov.io/gh/fairnesscoop/jeunot)
+[![CI](https://github.com/marinebrnn/jeunot/actions/workflows/ci.yml/badge.svg)](https://github.com/marinebrnn/jeunot/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/marinebrnn/jeunot/graph/badge.svg?token=QNKMUJHQDK)](https://codecov.io/gh/marinebrnn/jeunot)
 
 ## Environnement technique
 
