@@ -9,9 +9,9 @@ final readonly class OwnerView
     public function __construct(
         public string $uuid,
         public string $firstName,
-        public int|null $age,
-        public string $city,
-        public string|null $avatar,
+        public ?int $age,
+        public ?string $city,
+        public ?string $avatar,
     ) {
     }
 }
