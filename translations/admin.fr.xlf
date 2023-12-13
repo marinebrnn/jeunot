@@ -116,7 +116,7 @@
             </trans-unit>
             <trans-unit id="admin.users.howYouHeardAboutUs">
                 <source>admin.users.howYouHeardAboutUs</source>
-                <target>Comment vous nous avez connus ?</target>
+                <target>Comment nous avez-vous connu ?</target>
             </trans-unit>
         </body>
     </file>

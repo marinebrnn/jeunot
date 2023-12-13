@@ -4,6 +4,10 @@ footer {
   color: var(--text-on-background-flat-black);
 }
 
+footer a:not(.j-btn):hover {
+  text-decoration: underline;
+}
+
 #footer-nav a {
   display: inline-block;
   padding-block: var(--w);
