@@ -21,19 +21,20 @@
   padding: var(--button-padding-lg);
 }
 
-button[type="submit"].j-btn,
+.j-btn--md {
+  font-size: var(--font-size-default);
+}
+
 .j-btn--action {
   width: 100%;
   font-size: var(--font-size-default);
 }
 
-button[type="submit"].j-btn[class*="j-icon--"] {
-  width: initial;
-  --button-padding-lg: var(--button-padding);
+.j-btn[class*="j-icon--"] {
+  display: inline-flex;
 }
 
 @media screen and (min-width: 600px) {
-  button[type="submit"].j-btn,
   .j-btn--action {
     width: initial;
     padding: var(--button-padding-lg);

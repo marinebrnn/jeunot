@@ -7,6 +7,10 @@
   width: var(--icon-size-sm);
 }
 
+.j-icon--lg {
+  width: var(--icon-size-lg);
+}
+
 .j-icon--left,
 .j-icon--right {
   display: flex;

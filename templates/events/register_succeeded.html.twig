@@ -1,13 +1,47 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-    {{ 'events.register.succeded.title'|trans }} - {{ parent() }}
+    {{ 'events.register.succeeded.title'|trans }} - {{ parent() }}
 {% endblock %}
 
+{% block main_tag %}<main class="j-background-alt-yellow">{% endblock %}
+
 {% block main %}
-    <div class="j-container">
-        <h1>{{ 'events.register.succeded.title'|trans }} !</h1>
-        <p>{{ 'events.register.succeded.detail'|trans({ '%title%': event.title }) }}</p>
-        {% include 'events/_unregistration_form.html.twig' with { event } only %}
+    <div class="j-container j-background-default" style="--container-width: calc(92 * var(--w))">
+        <div class="j-box j-stack" style="--box-padding: calc(3 * var(--w)) 0; --stack-gap: calc(3 * var(--w))">
+            <h1 class="j-h2">{{ 'events.register.succeeded.title'|trans }} 👍</h1>
+
+            <div class="j-container j-event-register-succeeded-alert" style="--container-width: 55ch">
+                <p>{{ 'events.register.succeeded.detail.prefix'|trans }}</p>
+                <p class="j-text-bold">{{ event.title }}</p>
+                <p>{{ 'events.register.succeeded.detail.suffix'|trans }}</p>
+            </div>
+
+            <div>
+                <div class="j-stack" style="--stack-gap: var(--w)">
+                    <p>
+                        {{ 'events.register.succeeded.have_questions'|trans }}
+                    </p>
+                    <a href="mailto:{{ event.ownerEmail }}" class="j-btn j-btn--md j-btn--tertiary j-icon--left">
+                        {% include 'common/icons/message.svg.twig' with { attr: {class: 'j-icon'} } only %}
+                        {{ 'events.register.succeeded.contact_owner'|trans }}
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <div class="j-stack" style="--stack-gap: var(--w)">
+                    <p>
+                        {{ 'events.register.succeeded.not_available'|trans }}
+                    </p>
+                    {% include 'events/_unregistration_form.html.twig' with { event } only %}
+                </div>
+            </div>
+
+            <a href="{{ path('app_events_list') }}" class="j-btn j-btn--action j-icon--left">
+                {% include 'common/icons/arrow-left-big.svg.twig' with { stroke: 'var(--white)', attr: {class: 'j-icon'} } only %}
+                {{ 'events.register.succeeded.back_to_events'|trans }}
+            </a>
+        </div>
     </div>
 {% endblock main %}

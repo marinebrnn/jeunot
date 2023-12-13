@@ -1,6 +1,6 @@
 <div class="j-cluster" style="--cluster-gap: calc(3 * var(--v))">
     {% include 'common/icons/date.svg.twig' with { attr: { class: 'j-icon' } } only %}
-    <div>
+    <div class="j-event-dates">
         <div class="j-text-bold">
             <time datetime="{{ event.startDate|date('Y-m-d') }}">{{ event.startDate|format_datetime('full', 'none', locale='fr') }}</time>
             {% if event.isOverSeveralDays %}

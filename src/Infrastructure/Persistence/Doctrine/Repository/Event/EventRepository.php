@@ -113,6 +113,23 @@ final class EventRepository extends ServiceEntityRepository implements EventRepo
         return $qb->getQuery()->getResult();
     }
 
+    public function findRegisterSucceededEvent(string $uuid): ?array
+    {
+        return $this->createQueryBuilder('e')
+            ->select('
+                e.uuid,
+                e.title,
+                o.email as ownerEmail
+            ')
+            ->innerJoin('e.owner', 'o')
+            ->where('e.published = true')
+            ->andWhere('e.uuid = :uuid')
+            ->setParameter('uuid', $uuid)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     public function findOneByUuid(string $uuid): ?Event
     {
         return $this->createQueryBuilder('e')

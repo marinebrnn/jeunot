@@ -18,6 +18,9 @@ h6 {
   font-family: var(--font-title);
   font-weight: var(--font-weight-bold);
   color: var(--text-action-blue);
+}
+
+:where(h1, h2, h3, .j-h3, h4, h5, h6):not(.j-mb-0) {
   /*
   NOTE: 'em' is relative to the font size (as opposed to 'rem'),
   so the effective margin will grow with each header level.
@@ -31,7 +34,8 @@ h1,
   line-height: var(--line-height-h1);
 }
 
-h2 {
+h2,
+.j-h2 {
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
 }
@@ -42,12 +46,13 @@ h3,
   line-height: var(--line-height-h3);
 }
 
-p {
+p,
+.j-as-p {
   font-size: var(--font-size-default);
   line-height: var(--line-height-default);
 }
 
-p:not(:last-child) {
+:where(p, .j-as-p):not(:last-child) {
   margin-block-end: calc(2 * var(--w));
 }
 
@@ -55,7 +60,7 @@ small {
   font-size: var(--font-size-sm);
 }
 
-p a {
+:where(p, .j-as-p) a {
   color: var(--early-spring-night);
 }
 

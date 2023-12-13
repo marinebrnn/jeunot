@@ -394,25 +394,33 @@
                 <source>events.register.title</source>
                 <target>Inscription à l'événement</target>
             </trans-unit>
+            <trans-unit id="events.register.back">
+                <source>events.register.back</source>
+                <target>Retour à l'événement</target>
+            </trans-unit>
+            <trans-unit id="events.register.infos">
+                <source>events.register.infos</source>
+                <target>Rappel des informations pratiques</target>
+            </trans-unit>
             <trans-unit id="events.register.comment">
                 <source>events.register.comment</source>
                 <target>Commentaire</target>
             </trans-unit>
-            <trans-unit id="events.cancel_registration">
-                <source>events.cancel_registration</source>
-                <target>Annuler mon inscription</target>
-            </trans-unit>
-            <trans-unit id="events.cancel_registration.success">
-                <source>events.cancel_registration.success</source>
-                <target>Votre désinscription a bien été prise en compte !</target>
-            </trans-unit>
             <trans-unit id="events.register.comment.help">
                 <source>events.register.comment.help</source>
-                <target>Si vous avez une remarque, une question, un besoin, vous pouvez le communiquer à l’origanisateur ici. A noter que les organisateurs sont des bénévoles.</target>
+                <target>Si vous avez une remarque, une question, un besoin, vous pouvez le communiquer à l'organisateur ici. À noter que les organisateurs sont des bénévoles.</target>
+            </trans-unit>
+            <trans-unit id="events.register.comment.placeholder">
+                <source>events.register.comment.placeholder</source>
+                <target>Écrire votre commentaire ici...</target>
             </trans-unit>
             <trans-unit id="events.register.submit">
                 <source>events.register.submit</source>
                 <target>Valider mon inscription</target>
+            </trans-unit>
+            <trans-unit id="events.register.cancel">
+                <source>events.register.cancel</source>
+                <target>Annuler</target>
             </trans-unit>
             <trans-unit id="events.register.failed">
                 <source>events.register.failed</source>
@@ -422,13 +430,41 @@
                 <source>events.register.full</source>
                 <target>Cet événement est complet.</target>
             </trans-unit>
-            <trans-unit id="events.register.succeded.title">
-                <source>events.register.succeded.title</source>
-                <target>Vous êtes bien inscrit·e</target>
+            <trans-unit id="events.register.succeeded.title">
+                <source>events.register.succeeded.title</source>
+                <target>Vous êtes bien inscrit·e !</target>
             </trans-unit>
-            <trans-unit id="events.register.succeded.detail">
-                <source>events.register.succeded.detail</source>
-                <target>Votre inscription est confirmée à "%title%". Vous recevrez plus d’informations dans les jours précédant l’événement. Pensez à surveiller vos e-mails !</target>
+            <trans-unit id="events.register.succeeded.detail.prefix">
+                <source>events.register.succeeded.detail.prefix</source>
+                <target>Votre inscription est confirmée à</target>
+            </trans-unit>
+            <trans-unit id="events.register.succeeded.detail.suffix">
+                <source>events.register.succeeded.detail.suffix</source>
+                <target>Vous recevrez plus d’informations dans les jours précédant l’événement. Pensez à surveiller vos e-mails ! 💌</target>
+            </trans-unit>
+            <trans-unit id="events.register.succeeded.have_questions">
+                <source>events.register.succeeded.have_questions</source>
+                <target>Vous avez des questions ?</target>
+            </trans-unit>
+            <trans-unit id="events.register.succeeded.contact_owner">
+                <source>events.register.succeeded.contact_owner</source>
+                <target>Contacter l'organisateur</target>
+            </trans-unit>
+            <trans-unit id="events.register.succeeded.not_available">
+                <source>events.register.succeeded.not_available</source>
+                <target>Vous n'êtes plus disponible ?</target>
+            </trans-unit>
+            <trans-unit id="events.register.succeeded.back_to_events">
+                <source>events.register.succeeded.back_to_events</source>
+                <target>Retour au calendrier</target>
+            </trans-unit>
+            <trans-unit id="events.cancel_registration">
+                <source>events.cancel_registration</source>
+                <target>Annuler mon inscription</target>
+            </trans-unit>
+            <trans-unit id="events.cancel_registration.success">
+                <source>events.cancel_registration.success</source>
+                <target>Votre désinscription a bien été prise en compte !</target>
             </trans-unit>
             <trans-unit id="events.detail.owner.title">
                 <source>events.detail.owner.title</source>

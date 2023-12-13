@@ -15,8 +15,14 @@ final class RegisterUserForAnEventSucceededControllerTest extends AbstractWebTes
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
-        $this->assertSame('Vous êtes bien inscrit·e !', $crawler->filter('h1')->text());
-        $this->assertMetaTitle('Vous êtes bien inscrit·e - Jeunot', $crawler);
+        $this->assertSame('Vous êtes bien inscrit·e ! 👍', $crawler->filter('h1')->text());
+        $this->assertMetaTitle('Vous êtes bien inscrit·e ! - Jeunot', $crawler);
+
+        $contactLink = $crawler->selectLink("Contacter l'organisateur");
+        $this->assertSame('mailto:mathieu@fairness.coop', $contactLink->link()->getUri());
+
+        $unregisterLink = $crawler->selectButton('Annuler mon inscription');
+        $this->assertStringEndsWith('/events/f1f992d3-3cf5-4eb2-9b83-f112b7234613/unregister', $unregisterLink->form()->getUri());
     }
 
     public function testUnpublishedEvent(): void
