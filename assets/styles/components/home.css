@@ -1,7 +1,6 @@
 .home-jumbotron {
   position: relative;
   overflow: hidden;
-  z-index: -2;
 }
 
 .home-jumbotron::before {
@@ -11,6 +10,7 @@
   top: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--background-flat-yellow);
   background-image: url("/public/images/home/jumbotron-mobile.svg");
   background-repeat: no-repeat;
   background-size: 500px auto;
