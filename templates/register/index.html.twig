@@ -8,7 +8,8 @@
     {% include 'common/jumbotron_simple.html.twig' with { title: 'register.title'|trans, description: 'register.description'|trans } only %}
 
     <div class="j-container j-stack j-box" style="--box-padding: calc(2 * var(--w))">
-        <p>{{ 'register.mandatory_fields'|trans }}</p>
+        <p>{{ 'common.form.mandatory_fields'|trans|raw }}</p>
+
         {{ form_start(form) }}
             {{ form_row(form.firstName, { row_attr: { class: 'j-input-group' } }) }}
             {{ form_row(form.lastName, { row_attr: { class: 'j-input-group' } }) }}

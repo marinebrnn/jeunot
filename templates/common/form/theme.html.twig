@@ -29,8 +29,22 @@ Source: https://github.com/symfony/symfony/blob/6.3/src/Symfony/Bridge/Twig/Reso
     {% endif %}
 {% endblock form_errors %}
 
-{% block form_label_content %}
+{% block form_label %}
+    {% if help %}
+        {% set label_attr = label_attr|merge({ class: (label_attr.class|default('') ~ ' j-label-with-help')|trim }) %}
+    {% endif %}
+
     {{ parent() }}
+{% endblock %}
+
+{% block form_label_content %}
+    {% if help %}
+        <span class="j-label-content">
+            {{ parent() }}
+        </span>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
     {{- form_help(form) -}}
 {% endblock %}
 

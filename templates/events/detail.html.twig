@@ -60,6 +60,9 @@
                 <p>
                     {{ 'events.detail.register.anonymousWarning'|trans }}
                 </p>
+                <a href="{{ path('app_register') }}" class="j-btn j-btn--action">
+                    {{ 'events.detail.register.anonymousCta'|trans }}
+                </a>
             {% endif %}
 
             {% if event.isLoggedUserRegisteredForEvent %}

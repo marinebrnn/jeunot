@@ -31,6 +31,10 @@
                 <div>
                     <h2>{{ 'profile.edit.public'|trans }}</h2>
 
+                    <p>
+                        {{ 'common.form.mandatory_fields'|trans|raw }}
+                    </p>
+
                     {% if app.user.avatar %}
                         <div class="j-profile-picture j-frame" style="--frame-ratio: 1 / 1">
                             <img src="{{ storageCdnUrl ~ '/' ~ app.user.avatar }}" alt="{{ 'profile.detail.picture'|trans }}">
@@ -53,6 +57,10 @@
 
                 <div>
                     <h2>{{ 'profile.edit.private'|trans }}</h2>
+
+                    <p>
+                        {{ 'common.form.mandatory_fields'|trans|raw }}
+                    </p>
 
                     {{ form_row(form.lastName, { row_attr: { class: 'j-input-group' } }) }}
                     {{ form_row(form.email, { row_attr: { class: 'j-input-group' } }) }}

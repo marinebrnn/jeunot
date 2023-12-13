@@ -1,8 +1,3 @@
-.required::after {
-  content: "*";
-  color: var(--saffron-desires);
-}
-
 input:not([type="checkbox"]),
 textarea {
   display: block;
@@ -133,6 +128,13 @@ fieldset > legend {
 
 :where(.j-input-group, .j-select-group) > label > .j-help-text {
   margin-top: var(--v);
+}
+
+label:not(.j-label-with-help).required::after,
+label.j-label-with-help.required > .j-label-content::after,
+.j-required::after {
+  content: " *";
+  color: var(--saffron-desires);
 }
 
 .j-checkbox-group {
