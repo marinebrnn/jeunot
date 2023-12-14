@@ -499,6 +499,14 @@
                 <!-- TODO: pluralize -->
                 <target>%nbAttendees% inscrits - <![CDATA[<strong>]]>%nbAvailablePlaces% places disponibles<![CDATA[</strong>]]></target>
             </trans-unit>
+            <trans-unit id="events.detail.numberOfAttendees">
+                <source>events.detail.numberOfAttendees</source>
+                <target><![CDATA[<strong>]]>Participants (%nbAttendees%)<![CDATA[</strong>]]></target>
+            </trans-unit>
+            <trans-unit id="events.detail.Attendees">
+                <source>events.detail.Attendees</source>
+                <target>Participants</target>
+            </trans-unit>
             <trans-unit id="events.detail.register.anonymousWarning">
                 <source>events.detail.register.anonymousWarning</source>
                 <target>Vous devez être connecté·e pour vous inscrire et recevoir les informations de rendez-vous.</target>

@@ -18,5 +18,7 @@ interface AttendeeRepositoryInterface
 
     public function findOneByEventAndUser(Event $event, User $user): ?Attendee;
 
+    public function findAttendeesByEvent(Event $event): ?array;
+
     public function delete(Attendee $attendee): void;
 }

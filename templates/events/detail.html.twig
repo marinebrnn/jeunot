@@ -76,6 +76,10 @@
                     {{ 'events.detail.register'|trans }}
                 </a>
             {% endif %}
+
+            <p>
+                {{ 'events.detail.numberOfAttendees'|trans({ '%nbAttendees%': event.nbAttendees })|raw }}
+            </p>
         </div>
     </div>
 
