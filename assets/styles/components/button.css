@@ -1,6 +1,7 @@
 .j-btn {
   --tint: var(--background-action-blue);
   --hover-tint: var(--background-action-blue-hover);
+  --text-on-tint: var(--white);
   display: inline-block;
   --button-padding: 0.4375rem 1rem;
   --button-padding-lg: 1rem 1.625rem;
@@ -61,6 +62,7 @@
 .j-btn--yellow {
   --tint: var(--background-flat-yellow);
   --hover-tint: var(--background-flat-yellow-hover);
+  --text-on-tint: var(--text-default);
   color: var(--text-on-background-flat-yellow);
 }
 
@@ -70,10 +72,14 @@
 }
 
 .j-btn--secondary {
-  --hover-tint: rgba(0, 0, 0, 0.05);
+  --hover-tint: var(--tint);
   background-color: transparent;
   color: var(--tint);
   border: 1px solid var(--tint);
+}
+
+.j-btn--secondary:not(:disabled):hover {
+  color: var(--text-on-tint, var(--text-default));
 }
 
 .j-btn--tertiary {

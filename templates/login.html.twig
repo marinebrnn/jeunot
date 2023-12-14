@@ -10,13 +10,19 @@
     <div class="j-container j-box j-stack" style="--box-padding: calc(2 * var(--w))">
         <form action="{{ path('app_login') }}" method="post">
             <div class="j-input-group">
-                <label for="email">{{ 'login.email'|trans }}</label>
+                <label for="email" class="required">
+                    {{ 'login.email'|trans }}
+                </label>
                 <input type="email" autocomplete="email" id="email" required name="email" value="{{ last_username }}"/>
             </div>
 
             <div class="j-input-group">
-                <label for="password">{{ 'login.password'|trans }}</label>
-                <input aria-required="true" required name="password" autocomplete="current-password" id="password" type="password"/>
+                <label for="password" class="required">{{ 'login.password'|trans }}</label>
+                {% embed 'common/form/password-input.html.twig' %}
+                    {% block input %}
+                        <input aria-required="true" required name="password" autocomplete="current-password" id="password" type="password"/>
+                    {% endblock %}
+                {% endembed %}
                 <p>
                     <a href="{{ path('app_forgot_password') }}">
                         {{ 'login.forgot_password'|trans }}

@@ -25,7 +25,7 @@ final class DashboardControllerTest extends AbstractWebTestCase
         $this->assertSame('Dîner au restaurant', $eventTitle->eq(0)->text());
         $this->assertSame('Balade à vélo en tandem', $eventTitle->eq(1)->text());
 
-        $postLi = $crawler->filter('[data-testid="card-list"] li');
+        $postLi = $crawler->filter('[data-testid="card-list"] [role="listitem"]');
 
         $this->assertSame(1, $postLi->count());
         $this->assertSame('Lancement de la plateforme Jeunot', $postLi->filter('h3')->text());

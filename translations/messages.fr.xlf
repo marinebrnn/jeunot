@@ -10,6 +10,14 @@
                 <source>common.tagline</source>
                 <target>La communauté où les 60 ans et plus se rencontrent !</target>
             </trans-unit>
+            <trans-unit id="common.form.password.display">
+                <source>common.form.password.display</source>
+                <target>Afficher le mot de passe</target>
+            </trans-unit>
+            <trans-unit id="common.form.mandatory_fields">
+                <source>common.form.mandatory_fields</source>
+                <target>Les champs signalés par une <![CDATA[<span class="j-required">étoile</span>]]> sont obligatoires.</target>
+            </trans-unit>
             <trans-unit id="nav.brand.title">
                 <source>nav.brand.title</source>
                 <target>Retour à l'accueil</target>
@@ -77,6 +85,18 @@
             <trans-unit id="nav.terms.short">
                 <source>nav.terms.short</source>
                 <target>CGU</target>
+            </trans-unit>
+            <trans-unit id="nav.legals">
+                <source>nav.legals</source>
+                <target>Mentions légales</target>
+            </trans-unit>
+            <trans-unit id="nav.cookies">
+                <source>nav.cookies</source>
+                <target>Cookies</target>
+            </trans-unit>
+            <trans-unit id="nav.footer">
+                <source>nav.footer</source>
+                <target>Navigation de pied de page</target>
             </trans-unit>
             <trans-unit id="footer.freepik_disclaimer">
                 <source>footer.freepik_disclaimer</source>
@@ -284,7 +304,7 @@
             </trans-unit>
             <trans-unit id="register.howYouHeardAboutUs">
                 <source>register.howYouHeardAboutUs</source>
-                <target>Comment vous nous avez connus ?</target>
+                <target>Comment nous avez-vous connu ?</target>
             </trans-unit>
             <trans-unit id="register.description">
                 <source>register.description</source>
@@ -293,10 +313,6 @@
             <trans-unit id="register.submit">
                 <source>register.submit</source>
                 <target>Créer mon compte</target>
-            </trans-unit>
-            <trans-unit id="register.mandatory_fields">
-                <source>register.mandatory_fields</source>
-                <target>Tous les champs sont obligatoires</target>
             </trans-unit>
             <trans-unit id="register.succeeded.title">
                 <source>register.succeeded.title</source>
@@ -486,6 +502,10 @@
             <trans-unit id="events.detail.register.anonymousWarning">
                 <source>events.detail.register.anonymousWarning</source>
                 <target>Vous devez être connecté·e pour vous inscrire et recevoir les informations de rendez-vous.</target>
+            </trans-unit>
+            <trans-unit id="events.detail.register.anonymousCta">
+                <source>events.detail.register.anonymousCta</source>
+                <target>Créer un compte</target>
             </trans-unit>
             <trans-unit id="events.detail.register">
                 <source>events.detail.register</source>

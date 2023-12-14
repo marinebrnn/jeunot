@@ -45,6 +45,7 @@ final class ProfileFormType extends AbstractType
                 'label' => 'profile.gender',
                 'choices' => $choices,
                 'placeholder' => 'profile.gender.placeholder',
+                'required' => false,
             ])
             ->add('city', TextType::class, [
                 'label' => 'profile.city',
@@ -55,6 +56,7 @@ final class ProfileFormType extends AbstractType
             ])
             ->add('biography', TextareaType::class, [
                 'label' => 'profile.biography',
+                'required' => false,
             ])
             ->add('birthday', BirthdayType::class, [
                 'widget' => 'single_text',

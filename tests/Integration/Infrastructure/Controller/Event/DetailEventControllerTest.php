@@ -49,7 +49,8 @@ final class DetailEventControllerTest extends AbstractWebTestCase
         $this->assertSecurityHeaders();
         $this->assertSame('Balade et pique-nique en forêt de Chevreuse', $crawler->filter('h1')->text());
         $this->assertMetaTitle('Balade et pique-nique en forêt de Chevreuse - Jeunot', $crawler);
-        $this->assertSame('Saint Remy les Chevreuses Balade et pique-nique en forêt de Chevreuse mercredi 13 septembre 2023 09:00 - 18:00 Saint Remy les Chevreuses Lorem ipsum Cet événement est organisé par Mathieu 33 ans, Saint Ouen 0 inscrits - 10 places disponibles Vous devez être connecté·e pour vous inscrire et recevoir les informations de rendez-vous.', $crawler->filter('[data-testid="event"]')->text());
+        $this->assertSame('Saint Remy les Chevreuses Balade et pique-nique en forêt de Chevreuse mercredi 13 septembre 2023 09:00 - 18:00 Saint Remy les Chevreuses Lorem ipsum Cet événement est organisé par Mathieu 33 ans, Saint Ouen 0 inscrits - 10 places disponibles Vous devez être connecté·e pour vous inscrire et recevoir les informations de rendez-vous. Créer un compte', $crawler->filter('[data-testid="event"]')->text());
+        $this->assertSame('http://localhost/register', $crawler->filter('[data-testid="event"]')->selectLink('Créer un compte')->link()->getUri());
         $this->assertSame(0, $crawler->filter('[data-testid="register-link"]')->count()); // No register link
     }
 

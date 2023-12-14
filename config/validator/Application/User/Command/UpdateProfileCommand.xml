@@ -35,7 +35,6 @@
             </constraint>
         </property>
         <property name="gender">
-            <constraint name="NotBlank" />
             <constraint name="Length">
                 <option name="max">20</option>
             </constraint>
@@ -47,7 +46,6 @@
             </constraint>
         </property>
         <property name="biography">
-            <constraint name="NotBlank" />
             <constraint name="Length">
                 <option name="max">255</option>
             </constraint>

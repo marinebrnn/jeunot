@@ -13,7 +13,7 @@ final class ListPostsControllerTest extends AbstractWebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/posts?pageSize=20');
 
-        $li = $crawler->filter('[data-testid="card-list"] li');
+        $li = $crawler->filter('[data-testid="card-list"] [role="listitem"]');
         $postTitle = $li->filter('h3');
 
         $this->assertResponseStatusCodeSame(200);

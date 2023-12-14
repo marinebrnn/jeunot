@@ -54,6 +54,7 @@ final class EditProfileControllerTest extends AbstractWebTestCase
         $form['profile_form[lastName]'] = '';
         $form['profile_form[email]'] = '';
         $form['profile_form[biography]'] = '';
+        $form['profile_form[gender]'] = '';
         $form['profile_form[city]'] = '';
         $form['profile_form[birthday]'] = '';
         $crawler = $client->submit($form);
@@ -63,7 +64,6 @@ final class EditProfileControllerTest extends AbstractWebTestCase
         $this->assertSame('Cette valeur ne doit pas être vide.', $crawler->filter('#profile_form_firstName_error')->text());
         $this->assertSame('Cette valeur ne doit pas être vide.', $crawler->filter('#profile_form_email_error')->text());
         $this->assertSame('Cette valeur ne doit pas être vide.', $crawler->filter('#profile_form_city_error')->text());
-        $this->assertSame('Cette valeur ne doit pas être vide.', $crawler->filter('#profile_form_biography_error')->text());
         $this->assertSame('Cette valeur doit être de type date.', $crawler->filter('#profile_form_birthday_error')->text());
     }
 
