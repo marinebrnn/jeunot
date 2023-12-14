@@ -87,13 +87,7 @@
                 </div>
             {{ form_end(form) }}
 
-            <form method="post" action="{{ path('app_profile_delete') }}">
-                <button class="j-btn j-btn--red j-btn--tertiary j-icon--left">
-                    {% include 'common/icons/trash.svg.twig' with { attr: { class: 'j-icon j-icon--sm' } } only %}
-                    {{ 'profile.delete'|trans }}
-                </button>
-                <input type="hidden" name="token" value="{{ csrf_token('delete-user-account') }}"/>
-            </form>
+            {% include 'app/profile/_delete_form.html.twig' %}
         </div>
     </div>
 {% endblock main %}

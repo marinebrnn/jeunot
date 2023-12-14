@@ -1,7 +1,21 @@
-<form method="post" action="{{ path('app_events_unregister', { uuid: event.uuid }) }}">
-    <button type="submit" class="j-btn j-btn--md j-btn--red j-btn--tertiary j-icon--left">
-        {% include 'common/icons/close.svg.twig' with { attr: {class: 'j-icon j-icon--sm' } } only %}
-        {{ 'events.cancel_registration'|trans }}
-    </button>
-    <input type="hidden" name="token" value="{{ csrf_token('unregister-user-for-an-event') }}"/>
+{% set formId = 'delete-form-' ~ event.uuid %}
+{% set dialogId = 'delete-confirm-' ~ event.uuid %}
+
+<form id="{{ formId }}" method="post" action="{{ path('app_events_unregister', { uuid: event.uuid }) }}">
+    <j-dialog-trigger data-dialog-id="{{ dialogId }}" data-form-submit-value="confirm" data-form-id="{{ formId }}">
+        <button type="submit" class="j-btn j-btn--md j-btn--red j-btn--tertiary j-icon--left">
+            {% include 'common/icons/close.svg.twig' with { attr: {class: 'j-icon j-icon--sm' } } only %}
+            {{ 'events.cancel_registration'|trans }}
+        </button>
+    </j-dialog-trigger>
+
+    <input type="hidden" name="token" value="{{ csrf_token('unregister-user-for-an-event') }}" />
 </form>
+
+{% include 'common/dialog.html.twig' with {
+    id: dialogId,
+    title: 'events.cancel_registration.dialog.title'|trans({'%title%': event.title}),
+    confirmValue: 'confirm',
+    confirmLabel: 'events.cancel_registration.dialog.confirm'|trans,
+    cancelLabel: 'events.cancel_registration.dialog.cancel'|trans,
+} only %}
