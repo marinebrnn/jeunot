@@ -1,0 +1,11 @@
+{% if flashes|length > 0 %}
+    <div class="j-flashes j-container j-stack" style="--stack-gap: var(--w)">
+        {% for label, messages in flashes %}
+            {% for message in messages %}
+                <j-flash role="status" aria-live="polite" class="j-alert j-alert--{{ label }}">
+                    {{ message|raw }}
+                </j-flash>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endif %}
