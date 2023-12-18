@@ -9,6 +9,10 @@
 
     <div class="j-container j-box j-stack" style="--box-padding: calc(2 * var(--w))">
         <form action="{{ path('app_login') }}" method="post">
+            {% if error %}
+                {% include 'common/form/errors.html.twig' with { errors: [error.messageKey|trans(error.messageData, 'security')] } only %}
+            {% endif %}
+
             <div class="j-input-group">
                 <label for="email" class="required">
                     {{ 'login.email'|trans }}
@@ -29,12 +33,6 @@
                     </a>
                 </p>
             </div>
-
-            {% if error %}
-                <p class="error">
-                    {{ error.messageKey|trans(error.messageData, 'security') }}
-                </p>
-            {% endif %}
 
             <div class="j-checkbox-group">
                 <input type="checkbox" id="_remember_me" name="_remember_me" checked />

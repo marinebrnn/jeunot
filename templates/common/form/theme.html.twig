@@ -20,11 +20,7 @@ Source: https://github.com/symfony/symfony/blob/6.3/src/Symfony/Bridge/Twig/Reso
 {% block form_errors %}
     {% if errors|length > 0 %}
         <div id="{{ id }}_error">
-            {%- for error in errors -%}
-                <p class="j-error-message">
-                    {{ error.message }}
-                </p>
-            {%- endfor -%}
+            {% include 'common/form/errors.html.twig' with { errors } only %}
         </div>
     {% endif %}
 {% endblock form_errors %}

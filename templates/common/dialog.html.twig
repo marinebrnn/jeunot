@@ -1,0 +1,22 @@
+<dialog id="{{ id }}" class="j-dialog">
+  <div class="j-dialog-header">
+      <h2>
+          {{ title }}
+      </h2>
+
+      <j-dialog-close data-dialog-id="{{ id }}">
+          <button class="j-btn j-btn--tertiary j-center" aria-label="{{ 'common.dialog.close'|trans }}">
+              {% include 'common/icons/close.svg.twig' with { attr: {class: 'j-icon'} } only %}
+          </button>
+      </j-dialog-close>
+  </div>
+
+  {% if description is defined %}
+    <p>{{ description }}</p>
+  {% endif %}
+
+  <form method="dialog" class="j-dialog-actions">
+      <button value="{{ confirmValue }}" class="j-btn j-btn--red j-btn--action">{{ confirmLabel }}</button>
+      <button value="{{ cancelValue|default('cancel') }}" class="j-btn j-btn--secondary j-btn--action">{{ cancelLabel }}</button>
+  </form>
+</dialog>

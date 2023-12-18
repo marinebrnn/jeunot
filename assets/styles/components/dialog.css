@@ -1,0 +1,25 @@
+dialog.j-dialog {
+  margin: auto;
+  max-width: var(--dialog-width, 80ch);
+}
+
+.j-dialog-header {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--w);
+}
+
+/* Display close button in full, make title take the rest of the horizontal space */
+.j-dialog-header > :first-child {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.j-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--w);
+}

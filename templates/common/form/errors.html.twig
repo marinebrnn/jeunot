@@ -1,0 +1,5 @@
+{%- for error in errors -%}
+  <p class="j-error-message">
+      {{ error.message is defined ? error.message : error }}
+  </p>
+{%- endfor -%}

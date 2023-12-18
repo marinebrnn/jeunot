@@ -18,6 +18,10 @@
                 <source>common.form.mandatory_fields</source>
                 <target>Les champs signalés par une <![CDATA[<span class="j-required">étoile</span>]]> sont obligatoires.</target>
             </trans-unit>
+            <trans-unit id="common.dialog.close">
+                <source>common.dialog.close</source>
+                <target>Fermer</target>
+            </trans-unit>
             <trans-unit id="nav.brand.title">
                 <source>nav.brand.title</source>
                 <target>Retour à l'accueil</target>
@@ -478,6 +482,18 @@
                 <source>events.cancel_registration</source>
                 <target>Annuler mon inscription</target>
             </trans-unit>
+            <trans-unit id="events.cancel_registration.dialog.title">
+                <source>events.cancel_registration.dialog.title</source>
+                <target>Se désinscrire de "%title%" ?</target>
+            </trans-unit>
+            <trans-unit id="events.cancel_registration.dialog.cancel">
+                <source>events.cancel_registration.dialog.cancel</source>
+                <target>Non, rester inscrit·e</target>
+            </trans-unit>
+            <trans-unit id="events.cancel_registration.dialog.confirm">
+                <source>events.cancel_registration.dialog.confirm</source>
+                <target>Oui, me désinscrire</target>
+            </trans-unit>
             <trans-unit id="events.cancel_registration.success">
                 <source>events.cancel_registration.success</source>
                 <target>Votre désinscription a bien été prise en compte !</target>
@@ -694,6 +710,22 @@
             <trans-unit id="profile.delete">
                 <source>profile.delete</source>
                 <target>Supprimer mon compte</target>
+            </trans-unit>
+            <trans-unit id="profile.delete.dialog.title">
+                <source>profile.delete.dialog.title</source>
+                <target>Voulez-vous vraiment supprimer votre compte ?</target>
+            </trans-unit>
+            <trans-unit id="profile.delete.dialog.description">
+                <source>profile.delete.dialog.description</source>
+                <target>Toutes vos données seront effacées. Cette action est irréversible.</target>
+            </trans-unit>
+            <trans-unit id="profile.delete.dialog.cancel">
+                <source>profile.delete.dialog.cancel</source>
+                <target>Non, garder mon compte</target>
+            </trans-unit>
+            <trans-unit id="profile.delete.dialog.confirm">
+                <source>profile.delete.dialog.confirm</source>
+                <target>Oui, supprimer mon compte</target>
             </trans-unit>
             <trans-unit id="posts.title">
                 <source>posts.title</source>

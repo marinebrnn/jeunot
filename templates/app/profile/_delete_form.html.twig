@@ -1,0 +1,21 @@
+{% set formId = 'delete-profile' %}
+{% set dialogId = 'delete-profile-dialog' %}
+
+<form id="{{ formId }}" method="post" action="{{ path('app_profile_delete') }}">
+    <j-dialog-trigger data-dialog-id="{{ dialogId }}" data-form-id="{{ formId }}" data-form-submit-value="confirm">
+        <button class="j-btn j-btn--red j-btn--tertiary j-icon--left">
+            {% include 'common/icons/trash.svg.twig' with { attr: { class: 'j-icon j-icon--sm' } } only %}
+            {{ 'profile.delete'|trans }}
+        </button>
+    </j-dialog-trigger>
+    <input type="hidden" name="token" value="{{ csrf_token('delete-user-account') }}" />
+</form>
+
+{% include 'common/dialog.html.twig' with {
+    id: dialogId,
+    title: 'profile.delete.dialog.title'|trans,
+    description: 'profile.delete.dialog.description'|trans,
+    confirmValue: 'confirm',
+    confirmLabel: 'profile.delete.dialog.confirm'|trans,
+    cancelLabel: 'profile.delete.dialog.cancel'|trans,
+} only %}
