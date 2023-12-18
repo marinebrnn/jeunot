@@ -19,7 +19,7 @@ final class UnregisterUserForAnEventControllerTest extends AbstractWebTestCase
         ]);
         $this->assertResponseRedirects('/events/89f72b23-55e9-4975-b640-da24890095b7', 302);
         $crawler = $client->followRedirect();
-        $this->assertSame('Votre désinscription a bien été prise en compte !', $crawler->filter('div.alert--success')->text());
+        $this->assertEquals(['success' => ['Votre désinscription a bien été prise en compte !']], $this->getFlashes($crawler));
     }
 
     public function testUnregisterFromAnEventWhereIAmNotRegistered(): void

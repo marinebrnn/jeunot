@@ -29,7 +29,7 @@ final class ForgotPasswordControllerTest extends AbstractWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
-        $this->assertSame('Si cette adresse e-mail est enregistrée chez Jeunot, vous recevrez un lien pour réinitialiser votre mot de passe.', $crawler->filter('div.alert--success')->text());
+        $this->assertSame(['success' => ['Si cette adresse e-mail est enregistrée chez Jeunot, vous recevrez un lien pour réinitialiser votre mot de passe.']], $this->getFlashes($crawler));
         $this->assertRouteSame('app_forgot_password');
     }
 

@@ -26,7 +26,7 @@ final class ResetPasswordControllerTest extends AbstractWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
-        $this->assertSame('Votre mot de passe a bien été changé. Vous pouvez dès à présent vous connecter en utilisant votre nouveau mot de passe.', $crawler->filter('div.alert--success')->text());
+        $this->assertEquals(['success' => ['Votre mot de passe a bien été changé. Vous pouvez dès à présent vous connecter en utilisant votre nouveau mot de passe.']], $this->getFlashes($crawler));
         $this->assertRouteSame('app_login');
     }
 
@@ -81,7 +81,7 @@ final class ResetPasswordControllerTest extends AbstractWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertRouteSame('app_forgot_password');
-        $this->assertSame('Le changement de mot de passe a échoué, veuillez faire une nouvelle demande.', $crawler->filter('div.alert--error')->text());
+        $this->assertEquals(['error' => ['Le changement de mot de passe a échoué, veuillez faire une nouvelle demande.']], $this->getFlashes($crawler));
     }
 
     public function testTokenExpired(): void
@@ -99,6 +99,6 @@ final class ResetPasswordControllerTest extends AbstractWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertRouteSame('app_forgot_password');
-        $this->assertSame('Le changement de mot de passe a échoué, veuillez faire une nouvelle demande.', $crawler->filter('div.alert--error')->text());
+        $this->assertEquals(['error' => ['Le changement de mot de passe a échoué, veuillez faire une nouvelle demande.']], $this->getFlashes($crawler));
     }
 }

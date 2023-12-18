@@ -25,15 +25,7 @@
         {% include 'common/header_anonymous.html.twig' %}
     {% endif %}
 
-    {% for label, messages in app.flashes %}
-        {% if loop.first %}<div class="fr-container">{% endif %}
-        {% for message in messages %}
-            <div class="alert--{{ label }}">
-                {{ message|raw }}
-            </div>
-        {% endfor %}
-        {% if loop.last %}</div>{% endif %}
-    {% endfor %}
+    {% include 'common/flashes.html.twig' with {flashes: app.flashes} only %}
 
     {% block main_tag %}<main>{% endblock %}
         {% block main %}{% endblock %}

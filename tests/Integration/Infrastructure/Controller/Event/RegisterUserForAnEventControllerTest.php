@@ -61,7 +61,7 @@ final class RegisterUserForAnEventControllerTest extends AbstractWebTestCase
         $form = $saveButton->form();
         $client->submit($form);
 
-        $this->assertSame('Vous ne pouvez pas vous inscrire à l\'événement. Il se peut que vous soyez déjà inscrit ou qu\'il n\'y ai plus de place disponible.', $crawler2->filter('div.alert--error')->text());
+        $this->assertEquals(['error' => ['Vous ne pouvez pas vous inscrire à l\'événement. Il se peut que vous soyez déjà inscrit ou qu\'il n\'y ai plus de place disponible.']], $this->getFlashes($crawler2));
     }
 
     public function testUnpublishedEvent(): void

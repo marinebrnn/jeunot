@@ -36,4 +36,22 @@ abstract class AbstractWebTestCase extends WebTestCase
         // $this->assertResponseHasHeader('X-Content-Security-Policy');
         // $this->assertResponseHasHeader('Content-Security-Policy');
     }
+
+    protected function getFlashes(Crawler $crawler): array
+    {
+        $flashes = [];
+
+        foreach (['success', 'error'] as $type) {
+            $flashesOfType = array_map(
+                fn ($text) => trim($text),
+                $crawler->filter(sprintf('[data-flash-type="%s"]', $type))->extract(['_text']),
+            );
+
+            if (\count($flashesOfType) > 0) {
+                $flashes[$type] = $flashesOfType;
+            }
+        }
+
+        return $flashes;
+    }
 }
